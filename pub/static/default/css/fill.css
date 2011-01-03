@@ -161,6 +161,12 @@ body{
     padding-top:8px;
 }
 
+.featured  {
+	padding: none;
+	margin: none;
+	height: 103px;
+}
+
 
 fieldset {
 	padding:15px;

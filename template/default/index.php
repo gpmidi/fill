@@ -43,14 +43,20 @@ $gitCommit = unserialize(file_get_contents(HR_ROOT . '/gitcommit.txt'));
 		</div>
 	        <div class="featured-rotator">
 	            <div class="featured-rotator-wrap">
-	                <a href="#prev" class="rprev"></a>
-	                <ul>
-	                    <li>featured item 1</li>
-	                    <li>featured item 2</li>
-	                    <li>featured item 3</li>
-	                    <li>featured item 4</li>
-	                </ul>
-	                <a href="#next" class="rnext"></a>
+					<div class="featured" style="float: left;">
+						<a href="#prev" class="rprev"></a>
+					</div>
+					<div class="featured" style="float: left;">
+						<ul>
+							<li>featured item 1</li>
+							<li>featured item 2</li>
+							<li>featured item 3</li>
+							<li>featured item 4</li>
+						</ul>
+					</div>
+					<div class="featured" style="float: right;">
+						<a href="#next" class="rnext"></a>
+					</div>
 	            </div>
 	        </div>
 		<div class="content-wrap">
