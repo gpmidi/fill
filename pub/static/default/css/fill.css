@@ -98,6 +98,7 @@ body{
 .rprev, .rnext {
 	width: 29px;
 	height: 29px;
+	display: block;
 }
 .rprev {
 	background: url('/static/default/images/rotate_left.gif');
