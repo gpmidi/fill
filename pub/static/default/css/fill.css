@@ -95,6 +95,16 @@ body{
     display:block;
     border-radius: 10px;
 }
+.rprev, .rnext {
+	width: 29px;
+	height: 29px;
+}
+.rprev {
+	background: url('/static/default/images/rotate_left.gif');
+}
+.rnext {
+	background: url('/static/default/images/rotate_right.gif');
+}
 .content-wrap{
     width:96%;
     margin-left:2%;
