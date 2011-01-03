@@ -324,6 +324,7 @@ class Database {
 			self::databaseIsntEnabledYouNoob();
 		$start = microtime(true);
 		$prepare = array();
+		$set = '';
 
 		$sql = "UPDATE `%s%s` SET%s %s";
 
