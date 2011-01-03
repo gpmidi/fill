@@ -28,7 +28,7 @@ if ($slug == "uploadComplete")
 		$listNess = $dbQuery2->fetchAll();
 		$descdata = array();
 		foreach ($_POST as $varname => $varval) {
-			if (substr($varma,e, 0, 10) == 'SWFUpload') {
+			if (substr($varname, 0, 10) == 'SWFUpload') {
 				$vn = explode('_', $varname);
 				$fnum = $vn[2];
 				if (!isset($descdata[$fnum])) {
