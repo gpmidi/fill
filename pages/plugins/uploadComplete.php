@@ -60,7 +60,7 @@ if ($slug == "uploadComplete")
 			$editSummary .= '</ul>';
 		}
 		if (count($editLog) != 0) {
-                        $editSummary = '<p>You <b>uploaded new versions of</b> the following files:</p><ul>';
+                        $editSummary .= '<p>You <b>uploaded new versions of</b> the following files:</p><ul>';
                         foreach ($editLog as $fname) {
                                 $editSummary .= '<li>'.$fname.'</li>';
                         }
