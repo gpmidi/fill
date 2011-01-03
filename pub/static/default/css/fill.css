@@ -50,7 +50,7 @@ body{
     font-family: 'Nobile', arial, serif;
     text-decoration:none;
 }
-.menu-links ul li a:hover{
+.menu-links ul li a:hover, .menu-links ul li.active a{
     color:#fff;
     border:#f0ae02 1px solid;
     padding:2px;
@@ -61,6 +61,10 @@ body{
     -webkit-border-radius: 8px;
     border-radius: 8px;
     background:#e28400;
+}
+.menu-links ul li.active a{
+    background:#d27400; /* tad darker */
+    border: #e09e00 1px solid; /* this too */
 }
 .featured-rotator{
     float:left;
