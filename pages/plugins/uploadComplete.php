@@ -26,6 +26,7 @@ if ($slug == "uploadComplete")
 			die('ERROR ERROR ERROR');
 		}
 		$listNess = $dbQuery2->fetchAll();
+		$randomPrintR = print_r($_POST, true);
 		Content::setTitle('Upload complete');
 		Content::setContent(<<<EOT
 				<p>$randomPrintR</p>
