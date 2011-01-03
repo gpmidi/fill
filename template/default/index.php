@@ -5,8 +5,10 @@ $gitCommit = unserialize(file_get_contents(HR_ROOT . '/gitcommit.txt'));
 	<head>
 		<title><?php echo pagetitle(); ?> &lsaquo; Fill the Bukkit</title>
 
+		<link href='http://fonts.googleapis.com/css?family=Nobile' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="<?php echo HR_TEMPLATE_PUB_ROOT; ?>css/fonts.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo HR_TEMPLATE_PUB_ROOT; ?>css/hrepo.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo HR_TEMPLATE_PUB_ROOT; ?>css/fill.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo HR_TEMPLATE_PUB_ROOT; ?>css/messages.css" />
 		<?php
 		foreach (Content::$additionalCSS as $addssheet)
 		{
@@ -32,31 +34,52 @@ $gitCommit = unserialize(file_get_contents(HR_ROOT . '/gitcommit.txt'));
 		?>
 	</head>
 	<body>
-		<div id="top">
-			<div class="gutter clear">
-				<h1><a href="/">Fill the Bukkit</a></h1>
+	<div class="wrap">
+		<div class="header">
+			<div class="menu-links">
+				<a class="home-button" href="/"></a>
 				<?php echo nav(); ?>
 			</div>
 		</div>
-		<div id="wrapper">
-			<div class="article">
-				<div class="subheading">
-					Title
+	        <div class="featured-rotator">
+	            <div class="featured-rotator-wrap">
+	                <a href="#prev" class="rprev"></a>
+	                <ul>
+	                    <li>featured item 1</li>
+	                    <li>featured item 2</li>
+	                    <li>featured item 3</li>
+	                    <li>featured item 4</li>
+	                </ul>
+	                <a href="#next" class="rnext"></a>
+	            </div>
+	        </div>
+		<div class="content-wrap">
+			<div class="cols1">
+				<div class="item">
+					<div class="item-t">
+						<h1>Categories</h1>
+					</div>
 				</div>
-				<div class="content">
-					<?php echo content(); ?>
+			</div>
+			<div class="cols2">
+				<div class="item">
+					<div class="item-t">
+						<?php echo content(); ?>
+					</div>
 				</div>
-				<div class="subfooter">
-					Footer
+			</div>
+			<div class="cols3">
+				<div class="item">
+					<div class="item-t">
+						<h1>Categories</h1>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div id="footer">
-			<div class="gutter clear">
-				<p>&copy; <?php echo date('Y'); ?> the Bukkit Team.</p>
-				<p>Powered by <a href="http://hostiio.com">Hostiio</a> and <a href="http://aws.amazon.com/s3">Amazon S3</a>.</p>
-				<p>Git Revision: <a href="http://github.com/robbiet480/hRepo/commit/<?php echo $gitCommit['long']; ?>"><?php echo $gitCommit['short']; ?></a> - by <?php echo $gitCommit['userid']; ?> at <?php echo date('jS M Y, H:i:s', strtotime($gitCommit['commitdate'])); ?></p>
-			</div>
+			<p>&copy; <?php echo date('Y'); ?> the Bukkit Team.</p>
+			<p>Powered by <a href="http://hostiio.com">Hostiio</a> and <a href="http://aws.amazon.com/s3">Amazon S3</a>.</p>
+			<p>Git Revision: <a href="http://github.com/robbiet480/hRepo/commit/<?php echo $gitCommit['long']; ?>"><?php echo $gitCommit['short']; ?></a> - by <?php echo $gitCommit['userid']; ?> at <?php echo date('jS M Y, H:i:s', strtotime($gitCommit['commitdate'])); ?></p>
 		</div>
 
 	</body>
