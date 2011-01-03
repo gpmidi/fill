@@ -40,7 +40,7 @@ if ($slug == "handleUpload")
 		else
 		{
 			$pluginFileRow = $a->fetch(PDO::FETCH_ASSOC);
-			$b = Database::select('plugins_downloads_version', 'vnumber', array('did = ?', $pluginFileRow['did']));
+			$b = Database::select('plugin_downloads_version', 'vnumber', array('did = ?', $pluginFileRow['did']));
 			$lastNum = $b->fetchColumn();
 		}
 		Database::insert('plugin_downloads_version', array('did' => $pluginFileRow['did'], 'vnumber' => $lastNum + 1, 'vhash' => $fileMd5, 'vdate' => date('Y-m-d H:i:s'), 'vchangelog' => 'notdoneyet', 'isons3' => '0'));
