@@ -64,6 +64,7 @@ $gitCommit = unserialize(file_get_contents(HR_ROOT . '/gitcommit.txt'));
 			<div class="cols2">
 				<div class="item">
 					<div class="item-t">
+						<h1><?php echo Content::$pageHeader; ?></h1>
 						<?php echo content(); ?>
 					</div>
 				</div>

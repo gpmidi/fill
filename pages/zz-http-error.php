@@ -14,8 +14,8 @@ if (!isset($httpError)) {
 	if (User::$role == User::ROLE_GUEST) {
 		$maybeLogin = '<p>You might need to <a href="/login/">log in</a> to access this area.</p>';
 	}
+	Content::setTitle('Access Denied');
 	Content::setContent(<<<EOT
-	<h1>Access Denied</h1>
 	<p>You do not have the correct privileges to access this area.</p>
 	$maybeLogin
 EOT
@@ -23,8 +23,8 @@ EOT
 } else if ($httpError == 404) {
 	Content::$forcedTitle = "404 Error";
 	Content::$status = "404 Not Found";
+	Content::setTitle('404 - Giga Puddi Not Locatable');
 	Content::setcontent(<<<EOT
-	<h1>404 Error</h1>
 	<p>You suck.</p>
 EOT
 	);

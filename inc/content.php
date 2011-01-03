@@ -8,7 +8,8 @@ class Content {
 	);
 	public static $useTemplate = true;
 	public static $status = "200 OK";
-	public static $forcedTitle = "";
+	public static $forcedTitle = ""; // <title>
+	public static $pageHeader = ''; // <h1>
 	public static $additionalJS = array();
 	public static $additionalCSS = array();
 
@@ -26,6 +27,10 @@ class Content {
 
 	public static function prepend($x) {
 		self::$content = $x . self::$content;
+	}
+
+	public static function setTitle($x) {
+		self::$pageHeader = $x;
 	}
 
 	public static function setHeader($k, $v) {

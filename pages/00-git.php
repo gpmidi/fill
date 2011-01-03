@@ -4,8 +4,8 @@ if($slug == "git") {
 	Content::$forcedTitle = "Git Update";
 	if (count($params) > 0) {
 		chdir(HR_ROOT);
+		Content::setTitle('Updating website from github');
 		Content::setContent("
-			<h1>Updating website from git...</h1>
 			<pre>".`echo Running git reset --hard && git reset --hard 2>&1 && echo Running git pull && git pull`."</pre><br />
 			<h3>Now pulling latest commit information from Github...</h3>
 		");
@@ -22,8 +22,8 @@ if($slug == "git") {
 		file_put_contents(HR_ROOT . '/gitcommit.txt', serialize($gitCommit));
 		Content::append('<p>Last git commit: ' . $gitCommit['long'] . ' by ' . $gitCommit['userid']. '</p>');
 	} else {
+		Content::setTitle('Auth code invalid');
 		Content::setContent("
-			<h1>Authorisation code incorrect or missing</h2>
 			<p>Git update did not go through.</p>
 		");
 	}

@@ -44,8 +44,8 @@ if ($slug == "upload")
 			'name' => session_name(),
 			'id' => session_id()
 		);
+		Content::setTitle('Upload Files for ' . $pluginName);
 		Content::setContent(<<<EOT
-				<h1>Upload Files</h1>
 				$message
 				<div id="uploadBox"></div>
 				<form action="/uploadComplete/{$params[0]}/{$params[1]}/" method="POST" id="uploadFormForm">

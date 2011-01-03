@@ -2,8 +2,8 @@
 
 $nav['about'] = array('url' => '/about', 'slug' => 'about', 'name' => 'About', 'loggedInOnly' => false, 'weight' => 2);
 if($slug == "about") {
+	Content::setTitle('About');
 	Content::setContent(<<<EOT
-						<h1>About</h1>
 						<h3>About the team</h3> 
  
 <h4>Robbie Trencheny</h4> 

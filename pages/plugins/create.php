@@ -50,8 +50,8 @@ if ($slug == 'create')
 				$message .= Message::error('An error occurred whilst adding the plugin to the database. Please contact an hRepo administrator.');
 			}
 		}
+		Content::setTitle('Create New Plugin');
 		Content::setContent(<<<EOT
-	<h1>Create a New Plugin</h1>
 	<h3>Step 1 of 2</h3>
 			$message
 		<form action="/create/" method="POST">
