@@ -12,7 +12,7 @@ if($slug == "git") {
 		inclib('github/lib/phpGitHubApi.php');
 		$phpGH = new phpGitHubApi();
 		$phpGH->authenticate('lukegb', '3b4e0c11ee0681db035b0e885147e236', phpGitHubAPI::AUTH_HTTP_TOKEN);
-		$latestCommits = $phpGH->getCommitApi()->getBranchCommits('robbiet480', 'hRepo', 'master');
+		$latestCommits = $phpGH->getCommitApi()->getBranchCommits('Bukkit', 'fill', 'master');
 		$gitCommit = array(
 			'long' => $latestCommits[0]['id'],
 			'short' => substr($latestCommits[0]['id'], 0, 7),
