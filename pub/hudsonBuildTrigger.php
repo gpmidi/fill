@@ -12,4 +12,4 @@ $reason = urlencode($reason);
 
 echo 'Fetching: '.'http://hudson.lukegb.com/job/'.urlencode($_GET['buildToTrigger']).'/build - ...<br /><br />';
 
-file_get_contents('http://hudson.lukegb.com/job/'.urlencode($_GET['buildToTrigger']).'/build?token=BUILDME123&reason='.$reason);
+file_get_contents('http://hudson.lukegb.com/job/'.urlencode($_GET['buildToTrigger']).'/build?token=BUILDME123&cause='.$reason);
