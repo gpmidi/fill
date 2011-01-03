@@ -26,10 +26,50 @@ if ($slug == "uploadComplete")
 			die('ERROR ERROR ERROR');
 		}
 		$listNess = $dbQuery2->fetchAll();
-		$randomPrintR = print_r($_POST, true);
+		$descdata = array();
+		foreach ($_POST as $varname => $varval) {
+			if (substr($varname, 0, 10) == 'SWFUpload') {
+				$vn = explode('_', $varname);
+				$fnum = $vn[2];
+				if (!isset($descdata[$fnum])) {
+					$descdata[$fnum] = array();
+				}
+				$descdata[$fnum][$vn[3]] = $varval;
+			}
+		}
+		$editLog = array();
+		$addLog = array();
+		foreach ($descdata as $dataarray) {
+			if (!isset($dataarray['name']) || !isset($dataarray['changelog']) || !isset($dataarray['version'])) continue;
+			$dbrec = Database::select('plugin_downloads', array('did', 'ddesc'), array('pid = ? AND dfname = ?', $pluginID, $dataarray['name']));
+			$dinfo = $dbrec->fetch(); // download ID and description
+			if ($dinfo['ddesc'] == 'notdoneyet') {
+				Database::update('plugin_downloads', array('ddesc' => $dataarray['changelog']), null, array('did = ?'));
+				$addLog[] = $dataarray['name'];
+			} else {
+				$editLog[] = $dataarray['name'];
+			}
+			Database::update('plugin_downloads_version', array('vchangelog' => $dataarray['changelog']), null, array('did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"'));
+		}
+		$editSummary = '';
+		if (count($addLog) != 0) {
+			$editSummary = '<p>You <b>added</b> the following files:</p><ul>';
+			foreach ($addLog as $fname) {
+				$editSummary .= '<li>'.$fname.'</li>';
+			}
+			$editSummary .= '</ul>';
+		}
+		if (count($editLog) != 0) {
+                        $editSummary = '<p>You <b>uploaded new versions of</b> the following files:</p><ul>';
+                        foreach ($editLog as $fname) {
+                                $editSummary .= '<li>'.$fname.'</li>';
+                        }
+                        $editSummary .= '</ul>';
+                }
 		Content::setTitle('Upload complete');
 		Content::setContent(<<<EOT
-				<p>$randomPrintR</p>
+				<p>Congratulations! Here's the edit summary:</p>
+				$editSummary
 EOT
 		);
 	}
