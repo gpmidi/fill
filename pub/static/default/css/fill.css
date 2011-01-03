@@ -82,6 +82,7 @@ body{
     height:103px;
     overflow:hidden;
     margin-right:10%;
+	float: left;
 }
 .featured-rotator-wrap ul li{
     float:left;
