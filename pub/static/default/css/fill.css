@@ -77,12 +77,13 @@ body{
 }
 .featured-rotator-wrap ul{
     list-style:none;
-    margin-left:10%;
+    margin-left:4%;
+    margin-right:4%;
     width:80%;
     height:103px;
     overflow:hidden;
-    margin-right:10%;
 	float: left;
+	min-width: 837px;
 }
 .featured-rotator-wrap ul li{
     float:left;
@@ -100,6 +101,7 @@ body{
 	width: 29px;
 	height: 29px;
 	display: block;
+	float: left;
 }
 .rprev {
 	background: url('/static/default/images/rotate_left.gif');
