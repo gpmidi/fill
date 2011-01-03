@@ -44,6 +44,7 @@ if ($slug == "handleUpload")
 			$lastNum = $b->fetchColumn();
 		}
 		Database::insert('plugin_downloads_version', array('did' => $pluginFileRow['did'], 'vnumber' => $lastNum + 1, 'vhash' => $fileMd5, 'vdate' => date('Y-m-d H:i:s'), 'vchangelog' => 'notdoneyet', 'isons3' => '0'));
+		$_SESSION['plugin_' . $_FILES['Filedata']['name']] = Database::getHandle()->lastInsertID();
 		move_uploaded_file($tempFile, $fileDir . $newFileName);
 		echo '1';
 		exit();
