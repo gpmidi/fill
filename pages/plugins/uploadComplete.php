@@ -44,12 +44,12 @@ if ($slug == "uploadComplete")
 			$dbrec = Database::select('plugin_downloads', array('did', 'ddesc'), array('pid = ? AND dfname = ?', $pluginID, $dataarray['name']));
 			$dinfo = $dbrec->fetch(); // download ID and description
 			if ($dinfo['ddesc'] == 'notdoneyet') {
-				Database::update('plugin_downloads', array('ddesc' => $dataarray['changelog']), null, array('did = ?'));
+				Database::update('plugin_downloads', array('ddesc' => $dataarray['changelog']), null, array('did = ?', $dinfo['did']));
 				$addLog[] = $dataarray['name'];
 			} else {
 				$editLog[] = $dataarray['name'];
 			}
-			Database::update('plugin_downloads_version', array('vchangelog' => $dataarray['changelog']), null, array('did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"'));
+			Database::update('plugin_downloads_version', array('vchangelog' => $dataarray['changelog']), null, array('did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"', $dinfo['did']));
 		}
 		$editSummary = '';
 		if (count($addLog) != 0) {
