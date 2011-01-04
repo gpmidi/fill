@@ -204,16 +204,14 @@ switch($hr_URI[1]){
 		echo $template->render($out_array);
 	break;
 	case "faq":
-		$template_settings=array();
-		$template_settings['HR_TEMPLATE_TITLE'] = "Frequently Asked Questions";
-		$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/faq', 'uri' => 'faq');
+		$out_array['HR_TEMPLATE_TITLE'] = "Frequently Asked Questions";
+		$out_array['HR_TEMPLATE_VARS'] = array('url' => '/faq', 'uri' => 'faq');
 		$template = $twig->loadTemplate("faq.html");
 		echo $template->render($out_array);
 	break;
 	case "contact":
-		$template_settings=array();
-		$template_settings['HR_TEMPLATE_TITLE'] = "Contact Us";
-		$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/contact', 'uri' => 'contact');
+		$out_array['HR_TEMPLATE_TITLE'] = "Contact Us";
+		$out_array['HR_TEMPLATE_VARS'] = array('url' => '/contact', 'uri' => 'contact');
 		$template = $twig->loadTemplate("contact.html");
 		echo $template->render($out_array);
 	break;

@@ -1,7 +1,7 @@
 <?php
 
 	$template_settings=array();
-        $template_settings['HR_TEMPLATE_TITLE'] = "Create New Plugin";
+        $template_settings['HR_TEMPLATE_TITLE'] = "Upload Plugin Files";
         $template_settings['HR_TEMPLATE_JS']=array('jquery.uploadify.min.js','upload.js');
 	$template_settings['HR_TEMPLATE_CSS']=array('uploadify.css');
         $template_settings['HR_TEMPLATE_VARS'] = array('url' => '/create', 'uri' => 'create');

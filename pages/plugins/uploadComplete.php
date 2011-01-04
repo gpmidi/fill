@@ -1,5 +1,7 @@
 <?php
 	$params = array_slice($hr_URI, 1);
+	$template_settings=array();
+	$template_settings['HR_TEMPLATE_TITLE'] = "Upload Complete!";
 
 	$pluginUsername = $params[0];
 	$u = new XenForo_Model_User();
