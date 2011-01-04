@@ -172,7 +172,8 @@ $out_array['THISYEAR'] = date('Y');
 $commitData = unserialize(file_get_contents('/home2/bukkit/fill/gitcommit.txt'));
 $out_array['SHORTCOMMIT'] = $commitData['short'];
 $out_array['LONGCOMMIT'] = $commitData['long'];
-$out_array['DATECOMMIT'] = ago($commitData['commitdate']);
+$out_array['DATECOMMIT'] = ago(strtotime($commitData['commitdate']));
+$out_array['USERCOMMIT'] = $commitData['userid'];
 
 function ago($timestamp){
    $difference = time() - $timestamp;
