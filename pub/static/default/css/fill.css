@@ -240,3 +240,21 @@ input.valid {
 	background-image: none;
 }
 
+/** footer **/
+#footer {
+	background-color: #d0d0d0;
+	border-top: 1px solid #a0a0a0;
+	clear: both;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#footer p {
+	text-align: center;
+	color: #909090;
+}
+
+#footer p a {
+	color: #606060;
+	text-decoration: none;
+}
