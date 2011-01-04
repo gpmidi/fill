@@ -44,7 +44,8 @@ while ($b = $a->fetch()) {
   $bukketnm = 'filldl.bukkit.org';
   if( $s->putObject($s->inputFile($mynm), $bukketnm, $s3nm, S3::ACL_PUBLIC_READ) ) {
     echo '...OK!';
-    Database::update('plugin_downloads_version', array('isons3' => 1), null, array('did = ? and vid = ?', $b['did'], $b['vid']));
+    if (Database::update('plugin_downloads_version', array('isons3' => 1), null, array('did = ? and vid = ?', $b['did'], $b['vid'])))
+      unlink($mynm);
   } else { 
     echo '...:(';
   }
