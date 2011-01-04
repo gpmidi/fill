@@ -55,7 +55,9 @@ class S3 {
 	* @param boolean $useSSL Enable SSL
 	* @return void
 	*/
-	public function __construct($accessKey = 'AKIAJH5WK3NGPLLGTEXQ', $secretKey = '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', $useSSL = true) {
+	public function __construct($useSSL = true) {
+		$accessKey = HR_S3_ACCESSKEY;
+		$secretKey = HR_S3_SECRETKEY;
 		if ($accessKey !== null && $secretKey !== null)
 			self::setAuth($accessKey, $secretKey);
 		self::$useSSL = $useSSL;

@@ -19,13 +19,13 @@
  * Constant: AWS_KEY
  * 	Amazon Web Services Key. Found in the AWS Security Credentials. You can also pass this value as the first parameter to a service constructor.
  */
-define('AWS_KEY', 'AKIAJH5WK3NGPLLGTEXQ');
+define('AWS_KEY', HR_S3_ACCESSKEY);
 
 /**
  * Constant: AWS_SECRET_KEY
  * 	Amazon Web Services Secret Key. Found in the AWS Security Credentials. You can also pass this value as the second parameter to a service constructor.
  */
-define('AWS_SECRET_KEY', 'Ma050YHi12ZAIb3w/SVBqWJbFppgxA/dfi7nqvjM');
+define('AWS_SECRET_KEY', HR_S3_SECRETKEY);
 
 /**
  * Constant: AWS_ACCOUNT_ID
