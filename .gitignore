@@ -1,3 +1,4 @@
 .DS_Store
 nbproject
 config.php
+templates_cache
