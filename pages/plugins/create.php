@@ -3,7 +3,7 @@
 	$template_settings['HR_TEMPLATE_TITLE'] = "Create New Plugin";
 	$template_settings['HR_TEMPLATE_JS']=array("plugincreateform.js");
 	$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/create', 'uri' => 'create');
-	if (User::$role < User::ROLE_MEMBER)
+	/**/ if (User::$role < User::ROLE_ADMIN)
 	{
 		$template_settings['HR_TEMPLATE_CONTENT'] = "This site isn't ready yet! Please wait until everything is ready!";
 	}
