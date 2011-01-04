@@ -34,7 +34,8 @@ $twig = new Twig_Environment($loader, array(
 ));
 
 
-$hr_URI=split("/",$_SERVER['REQUEST_URI']); // URI rewrite rules
+//$hr_URI=split("/",$_SERVER['REQUEST_URI']); // URI rewrite rules
+$hr_URI=explode('/',$_SERVER['REQUEST_URI']); // why use split when you can use the faster explode
 
 // URI fixing, to avoid google :( ing
 $correctURI = ltrim($_SERVER['REQUEST_URI'], '/');
