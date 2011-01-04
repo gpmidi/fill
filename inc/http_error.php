@@ -1,6 +1,6 @@
 <?php
 
-class HttpException {
+class HttpException extends Exception {
 	protected $httpError = 500;
 	function __construct($httpError = 500) {
 		// BAZINGA ¬_¬
