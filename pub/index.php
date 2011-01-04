@@ -106,6 +106,8 @@ inc('message.php');
 
 inc('content.php');
 
+inc('http_error.php');
+
 //inc('sidebar.php');
 
 /*
@@ -189,7 +191,7 @@ function ago($timestamp){
 
 // Git commit data END
 
-
+try {
 switch($hr_URI[1]){
 	case "about":
 		require_once( HR_ROOT . "pages/about.php" );
@@ -245,6 +247,15 @@ switch($hr_URI[1]){
 		$out_array=array_merge($template_settings,$out_array);
 		echo $template->render($out_array);
 	break;
+}
+} catch (HttpException $e) { // breakout! dunna dunna dunna
+		$template = $twig->loadTemplate($e->getErrorTemplate());
+		$template_settings = array(
+			'HR_FRIENDLY_ERROR' => $e->getErrorFriendly(),
+			'HR_ERROR_CODE' => $e->getErrorCode()
+		);
+		$out_array=array_merge($template_settings,$out_array);
+		echo $template->render($out_array);
 }
 exit;
 

@@ -9,7 +9,7 @@
 	}
 	else /**/ if (User::$role == User::ROLE_GUEST)
 	{
-		$httpError = 403;
+		throw new HttpException(403);
 	}
 	else
 	{

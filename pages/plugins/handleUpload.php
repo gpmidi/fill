@@ -10,11 +10,11 @@
 	$pluginID = $dbQuery->fetchColumn();
 	if ((User::$role == User::ROLE_GUEST || User::$uid != $pluginUserID) && (User::$role != User::ROLE_ADMIN))
 	{
-		$httpError = 403;
+		throw new HttpException(403);
 	}
 	else if ($dbQuery->rowCount() != 1)
 	{
-		$httpError = 404;
+		throw new HttpException(404);
 	}
 	else
 	{
