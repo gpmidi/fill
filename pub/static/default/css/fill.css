@@ -57,9 +57,9 @@ body{
     padding-left:7px;
     padding-right:7px;
     outline:0px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     background:#e28400;
 }
 .menu-links ul li.active a{
@@ -68,7 +68,7 @@ body{
 }
 .featured-rotator{
     float:left;
-    width:100%;
+    width:185%;
     height:125px;
 }
 .featured-rotator-wrap{
@@ -91,11 +91,11 @@ body{
     margin-left:28px;
     margin-right:28px;
     height:103px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     background:#fcfbff;
     display:block;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .rprev, .rnext {
 	width: 29px;
@@ -141,18 +141,18 @@ body{
     border:1px solid #d4d4d4;
     width:100%;
     margin-bottom:10px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     float:left;
 }
 .content-wrap .item-t{
     background:#fcfbff url('/static/default/images/item-top.gif') top repeat-x;
     margin-left:2px;
     margin-bottom:20px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     min-height:100px;
     margin-right:2px;
 }

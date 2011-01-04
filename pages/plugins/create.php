@@ -1,11 +1,11 @@
 <?php
-
-$nav['create'] = array('url' => '/create', 'slug' => 'create', 'name' => 'Create New Plugin', 'loggedInOnly' => 1, 'minRole' => User::ROLE_MEMBER, 'weight' => 4, 'extrapre' => '', 'extrapost' => ''); // 1 for only logged in
-if ($slug == 'create')
-{
-/**/	if (User::$role < User::ROLE_MEMBER)
+	$template_settings=array();
+	$template_settings['HR_TEMPLATE_TITLE'] = "Create New Plugin";
+	$template_settings['HR_TEMPLATE_JS']=array("plugincreateform.js");
+	$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/create', 'uri' => 'create');
+	if (User::$role < User::ROLE_MEMBER)
 	{
-		Content::setContent('This site isn\'t ready yet! Please wait until everything is ready!');
+		$template_settings['HR_TEMPLATE_CONTENT'] = "This site isn't ready yet! Please wait until everything is ready!";
 	}
 	else /**/ if (User::$role == User::ROLE_GUEST)
 	{
@@ -13,7 +13,6 @@ if ($slug == 'create')
 	}
 	else
 	{
-		Content::addAdditionalJS('plugincreateform.js');
 		$message = $pname = $pdesc = $preqs = $pmysql = $ismyplugin = $pauthorname = $pauthornameVis = '';
 
 		if (User::$role < User::ROLE_DEVELOPER)
@@ -50,40 +49,39 @@ if ($slug == 'create')
 				$message .= Message::error('An error occurred whilst adding the plugin to the database. Please contact an hRepo administrator.');
 			}
 		}
-		Content::setTitle('Create New Plugin');
-		Content::setContent(<<<EOT
+	
+	$template_settings['HR_TEMPLATE_CONTENT'] = "
+
 	<h3>Step 1 of 2</h3>
-			$message
-		<form action="/create/" method="POST">
-			<div class="form-row">
-				<label for="pname">Plugin Name</label>
-				<span><input type="text" name="pname" id="pname" value="$pname" /></span>
+			".$message."
+		<form action=\"/create/\" method=\"POST\">
+			<div class=\"form-row\">
+				<label for=\"pname\">Plugin Name</label>
+				<span><input type=\"text\" name=\"pname\" id=\"pname\" value=\"".$pname."\" /></span>
 			</div>
-			<div class="form-row">
-				<label for="pdesc">Description (<a href="/markdown/">Markdown</a> formatted)</label>
-				<span><textarea name="pdesc" id="pdesc">$pdesc</textarea></span>
+			<div class=\"form-row\">
+				<label for=\"pdesc\">Description (<a href=\"/markdown/\">Markdown</a> formatted)</label>
+				<span><textarea name=\"pdesc\" id=\"pdesc\">".$pdesc."</textarea></span>
 			</div>
-			<div class="form-row">
-				<label for="preqs">Requirements</label>
-				<span><input type="text" name="preqs" id="preqs" value="$preqs" /></span>
+			<div class=\"form-row\">
+				<label for=\"preqs\">Requirements</label>
+				<span><input type=\"text\" name=\"preqs\" id=\"preqs\" value=\"".$preqs."\" /></span>
 			</div>
-			<div class="form-row">
-				<label for="pmysql">Requires MySQL?</label>
-				<span><input type="checkbox" name="pmysql" id="pmysql" value="yes" $pmysql /></span>
+			<div class=\"form-row\">
+				<label for=\"pmysql\">Requires MySQL?</label>
+				<span><input type=\"checkbox\" name=\"pmysql\" id=\"pmysql\" value=\"yes\" ".$pmysql." /></span>
 			</div>
-			<div class="form-row">
-				<label for="ismyplugin">Is My Own Plugin?</label>
-				<span><input type="checkbox" name="ismyplugin" id="ismyplugin" value="yes" $ismyplugin /></span>
+			<div class=\"form-row\">
+				<label for=\"ismyplugin\">Is My Own Plugin?</label>
+				<span><input type=\"checkbox\" name=\"ismyplugin\" id=\"ismyplugin\" value=\"yes\" ".$ismyplugin." /></span>
 			</div>
-			<div class="form-row" id="pauthornameRow" $pauthornameVis>
-				<label for="pauthorname">Real Author Name</label>
-				<span><input type="text" name="pauthorname" id="pauthorname" value="$pauthorname" /></span>
+			<div class=\"form-row\" id=\"pauthornameRow\" $pauthornameVis>
+				<label for=\"pauthorname\">Real Author Name</label>
+				<span><input type=\"text\" name=\"pauthorname\" id=\"pauthorname\" value=\"".$pauthorname."\" /></span>
 			</div>
-			<div class="form-row form-row-last">
-				<span><input type="submit" name="submit" id="submitBtn" value="Create!" /></span>
+			<div class=\"form-row form-row-last\">
+				<span><input type=\"submit\" name=\"submit\" id=\"submitBtn\" value=\"Create!\" /></span>
 			</div>
 		</form>
-EOT
-		);
+		";
 	}
-}

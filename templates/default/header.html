@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ HR_TEMPLATE_TITLE }} &lsaquo; Fill the Bukkit</title>
+
+		<link href='http://fonts.googleapis.com/css?family=Nobile' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/fonts.css" />
+		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/fill.css" />
+		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/messages.css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	</head>
+	<body>
+	<div class="wrap">
+		<div class="header">
+			<div class="menu-links">
+				<a class="home-button" href="/"></a>
+				<ul id='nav'>
+				{% for menu_item in HR_MENU_ITEMS %}
+
+					<li id="{{ menu_item.id }}" class="{{ menu_item.class }}">
+						<a href="{{ menu_item.uri }}">{{ menu_item.text }}</a>
+					</li>
+
+				{% endfor %}
+
+				</ul>
+			</div>
+		</div>

@@ -1,7 +1,7 @@
 <?php
+	$template_settings=array();
+	$params = array_slice($hr_URI, 1);
 
-if ($slug == "handleUpload")
-{
 	$pluginUsername = $params[0];
 	$u = new XenForo_Model_User();
 	$pluginUserID = $u->getUserIdFromUser($u->getUserByName($pluginUsername));
@@ -49,4 +49,3 @@ if ($slug == "handleUpload")
 		echo '1';
 		exit();
 	}
-}

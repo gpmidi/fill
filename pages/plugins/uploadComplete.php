@@ -1,8 +1,6 @@
 <?php
+	$params = array_slice($hr_URI, 1);
 
-$nav['uploadComplete'] = array('url' => '/uploadComplete', 'slug' => 'uploadComplete', 'name' => 'Upload Complete', 'loggedInOnly' => 999, 'minRole' => 0, 'weight' => 4, 'extrapre' => '', 'extrapost' => ''); // 1 for only logged in
-if ($slug == "uploadComplete")
-{
 	$pluginUsername = $params[0];
 	$u = new XenForo_Model_User();
 	$pluginUserID = $u->getUserIdFromUser($u->getUserByName($pluginUsername));
@@ -66,11 +64,9 @@ if ($slug == "uploadComplete")
                         }
                         $editSummary .= '</ul>';
                 }
-		Content::setTitle('Upload complete');
-		Content::setContent(<<<EOT
+		$template_settings['HR_TEMPLATE_CONTENT'] = <<<EOT
 				<p>Congratulations! Here's the edit summary:</p>
 				$editSummary
 EOT
-		);
+		;
 	}
-}

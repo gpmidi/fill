@@ -1,103 +1,210 @@
 <?php
-
+ini_set('display_errors', 1); 
+ini_set('log_errors', 1); 
+ini_set('error_log', dirname(__FILE__) . '/error_log.txt'); 
+error_reporting(E_ALL);
 /*
-style info:
 
-always tabs.
-braces on the same line.
-camelCase classes, variables and methods
-under_scores in function names and file names
-filesnames are all lowercase
-prefix functions and constants with hr_ (for hRepo) for differntiantion from standard funcs
-always use braces on if, else, for, while, foreach, etc.
-never use the closing ?> unless needed
+style rules:
 
-all urls end in /
+1. always tabs.
+2. braces on the same line.
+3. camelCase classes, variables and methods
+4. under_scores in function names and file names
+5. filesnames are all lowercase
+6. prefix functions and constants with hr_ (for hRepo) for differntiantion from standard funcs
+7. always use braces on if, else, for, while, foreach, etc.
+8. never use the closing ?> unless needed
+9. all urls end in /
+
 */
 
 require('../config.php');
 
-if (isset($_SERVER['PATH_INFO'])) {
-	$_GET['page'] = $_SERVER['PATH_INFO']; // if the rewriting is on...
-}
-if (!isset($_GET['page'])) {
-	if (isset($_SERVER['QUERY_STRING'])) {
-		$andPos = strpos($_SERVER['QUERY_STRING'], '&');
-		$_GET['page'] = substr($_SERVER['QUERY_STRING'], 0, $andPos);
-	}
-}
+require_once( HR_ROOT . '/lib/Twig/Autoloader.php' );
+
+Twig_Autoloader::register();
+
+$loader = new Twig_Loader_Filesystem( HR_ROOT . '/templates/default' );
+
+$twig = new Twig_Environment($loader, array(
+	'cache' 		=>  	HR_ROOT . 'templates_cache/',
+	'debug' 		=> 	true,
+	'optimizations'	=>	-1
+));
+
+
+$hr_URI=split("/",$_SERVER['REQUEST_URI']); // URI rewrite rules
 
 // URI fixing, to avoid google :( ing
-$correctURI = ltrim($_GET['page'], '/');
+$correctURI = ltrim($_SERVER['REQUEST_URI'], '/');
 if (strlen($correctURI) != 0 && substr($correctURI, -1, 1) != '/') {
 	$correctURI = $correctURI . '/';
 }
 while (strpos($correctURI, '//') !== FALSE) {
 	$correctURI = str_replace('//', '/', $correctURI);
 }
-if ('/' . $correctURI != $_GET['page'] && count($_POST) == 0 && strlen($_GET['page']) != 0) {
+if ('/' . $correctURI != $_SERVER['REQUEST_URI'] && count($_POST) == 0 && strlen($_SERVER['REQUEST_URI']) != 0) {
 	header('Location: '. HR_PUB_ROOT . $correctURI);
 	exit();
 }
 // end URI fix
 
-$_GET['page'] = rtrim($_GET['page'], '/');
-$parts = explode('/',$_GET['page']);
-if(count($parts) > 1) {
-	$slug = $parts[1];
-} else {
-	$slug = 'index';
-}
-if (count($parts) > 2) {
-	$params = array_slice($parts, 2);
-} else {
-	$params = array();
-}
-unset($parts);
-
-// format: $nav['browse'] = array('url' => '/browse', 'slug' => 'browse', 'name' => 'Browse', 'loggedInOnly' => false, 'weight' => 1);
 $nav = array();
 
 
+
+
+
 // Load up the XenForo system
+
 	Log::add('Begin initialising XenForo...');
+
 	$startTime = microtime(true);
+
 	//$fileDir = realpath('./../forums/');
+
 	$fileDir = '/home2/bukkit/public_html/forums/';
 
+
+
 	require($fileDir . '/library/XenForo/Autoloader.php');
+
 	XenForo_Autoloader::getInstance()->setupAutoloader($fileDir . '/library');
 
+
+
 	XenForo_Application::initialize($fileDir . '/library', $fileDir);
+
 	XenForo_Application::set('page_start_time', $startTime);
 
+
+
 	// Not required if you are not using any of the preloaded data
+
 	$dependencies = new XenForo_Dependencies_Public();
+
 	$dependencies->preLoadData();
 
+
+
 	XenForo_Session::startPublicSession();
+
 	Log::add('XF initialisation complete!');
+
 // End XenForo
 
+
+
 inc('db.php');
-inc('content.php');
-inc('sidebar.php');
+
 inc('user.php');
-inc('template.php');
-inc('message.php');
+
 inc('plugin.php');
 
+inc('message.php');
+
+inc('content.php');
+
+//inc('sidebar.php');
+
+/*
+inc('template.php');
+
+*/
+
+
+
 // Mandatory include-everywhere libraries
+
 inclib('phpmailer/class.phpmailer.php'); // because then we can set defaults here
+
 $mailer = new PHPMailer();
+
 $mailer->SetFrom('donotreply@hrepo.com', 'hRepo System');
+
 $mailer->IsSendmail();
 
+
+
 // Now check the user!
+
 User::bootstrap();
 
-foreach(glob(HR_PAGES.'*.php') as $page) {
-	require($page);
-}
 
-template();
+
+/*foreach(glob(HR_PAGES.'*.php') as $page) {
+
+	require($page);
+
+}*/
+$out_array=array();
+$out_array['HR_MENU_ITEMS']=array(
+	"about"=>array(
+		"uri"=>"/about/",
+		"id"=>"topBarLinkAbout",
+		"text"=>"About"
+	),
+	"faq"=>array(
+		"uri"=>"/faq/",
+		"id"=>"topBarLinkFAQ",
+		"text"=>"FAQ"
+	),
+	"create"=>array(
+		"uri"=>"/create/",
+		"id"=>"topBarLinkCreateNewPlugin",
+		"text"=>"Create New Plugin"
+	),
+	"contact"=>array(
+		"uri"=>"/contact/",
+		"id"=>"topBarLinkContact",
+		"text"=>"Contact"
+	)
+);
+if(array_key_exists($hr_URI[1],$out_array['HR_MENU_ITEMS'])){
+	$out_array['HR_MENU_ITEMS'][($hr_URI[1])]['class']="active";
+}
+$out_array['HR_TEMPLATE_PUB_ROOT']=HR_TEMPLATE_PUB_ROOT;
+switch($hr_URI[1]){
+	case "about":
+		require_once( HR_ROOT . "pages/about.php" );
+		$template = $twig->loadTemplate("index.html");
+		$out_array=array_merge($template_settings,$out_array);
+		echo $template->render($out_array);
+	break;
+	case "faq":
+		require_once( HR_ROOT . "pages/faq.php" );
+		$template = $twig->loadTemplate("index.html");
+		$out_array=array_merge($template_settings,$out_array);
+		echo $template->render($out_array);
+	break;
+	case "create":
+		require_once( HR_ROOT . "pages/plugins/create.php" );
+		$template = $twig->loadTemplate("index.html");
+		$out_array=array_merge($template_settings,$out_array);
+		echo $template->render($out_array);
+	break;
+	case 'upload':
+                require_once( HR_ROOT . "pages/plugins/upload.php" );
+                $template = $twig->loadTemplate("index.html");
+                $out_array=array_merge($template_settings,$out_array);
+                echo $template->render($out_array);
+        case 'uploadComplete':
+                require_once( HR_ROOT . "pages/plugins/uploadComplete.php" );
+                $template = $twig->loadTemplate("index.html");
+                $out_array=array_merge($template_settings,$out_array);
+                echo $template->render($out_array);
+        case 'handleUpload':
+                require_once( HR_ROOT . "pages/plugins/handleUpload.php" );
+                $template = $twig->loadTemplate("index.html");
+                $out_array=array_merge($template_settings,$out_array);
+                echo $template->render($out_array);
+	default:
+		require_once( HR_ROOT . "pages/index.php" );
+		$template = $twig->loadTemplate("index.html");
+		$out_array=array_merge($template_settings,$out_array);
+		echo $template->render($out_array);
+	break;
+}
+exit;
+

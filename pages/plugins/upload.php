@@ -1,8 +1,11 @@
 <?php
 
-$nav['upload'] = array('url' => '/upload', 'slug' => 'upload', 'name' => 'Upload', 'loggedInOnly' => 999, 'minRole' => 0, 'weight' => 4, 'extrapre' => '', 'extrapost' => ''); // 1 for only logged in
-if ($slug == "upload")
-{
+	$template_settings=array();
+        $template_settings['HR_TEMPLATE_TITLE'] = "Create New Plugin";
+        $template_settings['HR_TEMPLATE_JS']=array('jquery.uploadify.min.js','upload.js');
+	$template_settings['HR_TEMPLATE_CSS']=array('uploadify.css');
+        $template_settings['HR_TEMPLATE_VARS'] = array('url' => '/create', 'uri' => 'create');
+	$params = array_slice($hr_URI, 1);
 	$pluginUsername = $params[0];
 	$u = new XenForo_Model_User();
 	$pluginUserID = $u->getUserIdFromUser($u->getUserByName($pluginUsername));
@@ -37,15 +40,11 @@ if ($slug == "upload")
 			$message = Message::notice('The files you currently have on Fill are called:<br /><ul>' . $list . '</ul>');
 		}
 		$message .= Message::warning('Remember: if you want to upload a new version of a file, that file must be named EXACTLY the same.<br /><br />Example: I previously uploaded AwesomePlugin.jar - to upload a new version, you must ensure that it is named exactly the same.<br /><br /><b>File names cannot be changed once uploaded.</b>');
-		Content::addAdditionalCSS('uploadify.css');
-		Content::addAdditionalJS('jquery.uploadify.min.js');
-		Content::addAdditionalJS('upload.js');
 		$session = array(
 			'name' => session_name(),
 			'id' => session_id()
 		);
-		Content::setTitle('Upload Files for ' . $pluginName);
-		Content::setContent(<<<EOT
+		$template_settings['HR_TEMPLATE_CONTENT'] = <<<EOT
 				$message
 				<div id="uploadBox"></div>
 				<form action="/uploadComplete/{$params[0]}/{$params[1]}/" method="POST" id="uploadFormForm">
@@ -56,6 +55,5 @@ if ($slug == "upload")
 	uploadURI = '/handleUpload/{$params[0]}/{$params[1]}/&{$session['name']}={$session['id']}&loadSessionFromGET=true';
 				</script>
 EOT
-		);
+		;
 	}
-}

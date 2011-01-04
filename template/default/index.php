@@ -1,44 +1,19 @@
-<?php 
-$gitCommit = unserialize(file_get_contents(HR_ROOT . '/gitcommit.txt'));
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo pagetitle(); ?> &lsaquo; Fill the Bukkit</title>
+		<title>(TITLE GOES HERE) &lsaquo; Fill the Bukkit</title>
 
 		<link href='http://fonts.googleapis.com/css?family=Nobile' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="<?php echo HR_TEMPLATE_PUB_ROOT; ?>css/fonts.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo HR_TEMPLATE_PUB_ROOT; ?>css/fill.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo HR_TEMPLATE_PUB_ROOT; ?>css/messages.css" />
-		<?php
-		foreach (Content::$additionalCSS as $addssheet)
-		{
-			if (substr($addssheet, 0, 2) != '//')
-			{
-				$addssheet = HR_TEMPLATE_PUB_ROOT . 'css/' . $addssheet;
-			}
-			echo '		<link rel="stylesheet" type="text/css" href="' . $addssheet . '" />
-';
-		}
-		?>
+		<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
+		<link rel="stylesheet" type="text/css" href="/css/fill.css" />
+		<link rel="stylesheet" type="text/css" href="/css/messages.css" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		<?php
-		foreach (Content::$additionalJS as $addjs)
-		{
-			if (substr($addjs, 0, 2) != '//')
-			{
-				$addjs = HR_TEMPLATE_PUB_ROOT . 'js/' . $addjs;
-			}
-			echo '          <script type="text/javascript" src="' . $addjs . '"></script>
-';
-		}
-		?>
 	</head>
 	<body>
 	<div class="wrap">
 		<div class="header">
 			<div class="menu-links">
 				<a class="home-button" href="/"></a>
-				<?php echo nav(); ?>
 			</div>
 		</div>
 	        <div class="featured-rotator">
@@ -64,8 +39,7 @@ $gitCommit = unserialize(file_get_contents(HR_ROOT . '/gitcommit.txt'));
 			<div class="cols2">
 				<div class="item">
 					<div class="item-t">
-						<h1><?php echo Content::$pageHeader; ?></h1>
-						<?php echo content(); ?>
+						<h1></h1>
 					</div>
 				</div>
 			</div>
