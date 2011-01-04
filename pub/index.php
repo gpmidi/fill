@@ -165,6 +165,30 @@ if(array_key_exists($hr_URI[1],$out_array['HR_MENU_ITEMS'])){
 	$out_array['HR_MENU_ITEMS'][($hr_URI[1])]['class']="active";
 }
 $out_array['HR_TEMPLATE_PUB_ROOT']=HR_TEMPLATE_PUB_ROOT;
+
+$out_array['THISYEAR'] = date('Y');
+// Git commit data START
+
+$commitData = unserialize(file_get_contents('/home2/bukkit/fill/gitcommit.txt'));
+$out_array['SHORTCOMMIT'] = $commitData['short'];
+$out_array['LONGCOMMIT'] = $commitData['long'];
+$out_array['DATECOMMIT'] = ago($commitData['commitdate']);
+
+function ago($timestamp){
+   $difference = time() - $timestamp;
+   $periods = array("second", "minute", "hour", "day", "week", "month", "years", "decade");
+   $lengths = array("60","60","24","7","4.35","12","10");
+   for($j = 0; $difference >= $lengths[$j]; $j++)
+   $difference /= $lengths[$j];
+   $difference = round($difference);
+   if($difference != 1) $periods[$j].= "s";
+   $text = "$difference $periods[$j] ago";
+   return $text;
+}
+
+// Git commit data END
+
+
 switch($hr_URI[1]){
 	case "about":
 		require_once( HR_ROOT . "pages/about.php" );
@@ -172,10 +196,24 @@ switch($hr_URI[1]){
 		$out_array=array_merge($template_settings,$out_array);
 		echo $template->render($out_array);
 	break;
-	case "faq":
-		require_once( HR_ROOT . "pages/faq.php" );
+	case 'git':
+		require_once( HR_ROOT . "pages/git.php" );
 		$template = $twig->loadTemplate("index.html");
 		$out_array=array_merge($template_settings,$out_array);
+		echo $template->render($out_array);
+	break;
+	case "faq":
+		$template_settings=array();
+		$template_settings['HR_TEMPLATE_TITLE'] = "Frequently Asked Questions";
+		$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/faq', 'uri' => 'faq');
+		$template = $twig->loadTemplate("faq.html");
+		echo $template->render($out_array);
+	break;
+	case "contact":
+		$template_settings=array();
+		$template_settings['HR_TEMPLATE_TITLE'] = "Contact Us";
+		$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/contact', 'uri' => 'contact');
+		$template = $twig->loadTemplate("contact.html");
 		echo $template->render($out_array);
 	break;
 	case "create":
@@ -185,20 +223,23 @@ switch($hr_URI[1]){
 		echo $template->render($out_array);
 	break;
 	case 'upload':
-                require_once( HR_ROOT . "pages/plugins/upload.php" );
-                $template = $twig->loadTemplate("index.html");
-                $out_array=array_merge($template_settings,$out_array);
-                echo $template->render($out_array);
-        case 'uploadComplete':
-                require_once( HR_ROOT . "pages/plugins/uploadComplete.php" );
-                $template = $twig->loadTemplate("index.html");
-                $out_array=array_merge($template_settings,$out_array);
-                echo $template->render($out_array);
-        case 'handleUpload':
-                require_once( HR_ROOT . "pages/plugins/handleUpload.php" );
-                $template = $twig->loadTemplate("index.html");
-                $out_array=array_merge($template_settings,$out_array);
-                echo $template->render($out_array);
+        require_once( HR_ROOT . "pages/plugins/upload.php" );
+        $template = $twig->loadTemplate("index.html");
+        $out_array=array_merge($template_settings,$out_array);
+        echo $template->render($out_array);
+	break;
+    case 'uploadComplete':
+		require_once( HR_ROOT . "pages/plugins/uploadComplete.php" );
+        $template = $twig->loadTemplate("index.html");
+        $out_array=array_merge($template_settings,$out_array);
+        echo $template->render($out_array);
+	break;
+    case 'handleUpload':
+        require_once( HR_ROOT . "pages/plugins/handleUpload.php" );
+        $template = $twig->loadTemplate("index.html");
+        $out_array=array_merge($template_settings,$out_array);
+        echo $template->render($out_array);
+	break;
 	default:
 		require_once( HR_ROOT . "pages/index.php" );
 		$template = $twig->loadTemplate("index.html");
