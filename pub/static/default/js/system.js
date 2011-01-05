@@ -8,7 +8,7 @@ $("body").ready(function(){
 	$(".rnext").css({"left":new_nf_l+"px","top":"110px","position":"absolute"});
 	$(".rprev").css({"left":"51px","top":"120px","position":"absolute"});
 	if(w_w>271){
-		w_remain=w_w-271-230;
+		w_remain=w_w-271-180;
 		max_items=1;
 	}
 	if(w_remain>271){
@@ -26,9 +26,10 @@ $("body").ready(function(){
 		max_items=max_items-1;
 	}
 	ndd_width+=max_items*299;
+	$(".featured-rotator-wrap #rotator_div ul").css({"height":"113px"});
 	$(".featured-rotator-wrap #rotator_div ul li:first").css({"marginLeft":"0px"});
 	$(".featured-rotator-wrap #rotator_div ul li:last").css({"marginRight":"0px"});
-	$(".featured-rotator-wrap #rotator_div").css({"left":"50%",width:(ndd_width)+"px","top":"79px","marginLeft":"-"+Math.ceil(ndd_width/2)+"px","position":"absolute"});
+	$(".featured-rotator-wrap #rotator_div").css({"left":"50%",width:(ndd_width)+"px","top":"75px","marginLeft":"-"+Math.ceil(ndd_width/2)+"px","position":"absolute"});
 	$(".featured-rotator-wrap #rotator_div ul").css({width:(ndd_width)+"px","float":"none"});
 
 });
