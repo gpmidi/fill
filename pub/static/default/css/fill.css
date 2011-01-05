@@ -162,17 +162,28 @@ body{
 	padding-left: 5px;
 	padding-right: 5px;
 	background-image:url('/static/default/images/subheadbg.jpg');
-	background-repeat: repeat-y;
+	background-repeat: repeat-x;
+	background-position: top;
 	color: #777777;
 }
 
 .itemContent {
-	padding: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-image:url('/static/default/images/itembg.jpg');
+	background-repeat: repeat-x;
+	background-position: top;
+	color: #6c6c6e;
+}
+
+.itemDesc {
+	width: 500px;
 }
 
 .topitem {
 	font-family: "lucida grande",sans-serif;
-	text-size: 16px;
+	font-size: 14px;
+	min-height: 100px;
 }
 
 .content-wrap .item-t{
@@ -238,9 +249,6 @@ textarea {
 }
 
 
-input[type=text]:hover,
-select:hover,
-button:hover,
 input[type=text]:hover,
 select:hover,
 button:hover,
@@ -338,6 +346,11 @@ h4 {
 
 .itemName {
 	color: #e18a00;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.itemAuthor {
 	font-weight: bold;
 }
 	

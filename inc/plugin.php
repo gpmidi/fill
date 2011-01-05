@@ -80,4 +80,71 @@ class Plugin {
 		}
 		return ($a == 1) ? true : false;
 	}
+
+	/**
+	 * getVotes() - get the current aggregate votes for this plugin
+         *
+         * @args void
+         * @returns array containing two elements, likes and dislikes
+	**/
+	function getVotes() {
+		$dbR = Database::select('plugin_ratings', '*', array('pid = ?', $this->id));
+		if ($dbR->rowCount() == 0) {
+			Database::insert('plugin_ratings', array('pid' => $this->id, 'likes' => 0, 'dislikes' => 0));
+			$dbR = Database::select('plugin_ratings', '*', array('pid = ?', $this->id));
+		}
+		$voteCs = $dbR->fetch();
+		unset($voteCs['pid']);
+		return $voteCs;
+	}
+
+	/**
+	 * userHasVoted($userid) - returns the current vote of the given user
+	 *
+	 * @return int Value showing vote
+	 * 0 = no vote
+	 * -1 = dislike
+	 * +1 = like
+	 *
+	 * @param int $userid XenForo user ID of the user to look up
+	**/
+	function userHasVoted($userid) {
+		$a = new XenForo_Model_User();
+		$curGet = $a->getUserById($userid);
+		$list = unserialize($curGet['plugins_voted_on']);
+		if (isset($list[$this->id]) && $list[$this->id] != 0) {
+			return $list[$this->id];
+		}
+		return 0;
+	}
+
+	/**
+	 * userSetVote($userid, $vote)
+	 * Sets a user's vote and adjusts the count
+	 * accordingly.
+	 *
+	 * @param int $userid User ID of the XF user to change the vote for
+	 * @param int $vote Vote to set to
+	 *
+	 * @see userGetVote
+	**/
+	function userSetVote($userid, $vote) {
+		$a = new XenForo_Model_User();
+		$curGet = $a->getUserById($userid);
+		$list = unserialize($curGet['plugins_voted_on']);
+		$voteCs = $self->getVotes();
+		if ($vote > 0)
+			$voteCs['likes'] += 1;
+		else
+			$voteCs['dislikes'] += 1;
+		if ($b = $this->userHasVoted($userid) && $b != 0) {
+			if ($b > 0)
+				$voteCs['likes'] -= 1;
+			else
+				$voteCs['dislikes'] -= 1;
+		}
+		$list[$this->id] = $vote;
+		$curGet->update($curGet, 'plugins_voted_on', serialize($list));
+		Database::update('plugin_ratings', $voteCs, null, array('pid = ?', $this->id));
+	}
 }

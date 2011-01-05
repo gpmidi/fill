@@ -226,6 +226,11 @@ switch($hr_URI[1]){
         	$out_array=array_merge($template_settings,$out_array);
         	echo $template->render($out_array);
 	break;
+	case 'featured_rotator':
+        	//require_once( HR_ROOT . "pages/plugins/rotator.php" ); // currently disabled for testing
+        	$template = $twig->loadTemplate("rotator.html");
+        	echo $template->render($out_array);
+	break;
 	default:
 		require_once( HR_ROOT . "pages/index.php" );
 		$template = $twig->loadTemplate("index.html");

@@ -17,10 +17,10 @@
 	<div class="topitem">
 		<span class="itemName">World Edit</span><br />
 		by <span class="itemAuthor">sk89q</span><br />
-		<span class="itemDesc">
+		<div class="itemDesc">
 			WorldEdit is a powerful tool for Minecraft SMP server that lets you modify
 			the world en-masse and undo griefing incidents.  Some of the things that it can do include:
-		</span>
+		</div>
 		<br />
 		<span class="itemDL">Download</span>
 	</div>
