@@ -2,7 +2,8 @@
 	$template_settings=array();
 	$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/index', 'uri' => 'index');
 	$uname = 'stranger!!';
-	$message = '';
+	$subhead = 'Cake:';
+	$itemcontent = '';
 	if (isset($_SESSION['message'])) {
 		$message = '<p>' . $_SESSION['message'] .'</p>';
 		unset($_SESSION['message']);
@@ -10,4 +11,22 @@
 	if (User::isValid()) {
 		$uname = User::$uname;
 	}
-	$template_settings['HR_TEMPLATE_CONTENT']=$message.' You have reached the home of Fill The Bukkit, the global mod repository for <a href="http://bukkit.org">Bukkit</a>, the fabulous mod for <a href="http://minecraft.net">Minecraft</a>, the highly addictive online and single player 8-bit mining game';
+	
+	
+	$itemcontent .= '
+	<div class="topitem">
+		<span class="itemName">World Edit</span><br />
+		by <span class="itemAuthor">sk89q</span><br />
+		<span class="itemDesc">
+			WorldEdit is a powerful tool for Minecraft SMP server that lets you modify
+			the world en-masse and undo griefing incidents.  Some of the things that it can do include:
+		</span>
+		<br />
+		<span class="itemDL">Download</span>
+	</div>
+	';
+	
+	
+	$template_settings['HR_TEMPLATE_CONTENT_HEADER']=$subhead;
+	$template_settings['HR_TEMPLATE_CONTENT']=$itemcontent;
+	$template_settings['HR_TEMPLATE_JS']=array("system.js");

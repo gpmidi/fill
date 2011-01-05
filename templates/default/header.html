@@ -8,6 +8,12 @@
 		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/fill.css" />
 		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/messages.css" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		{% for js_item in HR_TEMPLATE_JS %}
+			<script type="text/javascript" src="{{ HR_TEMPLATE_PUB_ROOT }}js/{{ js_item }}"></script>
+		{% endfor %}
+		{% for css_item in HR_TEMPLATE_CSS %}
+			<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/{{ css_item }}" />
+		{% endfor %}
 	</head>
 	<body>
 	<div class="wrap">

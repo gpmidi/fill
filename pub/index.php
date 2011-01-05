@@ -34,8 +34,7 @@ $twig = new Twig_Environment($loader, array(
 ));
 
 
-//$hr_URI=split("/",$_SERVER['REQUEST_URI']); // URI rewrite rules
-$hr_URI=explode('/',$_SERVER['REQUEST_URI']); // why use split when you can use the faster explode
+$hr_URI=explode('/',$_SERVER['REQUEST_URI']);
 
 // URI fixing, to avoid google :( ing
 $correctURI = ltrim($_SERVER['REQUEST_URI'], '/');
@@ -52,9 +51,6 @@ if ('/' . $correctURI != $_SERVER['REQUEST_URI'] && count($_POST) == 0 && strlen
 // end URI fix
 
 $nav = array();
-
-
-
 
 
 // Load up the XenForo system
@@ -109,11 +105,9 @@ inc('content.php');
 
 inc('http_error.php');
 
-//inc('sidebar.php');
-
 /*
 inc('template.php');
-
+inc('sidebar.php');
 */
 
 
@@ -128,19 +122,8 @@ $mailer->SetFrom('donotreply@hrepo.com', 'hRepo System');
 
 $mailer->IsSendmail();
 
-
-
-// Now check the user!
-
 User::bootstrap();
 
-
-
-/*foreach(glob(HR_PAGES.'*.php') as $page) {
-
-	require($page);
-
-}*/
 $out_array=array();
 $out_array['HR_MENU_ITEMS']=array(
 	"about"=>array(
@@ -193,6 +176,7 @@ function ago($timestamp){
 // Git commit data END
 
 try {
+
 switch($hr_URI[1]){
 	case "about":
 		require_once( HR_ROOT . "pages/about.php" );
@@ -225,22 +209,22 @@ switch($hr_URI[1]){
 		echo $template->render($out_array);
 	break;
 	case 'upload':
-        require_once( HR_ROOT . "pages/plugins/upload.php" );
-        $template = $twig->loadTemplate("index.html");
-        $out_array=array_merge($template_settings,$out_array);
-        echo $template->render($out_array);
+        	require_once( HR_ROOT . "pages/plugins/upload.php" );
+        	$template = $twig->loadTemplate("index.html");
+        	$out_array=array_merge($template_settings,$out_array);
+        	echo $template->render($out_array);
 	break;
-    case 'uploadComplete':
+    	case 'uploadComplete':
 		require_once( HR_ROOT . "pages/plugins/uploadComplete.php" );
-        $template = $twig->loadTemplate("index.html");
-        $out_array=array_merge($template_settings,$out_array);
-        echo $template->render($out_array);
+        	$template = $twig->loadTemplate("index.html");
+        	$out_array=array_merge($template_settings,$out_array);
+        	echo $template->render($out_array);
 	break;
-    case 'handleUpload':
-        require_once( HR_ROOT . "pages/plugins/handleUpload.php" );
-        $template = $twig->loadTemplate("index.html");
-        $out_array=array_merge($template_settings,$out_array);
-        echo $template->render($out_array);
+    	case 'handleUpload':
+        	require_once( HR_ROOT . "pages/plugins/handleUpload.php" );
+        	$template = $twig->loadTemplate("index.html");
+        	$out_array=array_merge($template_settings,$out_array);
+        	echo $template->render($out_array);
 	break;
 	default:
 		require_once( HR_ROOT . "pages/index.php" );
@@ -249,6 +233,7 @@ switch($hr_URI[1]){
 		echo $template->render($out_array);
 	break;
 }
+
 } catch (HttpException $e) { // breakout! dunna dunna dunna
 		$template = $twig->loadTemplate($e->getErrorTemplate());
 		$template_settings = array(
@@ -258,5 +243,4 @@ switch($hr_URI[1]){
 		$out_array=array_merge($template_settings,$out_array);
 		echo $template->render($out_array);
 }
-exit;
 
