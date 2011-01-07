@@ -5,3 +5,5 @@ templates_cache
 makeCheckin
 uploads
 signedHashes
+fillbukkit.untrusted.pem
+fillbukkit.trusted.pem

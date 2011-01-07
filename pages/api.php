@@ -32,21 +32,21 @@ $allowableOutputs = array(
 
 // Hooray, let's do the actual thinging
 
-$output = strtolower($hr_URI[2]);
-$page = strtolower($hr_URI[3]);
+$output = strtolower($hr_URI[1]);
+$page = strtolower($hr_URI[2]);
 
 if (in_array($output, array_keys($allowableOutputs)))
 {
 	header('Content-type: ' . $allowableOutputs[$output]['mime']);
 	$parseToOutput = $allowableOutputs[$output]['function'];
 }
-if (isset($hr_URI[4]) && $hr_URI[4] == 'debug')
+if (isset($hr_URI[3]) && $hr_URI[3] == 'debug')
 header('Content-type: text/html');
 
 if (in_array($page, $allowable))
 {
 	require_once(HR_ROOT . '/pages/api/' . $page . '.php');
-	$output = executeAPI(array_slice($hr_URI, 4));
+	$output = executeAPI(array_slice($hr_URI, 3));
 	exit($parseToOutput($output));
 }
 
@@ -75,7 +75,7 @@ function xmlout($arrayToParse) {
 	$xml->openMemory();
 	$xml->startDocument('1.0', 'UTF-8');
 	$xml->startElement('root');
-	foreach ($data as $key => $value)
+	foreach ($arrayToParse as $key => $value)
 	{
 		if (is_array($value))
 		{

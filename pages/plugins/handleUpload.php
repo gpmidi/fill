@@ -58,7 +58,7 @@
 		$vID = Database::getHandle()->lastInsertID();
 		
 		//file_put_contents($signedHashDir . $vid . '.sha256', sha256_file($tempFile));
-		$privateKey = openssl_get_privatekey(HR_ROOT . '/fillbukkit.pem');
+		$privateKey = openssl_get_privatekey(HR_ROOT . '/fillbukkit.untrusted.pem');
 		$signature = '';
 		openssl_sign(file_get_contents($tempFile), $signature, $privateKey, 'sha256');
 		file_put_contents($signedHashDir . $vid . '.sig', $signature);

@@ -246,6 +246,9 @@ try
 			$template = $twig->loadTemplate("rotator.html");
 			echo $template->render($out_array);
 			break;
+		case 'api':
+			require_once( HR_ROOT . 'pages/api.php' );
+			exit();
 		default:
 			require_once( HR_ROOT . "pages/index.php" );
 			$template = $twig->loadTemplate("index.html");
