@@ -19,6 +19,9 @@
 	}
 	else
 	{
+		// get the plugin object
+		$pluginObj = new Plugin($pluginID);
+		$isTrusted = ($status == Plugin::STATE_TRUSTED) ? true : false;
 		// okay, let's do this
 		// get down on it
 		$tempFile = $_FILES['Filedata']['tmp_name'];

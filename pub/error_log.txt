@@ -1,1 +1,5 @@
 [07-Jan-2011 10:47:49] PHP Fatal error:  main(): Failed opening required '/home2/bukkit/public_html/phill//pages/api/example.php' (include_path='/home2/bukkit/public_html/forums//library:.') in /home2/bukkit/public_html/phill/pages/api.php on line 46
+[07-Jan-2011 22:53:51] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home2/bukkit/public_html/phill/inc/plugin.php on line 33
+[07-Jan-2011 22:53:51] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[07-Jan-2011 22:53:52] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home2/bukkit/public_html/phill/inc/plugin.php on line 33
+[07-Jan-2011 22:53:52] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
