@@ -1,0 +1,28 @@
+{% extends 'threecolumn.html' %}
+{% block head %}
+{{ parent() }}
+<script type="text/javascript" src="/static/default/js/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="/static/default/js/upload.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/default/css/uploadify.css" />
+{% endblock head %}
+{% block title %}Upload{% endblock title %}
+{% block col2 %}
+				{{ MESSAGE | raw }}
+<div id="uploadBox"></div>
+<form action="/uploadComplete/{{ PLUGIN_AUTHOR }}/{{ PLUGIN_NAME }}/" method="POST" id="uploadFormForm">
+	<div id="uploadFormArea"></div>
+	<input type="submit" id="bigSubmitButton" disabled="disabled" value="Save Data" />
+</form>
+<script type="text/javascript">
+	uploadURI = '/handleUpload/{{ PLUGIN_AUTHOR }}/{{ PLUGIN_NAME }}/&{{ SESSION_NAME }}={{ SESSION_ID }}&loadSessionFromGET=true';
+	window.listOfPreFiles = [
+{% for prefile in prefiles %}	
+	{% if not loop.last %}
+		"{{ prefile }}",
+	{% else %}
+		"{{ prefile }}"
+	{% endif %}
+{% endfor %}
+	];
+</script>
+{% endblock col2 %}

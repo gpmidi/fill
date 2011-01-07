@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{{ HR_TEMPLATE_TITLE }} &lsaquo; Fill the Bukkit</title>
+		{% block head %}
+		<title>{% block title %}{% endblock %} &lsaquo; Fill the Bukkit</title>
 
 		<link href='http://fonts.googleapis.com/css?family=Nobile' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/fonts.css" />
 		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/fill.css" />
 		<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/messages.css" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		{% for js_item in HR_TEMPLATE_JS %}
+		<!--{% for js_item in HR_TEMPLATE_JS %}
 			<script type="text/javascript" src="{{ HR_TEMPLATE_PUB_ROOT }}js/{{ js_item }}"></script>
 		{% endfor %}
 		{% for css_item in HR_TEMPLATE_CSS %}
 			<link rel="stylesheet" type="text/css" href="{{ HR_TEMPLATE_PUB_ROOT }}css/{{ css_item }}" />
-		{% endfor %}
+		{% endfor %}--> <!-- these should be defined within individual templates -->
+		{% endblock %}
 	</head>
 	<body>
 	<div class="wrap">
@@ -32,3 +34,12 @@
 				</ul>
 			</div>
 		</div>
+		{% block main %}{% endblock main %}
+		<div id="footer">
+			<p>&copy; {{ THISYEAR }} the Bukkit Team.</p>
+			<p>Powered by <a href="http://hostiio.com">Hostiio</a> and <a href="http://aws.amazon.com/s3">Amazon S3</a>.</p>
+			<p>Git Revision: <a href="http://github.com/Bukkit/fill/commit/{{ LONGCOMMIT }}">{{ SHORTCOMMIT }}</a> - by {{ USERCOMMIT }} {{ DATECOMMIT }}</p>
+		</div>
+
+	</body>
+</html>

@@ -5,6 +5,9 @@
         $template_settings['HR_TEMPLATE_JS']=array('jquery.uploadify.min.js','upload.js');
 	$template_settings['HR_TEMPLATE_CSS']=array('uploadify.css');
         $template_settings['HR_TEMPLATE_VARS'] = array('url' => '/create', 'uri' => 'create');
+	if (count($hr_URI) < 3) {
+		throw new HttpException(403);
+	}
 	$params = array_slice($hr_URI, 1);
 	$pluginUsername = $params[0];
 	$u = new XenForo_Model_User();
@@ -33,27 +36,19 @@
 		{
 			$listNess = $dbQuery2->fetchAll();
 			$list = '';
+			$prefiles = array();
 			foreach ($listNess as $fnameThing)
 			{
 				$list .= '<li>' . $fnameThing['dfname'] . '</li>';
-			}
+				$prefiles[] = $fnameThing['dfname'];
+				}
 			$message = Message::notice('The files you currently have on Fill are called:<br /><ul>' . $list . '</ul>');
 		}
 		$message .= Message::warning('Remember: if you want to upload a new version of a file, that file must be named EXACTLY the same.<br /><br />Example: I previously uploaded AwesomePlugin.jar - to upload a new version, you must ensure that it is named exactly the same.<br /><br /><b>File names cannot be changed once uploaded.</b>');
-		$session = array(
-			'name' => session_name(),
-			'id' => session_id()
-		);
-		$template_settings['HR_TEMPLATE_CONTENT'] = <<<EOT
-				$message
-				<div id="uploadBox"></div>
-				<form action="/uploadComplete/{$params[0]}/{$params[1]}/" method="POST" id="uploadFormForm">
-				<div id="uploadFormArea"></div>
-				<input type="submit" id="bigSubmitButton" disabled="disabled" value="Save Data" />
-				</form>
-				<script type="text/javascript">
-	uploadURI = '/handleUpload/{$params[0]}/{$params[1]}/&{$session['name']}={$session['id']}&loadSessionFromGET=true';
-				</script>
-EOT
-		;
+		$template_settings['MESSAGE'] = $message;
+		$template_settings['SESSION_NAME'] = session_name();
+		$template_settings['SESSION_ID'] = session_id();
+		$template_settings['PLUGIN_AUTHOR'] = $params[0];
+		$template_settings['PLUGIN_NAME'] = $params[1];
+		$template_settings['prefiles'] = $prefiles;
 	}

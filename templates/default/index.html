@@ -1,39 +1,14 @@
-		{% include 'header.html' %}
-	        <div class="featured-rotator">
-	            <div class="featured-rotator-wrap">
-					<a href="#prev" class="rprev"></a>
-					<div id="rotator_div">
-						<div id="rotator_div_inner">
-							<ul>
-								<li>featured item 1</li>
-								<li>featured item 2</li>
-								<li>featured item 3</li>
-								<li>featured item 4</li>
-							</ul>
-						</div>
-					</div>
-					<a href="#next" class="rnext"></a>
-	            </div>
-	        </div>
-		<div class="content-wrap">
-			<div class="cols1">
-				<div class="item">
-					<div class="item-t">
-						<h1>Categories:</h1>
-					</div>
-				</div>
-			</div>
-			<div class="cols2">
-				<div class="item">
+{% extends 'threecolumn.html' %}
+{% block title %}{{ HR_TEMPLATE_TITLE }}{% endblock title %}
+{% block col2 %}
 					<div class="subHeading">
 						{{ HR_TEMPLATE_CONTENT_HEADER|raw }}
 					</div>
 					<div class="itemContent">
 						{{ HR_TEMPLATE_CONTENT|raw }}
 					</div>
-				</div>
-			</div>
-			<div class="cols3">
+{% endblock col2 %}
+{% block col3out %}
 				<div class="item">
 					<div class="item-t">
 						<h1>Statistics:</h1>
@@ -49,6 +24,4 @@
 						<h1>Recently Updated:</h1>
 					</div>
 				</div>
-			</div>
-		</div>
-		{% include 'footer.html' %}
+{% endblock col3out %}

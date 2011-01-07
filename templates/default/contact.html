@@ -1,40 +1,8 @@
-		{% include 'header.html' %}
-	        <div class="featured-rotator">
-	            <div class="featured-rotator-wrap">
-					<a href="#prev" class="rprev"></a>
-					<ul>
-						<li>featured item 1</li>
-						<li>featured item 2</li>
-						<li>featured item 3</li>
-						<li>featured item 4</li>
-					</ul>
-					<a href="#next" class="rnext"></a>
-	            </div>
-	        </div>
-		<div class="content-wrap">
-			<div class="cols1">
-				<div class="item">
-					<div class="item-t">
-						<h1>Categories</h1>
-					</div>
-				</div>
-			</div>
-			<div class="cols2">
-				<div class="item">
-					<div class="item-t">
+		{% extends 'threecolumn.html' %}
+{% block title %}Contact{% endblock title %}
+{% block col2 %}
 						<h1>Contact Us!</h1>
 						<h2>IRC</h2>
 Join our IRC chatroom!<br />
 Just point your favorite client to irc.esper.net, port 6667 and join #bukkit!
-					</div>
-				</div>
-			</div>
-			<div class="cols3">
-				<div class="item">
-					<div class="item-t">
-						<h1>Categories</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-		{% include 'footer.html' %}
+{% endblock col2 %}

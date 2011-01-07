@@ -3,3 +3,5 @@ nbproject
 config.php
 templates_cache
 makeCheckin
+uploads
+signedHashes

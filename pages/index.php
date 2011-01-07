@@ -5,7 +5,7 @@
 	$subhead = 'Cake:';
 	$itemcontent = '';
 	if (isset($_SESSION['message'])) {
-		$message = '<p>' . $_SESSION['message'] .'</p>';
+		$itemcontent .= '<p>' . $_SESSION['message'] .'</p>';
 		unset($_SESSION['message']);
 	}
 	if (User::isValid()) {

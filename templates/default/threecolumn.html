@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block head %}{{ parent() }}
+<script type="text/javascript" src="/static/default/js/system.js"></script>{% endblock head %}
+{% block main %}
+<div class="featured-rotator">
+	<div class="featured-rotator-wrap">
+		<a href="#prev" class="rprev"></a>
+		<div id="rotator_div">
+			<div id="rotator_div_inner">
+		{% include 'rotator.html' %}
+			</div>
+		</div>
+		<a href="#next" class="rnext"></a>
+	</div>
+</div>
+<div class="content-wrap">
+	<div class="cols1">
+		{% block col1out %}
+		<div class="item">
+			<div class="item-t">
+						{% block col1 %}
+				<h1>Categories</h1>
+						{% endblock col1 %}
+			</div>
+		</div>
+		{% endblock col1out %}
+	</div>
+	<div class="cols2">
+		{% block col2out %}
+		<div class="item">
+			<div class="item-t">
+						{% block col2 %}
+				<h1>Error: Content Did Not Load</h1>
+						{% endblock col2 %}
+			</div>
+		</div>
+		{% endblock col2out %}
+	</div>
+	<div class="cols3">
+		{% block col3out %}
+		<div class="item">
+			<div class="item-t">
+						{% block col3 %}
+				<h1>Categories</h1>
+						{% endblock col3 %}
+			</div>
+		</div>
+		{% endblock col3out %}
+	</div>
+</div>
+
+{% endblock main %}

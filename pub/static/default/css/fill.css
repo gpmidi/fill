@@ -356,8 +356,26 @@ h4 {
 	
 .itemDL {
     -moz-border-radius: 3px 3px 3px 3px;
-    -moz-box-shadow: 0 0 5px #F5F5F5 inset;
-    background: -moz-linear-gradient(0% 100% 90deg, #e38501, #e38500) repeat scroll 0 0 transparent;
+	-moz-box-shadow: 0 0 5px #F5F5F5 inset;
+	background-image: -moz-linear-gradient(
+	    center bottom,
+	    rgb(227,132,0) 0%,
+	    rgb(227,172,100) 100%
+	);
+	
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-webkit-box-shadow: 0 0 5px #F5F5F5 inset;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(227,132,0)),
+	    color-stop(1, rgb(227,172,100))
+	);
+	
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 0 5px #F5F5F5 inset;
+
     border: 1px solid #e38501;
     color: #FFFFFF;
     font-size: 12px;

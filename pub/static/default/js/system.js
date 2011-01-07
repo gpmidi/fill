@@ -15,7 +15,7 @@ $("body").ready(function(){
 	$(".featured-rotator-wrap #rotator_div ul li:last").css({"marginRight":"28px"});
 	$(".featured-rotator-wrap #rotator_div").css({"left":"50%","width":(ndd_width)+"px","top":"75px","marginLeft":"-"+Math.ceil(ndd_width/2)+"px","position":"absolute"});
 	$(".featured-rotator-wrap #rotator_div ul").css({"width":(ndd_width)+"px"});
-	$(".featured-rotator-wrap #rotator_div_inner").css({"width":(ndd_width*2+150)+"px","height":"113px"});
+	$(".featured-rotator-wrap #rotator_div_inner").css({"width":(ndd_width*2)+"px","height":"113px"});
 	$(".rprev").click(function(){
 		if(rotator_page>1){
 			rotator_page--;
