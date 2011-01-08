@@ -28,6 +28,7 @@
 		// Have they uploaded stuff before?
 		$dbQuery2 = Database::select('plugin_downloads', '*', array('pid = ?', $pluginID));
 		$message = '';
+		$prefiles = array();
 		if ($dbQuery2->rowCount() == 0)
 		{
 			$message = Message::notice('Hi there! It looks like this is the first time you\'ve uploaded files for this plugin. Simply select the files you wish to upload using the file selector below, and then provide details of your uploads in the form which will appear.');
@@ -36,7 +37,6 @@
 		{
 			$listNess = $dbQuery2->fetchAll();
 			$list = '';
-			$prefiles = array();
 			foreach ($listNess as $fnameThing)
 			{
 				$list .= '<li>' . $fnameThing['dfname'] . '</li>';

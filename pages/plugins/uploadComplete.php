@@ -27,6 +27,7 @@
 		}
 		$listNess = $dbQuery2->fetchAll();
 		$descdata = array();
+		print_r($_POST);
 		foreach ($_POST as $varname => $varval) {
 			if (substr($varname, 0, 9) == 'SWFUpload') {
 				$vn = explode('_', $varname);
@@ -40,14 +41,16 @@
 		$editLog = array();
 		$addLog = array();
 		foreach ($descdata as $dataarray) {
-			if (!isset($dataarray['name']) || !isset($dataarray['changelog']) || !isset($dataarray['version'])) continue;
-			$dbrec = Database::select('plugin_downloads', array('did', 'ddesc'), array('pid = ? AND dfname = ?', $pluginID, $dataarray['name']));
+			if (!isset($dataarray['fname']) || !isset($dataarray['changelog']) || !isset($dataarray['version'])) continue;
+			$dbrec = Database::select('plugin_downloads', array('did', 'ddesc'), array('pid = ? AND dfname = ?', $pluginID, $dataarray['fname']));
 			$dinfo = $dbrec->fetch(); // download ID and description
 			if ($dinfo['ddesc'] == 'notdoneyet') {
-				Database::update('plugin_downloads', array('ddesc' => $dataarray['changelog']), null, array('did = ?', $dinfo['did']));
-				$addLog[] = $dataarray['name'];
+				if (isset($dinfo['friendlyname']) && !empty($dinfo['friendlyname'])) { $dfriendname = $dataarray['friendlyname']; }
+				else { $dfriendname = $dataarray['fname']; }
+				Database::update('plugin_downloads', array('ddesc' => $dataarray['changelog'], 'dfname' => $dataarray['fname'], 'dfriendlyname' => $dfriendname), null, array('did = ?', $dinfo['did']));
+				$addLog[] = $dataarray['fname'];
 			} else {
-				$editLog[] = $dataarray['name'];
+				$editLog[] = $dataarray['fname'];
 			}
 			Database::update('plugin_downloads_version', array('vchangelog' => $dataarray['changelog']), null, array('did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"', $dinfo['did']));
 		}

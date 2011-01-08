@@ -31,12 +31,14 @@ class Plugin {
 	
 	public $rating = -1; // rating 1-5
 	
-	public $status = -2; // -2 = non-visible, unclaimed; -1 = non-visible, claimed; 0 = unclaimed, visible; 1 = claimed, visible; 2 = trusted, claimed, visible; 3 = deprecated/out of date
+	public $status = -2; // -3 = non-visible, claimed, trusted; -2 = non-visible, unclaimed; -1 = non-visible, claimed; 0 = unclaimed, visible; 1 = claimed, visible; 2 = trusted, claimed, visible; 3 = deprecated/out of date
+	const STATE_HIDDEN_TRUSTED = -3; //
 	const STATE_HIDDEN_UNCLAIMED = -2;
 	const STATE_HIDDEN_CLAIMED = -1;
 	const STATE_UNCLAIMED = 0;
 	const STATE_CLAIMED = 1;
 	const STATE_TRUSTED = 2;
+	const STATE_DEPRECATED = 3;
 	
 	public $real_author_name = ''; // should only exist if $status = 0 or -2
 

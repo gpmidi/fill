@@ -21,14 +21,14 @@
 	{
 		// get the plugin object
 		$pluginObj = new Plugin($pluginID);
-		$isTrusted = ($status == Plugin::STATE_TRUSTED) ? true : false;
+		$isTrusted = ($pluginObj->status == Plugin::STATE_TRUSTED || $pluginObj->status == Plugin::STATE_HIDDEN_TRUSTED) ? true : false;
 		// okay, let's do this
 		// get down on it
 		$tempFile = $_FILES['Filedata']['tmp_name'];
 		$fileMd5 = md5_file($tempFile);
 		$newFileName = $fileMd5;
-		$fileDir = '/home2/bukkit/fill/uploads/';
-		$signedHashDir = '/home2/bukkit/fill/signedHashes/';
+		$fileDir = HR_ROOT . '/uploads/';
+		$signedHashDir = HR_ROOT . '/signedHashes/';
 		if (!file_exists($fileDir))
 		{
 			mkdir($fileDir, true);
@@ -61,10 +61,16 @@
 		$vID = Database::getHandle()->lastInsertID();
 		
 		//file_put_contents($signedHashDir . $vid . '.sha256', sha256_file($tempFile));
-		$privateKey = openssl_get_privatekey(HR_ROOT . '/fillbukkit.untrusted.pem');
+		$fileToGetFrom = '/home2/bukkit/fillbukkit.'.((!$isTrusted)?'un':'').'trusted.pem';
+		$publicKeyFile = '/home2/bukkit/fillbukkit.'.((!$isTrusted)?'un':'').'trusted.pub';
+		$privateKey = openssl_get_privatekey(file_get_contents($fileToGetFrom));
+		$publicKey = openssl_get_publickey(file_get_contents($publicKeyFile)); // just in case
 		$signature = '';
-		openssl_sign(file_get_contents($tempFile), $signature, $privateKey, 'sha256');
-		file_put_contents($signedHashDir . $vid . '.sig', $signature);
+		openssl_sign(file_get_contents($tempFile) . '--' . $pluginUsername . '//' . $pluginName . '//' . $vID, $signature, $privateKey, 'sha256');
+		//$signature = pack('H*', $signature);
+		$signature = bin2hex($signature);
+		file_put_contents($signedHashDir . $vID . '.sig', $signature);
+		
 		
 		$_SESSION['plugin_' . $_FILES['Filedata']['name']] = $vID;
 		move_uploaded_file($tempFile, $fileDir . $newFileName);

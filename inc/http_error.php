@@ -5,6 +5,7 @@ class HttpException extends Exception {
 	function __construct($httpError = 500) {
 		// BAZINGA ¬_¬
 		$this->httpError = $httpError;
+		header('HTTP/1.1 '.$httpError.' '.$this->getErrorFriendly());
 	}
 	
 	function getErrorCode() {
