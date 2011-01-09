@@ -27,7 +27,7 @@
 		}
 		$listNess = $dbQuery2->fetchAll();
 		$descdata = array();
-		print_r($_POST);
+		//print_r($_POST);
 		foreach ($_POST as $varname => $varval) {
 			if (substr($varname, 0, 9) == 'SWFUpload') {
 				$vn = explode('_', $varname);

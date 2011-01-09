@@ -1,5 +1,49 @@
-[07-Jan-2011 10:47:49] PHP Fatal error:  main(): Failed opening required '/home2/bukkit/public_html/phill//pages/api/example.php' (include_path='/home2/bukkit/public_html/forums//library:.') in /home2/bukkit/public_html/phill/pages/api.php on line 46
-[07-Jan-2011 22:53:51] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home2/bukkit/public_html/phill/inc/plugin.php on line 33
-[07-Jan-2011 22:53:51] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
-[07-Jan-2011 22:53:52] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home2/bukkit/public_html/phill/inc/plugin.php on line 33
-[07-Jan-2011 22:53:52] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:16:26] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 20
+[08-Jan-2011 16:16:26] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:17:12] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 20
+[08-Jan-2011 16:17:12] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:17:27] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 21
+[08-Jan-2011 16:17:27] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:17:28] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 21
+[08-Jan-2011 16:17:28] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:34:07] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 22
+[08-Jan-2011 16:34:07] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:34:47] PHP Fatal error:  Call to a member function returnedRows() on a non-object in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 22
+[08-Jan-2011 16:34:47] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:35:19] PHP Fatal error:  Call to a member function returnedRows() on a non-object in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 22
+[08-Jan-2011 16:35:19] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:35:52] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 25
+[08-Jan-2011 16:35:52] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:36:09] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 25
+[08-Jan-2011 16:36:09] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[08-Jan-2011 16:44:30] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 25
+[08-Jan-2011 16:44:30] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:25) in Unknown on line 0
+[08-Jan-2011 16:44:55] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 25
+[08-Jan-2011 16:44:55] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:25) in Unknown on line 0
+[08-Jan-2011 16:44:56] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 25
+[08-Jan-2011 16:44:56] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:25) in Unknown on line 0
+[08-Jan-2011 16:48:01] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 20
+[08-Jan-2011 16:48:01] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:20) in Unknown on line 0
+[08-Jan-2011 16:48:12] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 28
+[08-Jan-2011 16:48:12] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:28) in Unknown on line 0
+[08-Jan-2011 16:48:19] PHP Fatal error:  Call to a member function fetch() on a non-object in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 20
+[08-Jan-2011 16:48:19] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:20) in Unknown on line 0
+[08-Jan-2011 16:48:31] PHP Notice:  Undefined variable: resRows in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 31
+[08-Jan-2011 16:49:47] PHP Notice:  Undefined variable: res in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 16
+[08-Jan-2011 16:49:47] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 16
+[08-Jan-2011 16:49:47] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:16) in Unknown on line 0
+[08-Jan-2011 16:49:51] PHP Notice:  Undefined variable: res in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 16
+[08-Jan-2011 16:49:51] PHP Fatal error:  Call to a member function execute() on a non-object in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 16
+[08-Jan-2011 16:49:51] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:16) in Unknown on line 0
+[08-Jan-2011 18:08:14] PHP Fatal error:  Call to undefined method Plugin::getStatusName() in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 32
+[08-Jan-2011 18:08:14] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:32) in Unknown on line 0
+[08-Jan-2011 18:08:39] PHP Fatal error:  Call to undefined method Plugin::getStatusName() in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 32
+[08-Jan-2011 18:08:39] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:32) in Unknown on line 0
+[08-Jan-2011 19:08:20] PHP Notice:  Undefined variable: using in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 67
+[08-Jan-2011 19:29:10] PHP Parse error:  syntax error, unexpected ']' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 50
+[08-Jan-2011 19:29:10] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:50) in Unknown on line 0
+[08-Jan-2011 19:55:21] PHP Notice:  Undefined variable: operator in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 59
+[08-Jan-2011 19:55:25] PHP Notice:  Undefined variable: operator in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 59
+[08-Jan-2011 20:26:35] PHP Notice:  Undefined variable: operator in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 60
+[08-Jan-2011 20:26:35] PHP Notice:  Undefined variable: connective in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 60
+[08-Jan-2011 20:26:35] PHP Notice:  Undefined variable: operator in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 60

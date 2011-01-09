@@ -1,0 +1,8 @@
+		{% extends 'threecolumn.html' %}
+{% block title %}Plugin Listing{% endblock title %}
+{% block col2 %}
+						<h1>List of Plugins</h1>
+						<p class="queryInfo">There {% if HR_RESULTS_NUM != 1 %}were {{ HR_RESULTS_NUM }} results{% else %}was {{ HR_RESULTS_NUM }} result{% endif %} to your query in total, of which {{ HR_RESULTS_SHOWN }} {% if HR_RESULTS_SHOWN != 1 %}are{% else %}is{% endif %} displayed here.</p>
+<!--						{{ HR_DEBUG_INFO|raw }}-->
+						{% include "pluginlist.html" %}
+{% endblock %}

@@ -50,6 +50,14 @@
 			}
 		}
 	
+	// fetch categories:
+	$catQ = Database::select('categories', array('cid','cname'));
+	$pcategory = '';
+	while ($catR = $catQ->fetch(PDO::FETCH_ASSOC)) {
+		$pcategory .= '<div style="border-bottom: 1px solid #e0e0e0; clear: both; width: 100%;"><label style="display: inline; font-size: small; float: left;">'.$catR['cname'].'</label><input type="checkbox" value="'.$catR['cid'].'" name="pcategory[]" style="float: right;" /></div>';
+	}
+	
+	
 	$template_settings['HR_TEMPLATE_CONTENT'] = "
 
 	<h3>Step 1 of 2</h3>
@@ -58,6 +66,13 @@
 			<div class=\"form-row\">
 				<label for=\"pname\">Plugin Name</label>
 				<span><input type=\"text\" name=\"pname\" id=\"pname\" value=\"".$pname."\" /></span>
+			</div>
+			<div class=\"form-row\">
+				<!--<label for=\"pcategory\">Plugin Category</label>-->
+				<fieldset style=\"width: 50%;\">
+				<legend>Plugin Category</legend>
+				<span id=\"pcategory\">".$pcategory."</span>
+				</fieldset>
 			</div>
 			<div class=\"form-row\">
 				<label for=\"pdesc\">Description (<a href=\"/markdown/\">Markdown</a> formatted)</label>

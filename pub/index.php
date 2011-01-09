@@ -4,6 +4,10 @@ ini_set('display_errors', 1);
 ini_set('log_errors', 1);
 ini_set('error_log', dirname(__FILE__) . '/error_log.txt');
 error_reporting(E_ALL);
+
+if (PHP_SAPI == 'cli') { 
+	$_SERVER['REQUEST_URI'] = $argv[1];
+}
 /*
 
   style rules:
@@ -93,6 +97,8 @@ $dependencies->preLoadData();
 XenForo_Session::startPublicSession();
 
 Log::add('XF initialisation complete!');
+restore_exception_handler();
+restore_error_handler();
 
 // End XenForo
 
@@ -199,7 +205,7 @@ try
 		case 'git':
 			require_once( HR_ROOT . "pages/git.php" );
 			$template = $twig->loadTemplate("index.html");
-			$out_array = array_merge($template_settings, $out_array);
+			$out_array = array_merge($out_array, $template_settings);
 			echo $template->render($out_array);
 			break;
 		case "faq":
@@ -220,25 +226,25 @@ try
 		case "create":
 			require_once( HR_ROOT . "pages/plugins/create.php" );
 			$template = $twig->loadTemplate("index.html");
-			$out_array = array_merge($template_settings, $out_array);
+			$out_array = array_merge($out_array, $template_settings);
 			echo $template->render($out_array);
 			break;
 		case 'upload':
 			require_once( HR_ROOT . "pages/plugins/upload.php" );
 			$template = $twig->loadTemplate("upload.html");
-			$out_array = array_merge($template_settings, $out_array);
+			$out_array = array_merge($out_array, $template_settings);
 			echo $template->render($out_array);
 			break;
 		case 'uploadComplete':
 			require_once( HR_ROOT . "pages/plugins/uploadComplete.php" );
 			$template = $twig->loadTemplate("index.html");
-			$out_array = array_merge($template_settings, $out_array);
+			$out_array = array_merge($out_array, $template_settings);
 			echo $template->render($out_array);
 			break;
 		case 'handleUpload':
 			require_once( HR_ROOT . "pages/plugins/handleUpload.php" );
 			$template = $twig->loadTemplate("index.html");
-			$out_array = array_merge($template_settings, $out_array);
+			$out_array = array_merge($out_array, $template_settings);
 			echo $template->render($out_array);
 			break;
 		case 'featured_rotator':
@@ -249,10 +255,22 @@ try
 		case 'api':
 			require_once( HR_ROOT . 'pages/api.php' );
 			exit();
+		case 'list':
+			require_once( HR_ROOT . 'pages/plugins/list.php' );
+			$template = $twig->loadTemplate("list.html");
+			$out_array = array_merge($out_array, $template_settings);
+			echo $template->render($out_array);
+			break;
+		case 'detail':
+			require_once( HR_ROOT . 'pages/plugins/detail.php' );
+			$template = $twig->loadTemplate("detail.html");
+			$out_array = array_merge($out_array, $template_settings);
+			echo $template->render($out_array);
+			break;
 		default:
 			require_once( HR_ROOT . "pages/index.php" );
 			$template = $twig->loadTemplate("index.html");
-			$out_array = array_merge($template_settings, $out_array);
+			$out_array = array_merge($out_array, $template_settings);
 			echo $template->render($out_array);
 			break;
 	}
@@ -263,7 +281,7 @@ try
 		'HR_FRIENDLY_ERROR' => $e->getErrorFriendly(),
 		'HR_ERROR_CODE' => $e->getErrorCode()
 	);
-	$out_array = array_merge($template_settings, $out_array);
+	$out_array = array_merge($out_array, $template_settings);
 	echo $template->render($out_array);
 }
 

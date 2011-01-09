@@ -353,6 +353,11 @@ h4 {
 .itemAuthor {
 	font-weight: bold;
 }
+
+.itemNameLink {
+	text-decoration: none;
+	border-bottom: 1px dashed #d17a00;
+}
 	
 .itemDL {
     -moz-border-radius: 3px 3px 3px 3px;
@@ -387,4 +392,9 @@ h4 {
     width: 100px;
 	float: right;
 	margin: 5px;
+}
+
+.queryInfo {
+	text-align: right;
+	font-size: x-small;
 }

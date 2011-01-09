@@ -157,4 +157,23 @@ class Plugin {
 		$curGet->update($curGet, 'plugins_voted_on', serialize($list));
 		Database::update('plugin_ratings', $voteCs, null, array('pid = ?', $this->id));
 	}
+	
+	function getStatusSpecifics() {
+		if ($this->status < 0 || $this->status == 3) { // if hidden or deprecated/old
+			$hidden = true;
+		} else {
+			$hidden = false;
+		}
+		if ($this->status == -3 || $this->status == 2) { // if trusted
+			$trusted = true;
+		} else {
+			$trusted = false;
+		}
+		if ($this->status == -2 || $this->status == 0 || $this->status = 3) {
+			$claimed = false;
+		} else {
+			$claimed = true;
+		}
+		return array('hidden' => $hidden, 'trusted' => $trusted, 'claimed' => $claimed);
+	}
 }

@@ -1,0 +1,6 @@
+{% for plugin in HR_RESULTS %}
+	{% include "plugin_info.html" %}
+{% else %}
+	<span class="itemName">There were no results to your query!</span><br />
+	<i>Please refine your search terms.</i>
+{% endfor %}

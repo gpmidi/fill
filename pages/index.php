@@ -1,6 +1,7 @@
 <?php
 	$template_settings=array();
 	$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/index', 'uri' => 'index');
+	$template_settings['HR_TEMPLATE_TITLE'] = 'Welcome!';
 	$uname = 'stranger!!';
 	$subhead = 'Cake:';
 	$itemcontent = '';
