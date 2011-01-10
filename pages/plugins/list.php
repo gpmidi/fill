@@ -112,7 +112,8 @@
 			'desc' => $resRow['pdesc'],
 			'showButton' => true,
 			'buttonText' => 'More Info',
-			'buttonURI' => '/detail/'.$thisu['username'].'/'.$resRow['pname'].'/'
+			'buttonURI' => '/detail/'.$thisu['username'].'/'.$resRow['pname'].'/',
+			'lastUpdated' => 
 		);
 		$resRows[] = $newRow;
 	}

@@ -3,7 +3,24 @@ Author ID: {{ HR_PLUGIN_AUTHOR_ID }}<br />
 Author Name: {{ HR_PLUGIN_AUTHOR_NAME }}<br />
 Plugin Name: {{ HR_PLUGIN_NAME }}<br />
 Plugin Desc: {{ HR_PLUGIN_DESCRIPTION | raw }}<br />
-Plugin Downloads: {{ HR_PLUGIN_DOWNLOADS }}<br />
+Plugin Downloads: {{ HR_PLUGIN_NO_DOWNLOADS }}<br />
 Date added: {{ HR_PLUGIN_ADDED_DATE }}<br />
 Plugin rating: {{ HR_PLUGIN_RATING }}<br />
-Plugin status: {{ HR_PLUGIN_STATUS }}
+Plugin status: {{ HR_PLUGIN_STATUS }}<br />
+<br />
+<ul>
+{% for download in HR_PLUGIN_DOWNLOADS %}
+<li>{{ download.name }}<br />
+<ul>
+	<li>Filename: {{ download.filename }}</li>
+	<li>Download Description: {{ download.description }}</li>
+	<li>Current Version: {{ download.version }}</li>
+	{% if not download.isfirst %}
+		<li>Download Changelog: {{ download.changelog }}</li>
+	{% endif %}
+</ul>
+</li>
+{% else %}
+	<li><strong>There are no downloads for this plugin yet.</strong></li>
+{% endfor %}
+</ul>

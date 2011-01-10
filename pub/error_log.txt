@@ -47,3 +47,11 @@
 [08-Jan-2011 20:26:35] PHP Notice:  Undefined variable: operator in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 60
 [08-Jan-2011 20:26:35] PHP Notice:  Undefined variable: connective in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 60
 [08-Jan-2011 20:26:35] PHP Notice:  Undefined variable: operator in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 60
+[09-Jan-2011 14:53:48] PHP Notice:  Undefined index: origfname in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 47
+[09-Jan-2011 14:53:48] PHP Notice:  Undefined index: origfname in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 48
+[09-Jan-2011 15:06:30] PHP Notice:  Undefined index: friendlyname in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 59
+[09-Jan-2011 15:16:50] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:2) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[09-Jan-2011 15:16:52] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:2) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[09-Jan-2011 15:20:37] PHP Warning:  PDOStatement::execute() expects parameter 1 to be array, string given in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 79
+[10-Jan-2011 00:36:01] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 117
+[10-Jan-2011 00:36:01] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:117) in Unknown on line 0

@@ -39,7 +39,7 @@
 			$list = '';
 			foreach ($listNess as $fnameThing)
 			{
-				$list .= '<li>' . $fnameThing['dfname'] . '</li>';
+				$list .= '<li>'.$fnameThing['dfriendlyname'].' (Filename: ' . $fnameThing['dfname'] . ')</li>';
 				$prefiles[] = $fnameThing['dfname'];
 				}
 			$message = Message::notice('The files you currently have on Fill are called:<br /><ul>' . $list . '</ul>');

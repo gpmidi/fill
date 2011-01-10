@@ -1,4 +1,5 @@
 <?php
+//print_r($_POST);
 	$params = array_slice($hr_URI, 1);
 	$template_settings=array();
 	$template_settings['HR_TEMPLATE_TITLE'] = "Upload Complete!";
@@ -43,16 +44,48 @@
 		foreach ($descdata as $dataarray) {
 			if (!isset($dataarray['fname']) || !isset($dataarray['changelog']) || !isset($dataarray['version'])) continue;
 			$dbrec = Database::select('plugin_downloads', array('did', 'ddesc'), array('pid = ? AND dfname = ?', $pluginID, $dataarray['fname']));
+			if ($dataarray['fname'] != $dataarray['origfname']) { // great, now we get to merge them.
+				$dbrecnu = Database::select('plugin_downloads', array('did', 'ddesc'), array('pid = ? AND dfname = ?', $pluginID, $dataarray['origfname']));
+				// okay, so we've got the database record...
+				// does the correct plugin_downloads exit?
+				$dlines = $dbrec->fetchAll(); // THIS is what we're changing TO
+				$dinfo = $dbrecnu->fetch(); // and this is what we're changing FROM
+				if (count($dlines) > 0) { // yes
+					$correctDID = $dlines[0]['did'];
+					Database::delete('plugin_downloads', array('did = ?', $dinfo['did']));
+					// okay, that worked. I hope.
+				} else { // no
+					$correctDID = $dinfo['did'];
+					Database::update('plugin_downloads', array('dfname' => $dataarray['fname'], 'dfriendlyname' => 'notdoneyet'), null, array('did = ?', $correctDID));
+				}
+				// update plugin_downloads_version to point to correct download
+				Database::update('plugin_downloads_version', array('did' => $correctDID), null, array('did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"', $dinfo['did']));
+				// and now refetch $dbrec
+				$dbrec = Database::select('plugin_downloads', array('did', 'ddesc'), array('did = ?', $correctDID));
+			}
 			$dinfo = $dbrec->fetch(); // download ID and description
 			if ($dinfo['ddesc'] == 'notdoneyet') {
-				if (isset($dinfo['friendlyname']) && !empty($dinfo['friendlyname'])) { $dfriendname = $dataarray['friendlyname']; }
-				else { $dfriendname = $dataarray['fname']; }
+				if (isset($dataarray['friendlyname']) && !empty($dataarray['friendlyname'])) {
+					$dfriendname = $dataarray['friendlyname'];
+				} else {
+					$dfriendname = $dataarray['fname'];
+				}
 				Database::update('plugin_downloads', array('ddesc' => $dataarray['changelog'], 'dfname' => $dataarray['fname'], 'dfriendlyname' => $dfriendname), null, array('did = ?', $dinfo['did']));
 				$addLog[] = $dataarray['fname'];
 			} else {
 				$editLog[] = $dataarray['fname'];
 			}
-			Database::update('plugin_downloads_version', array('vchangelog' => $dataarray['changelog']), null, array('did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"', $dinfo['did']));
+			Database::update('plugin_downloads_version', 
+				array(
+					'vchangelog' => $dataarray['changelog'],
+					'vnumber' => $dataarray['version']
+				),
+				null,
+				array(
+					'did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"',
+					$dinfo['did']
+				)
+			);
 		}
 		$editSummary = '';
 		if (count($addLog) != 0) {

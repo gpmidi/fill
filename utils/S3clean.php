@@ -1,32 +1,69 @@
 <?php
-exit(1);
 
+if (PHP_SAPI != 'cli') exit('Must be run from command line'. PHP_EOL);
+
+$allowRun = false;
+if (isset($argv[1]) && $argv[1] == '--yes' && isset($argv[2]) && $argv[2] == '--aperture-clear') {
+  echo 'Firing laser...';
+  $allowRun = true;
+}
+else {
+  echo 'This script CANNOT continue.', PHP_EOL;
+}
+
+define('ALLOW_RUN', $allowRun);
 require('../config.php');
-exit(1);
+if (!ALLOW_RUN) exit(1);
 
 inclib('S3.php');
-exit(1);
+inc('db.php');
 $s = new S3();
-exit(1);
 S3::$useSSL = false;
-exit(1);
 
 $contents = $s->getBucket('filldl.bukkit.org');
-exit(1);
+if (!ALLOW_RUN) exit(1);
 
-//print_r($contents);
-exit(1);
-foreach ($contents as $fname => $junk) {
-exit(1);
-  echo 'Deleting: '.$fname.'...';
-  if (false || die(2) || $s->deleteObject('filldl.bukkit.org', $fname)) {
-exit(1);
-    echo '...OK!';
-exit(1);
+echo 'Cleaning database...', PHP_EOL;
+echo 'Truncating plugin_downloads_version...';
+if (Database::getHandle()->exec('TRUNCATE plugin_downloads_version') != 0) {
+  echo '...:)', PHP_EOL;
+} else {
+  echo '...! Failed.', PHP_EOL;
+}
+echo 'Truncating plugin_downloads...';
+if (Database::getHandle()->exec('TRUNCATE plugin_downloads') != 0) {
+  echo '...:)', PHP_EOL;
+} else {
+  echo '...! Failed.', PHP_EOL;
+}
+echo 'Database cleaning complete. Clearing filesystem...', PHP_EOL;
+foreach (scandir(HR_ROOT . '/uploads/') as $fname) {
+  if ($fname == '.' || $fname == '..') continue;
+  echo $fname, ': ';
+  if (!preg_match('/[0-9a-f]{32}/', $fname)) {
+    echo 'Filename does NOT match pattern for MD5. Skipping!', PHP_EOL;
+    continue;
+  }
+  if (!md5_file(HR_ROOT . '/uploads/'. $fname) == $fname) {
+    echo 'Filename hash does NOT match MD5 hash of file. Skipping!', PHP_EOL;
+    continue;
+  }
+  if (unlink(HR_ROOT . '/uploads/'. $fname)) {
+    echo 'DELETED.', PHP_EOL;
   } else {
-exit(1);
+    echo 'Delete failed.', PHP_EOL;
+    exit(3);
+  }
+}
+echo 'Filesystem cleaning complete. Clearing S3...', PHP_EOL;
+//print_r($contents);
+foreach ($contents as $fname => $junk) {
+  if (!ALLOW_RUN) exit(1);
+  echo 'Deleting: '.$fname.'...';
+  if ($s->deleteObject('filldl.bukkit.org', $fname)) {
+    echo '...OK!';
+  } else {
     echo '...:(';
-exit(1);
   }
   echo PHP_EOL;
 }

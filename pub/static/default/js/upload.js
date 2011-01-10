@@ -97,19 +97,22 @@ function setTimeStuff() {
 			whatIs = 'newFile';
 			
 			
-			if (jQuery.inArray(file.name, window.listOfPreFiles)) {
+			if (window.listOfPreFiles.length > 0 && jQuery.inArray(file.name, window.listOfPreFiles)) {
 				newFileChecked = "";
 				whatIs = 'oldFile';
 				//showRow = "<input type='hidden' name='"+file.id+"_name' value='"+file.name+"' />";
 				showRow = jQuery.proxy(buildSelector, file)();
 			}
 			
-			makeTheRow = makeTheRow + "<br /><label for='"+file.id+"_isNewFile'>New file:</label><input type='checkbox' id='"+file.id+"_showRowCheck' "+newFileChecked+" />";
+			if (window.listOfPreFiles.length > 0) {
+				makeTheRow = makeTheRow + "<br /><label for='"+file.id+"_isNewFile'>New file:</label><input type='checkbox' id='"+file.id+"_showRowCheck' "+newFileChecked+" />";
+			}
 			makeTheRow = makeTheRow + "<div id='"+file.id+"_showRow' class='"+whatIs+"'>"+showRow+"</div>";
+			makeTheRow = makeTheRow + "<input type='hidden' name='"+file.id+"_origfname' id='"+file.id+"_origfname' value='" + file.name +"' />"; //
 			makeTheRow = makeTheRow + "<br /><label for='"+file.id+"_version'>File version (required):</label><input type='text' name='"+file.id+"_version' id='"+file.id+"_version' /><br />";
 			makeTheRow = makeTheRow + "<label for='"+file.id+"_changelog'>File Description (required):</label><textarea name='"+file.id+"_changelog' id='"+file.id+"_changelog' style='width: 100%; height: 250px;'></textarea></fieldset></div>";
 			jQuery('#uploadFormArea').append(
 				makeTheRow
 				);
-			jQuery('#' + file.id + '_showRowCheck').click(jQuery.proxy(toggleShowRow, file));
+			jQuery('#' + file.id + '_showRowCheck').click(jQuery.proxy(toggleShowRow, this));
 		}

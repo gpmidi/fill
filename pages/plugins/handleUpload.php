@@ -57,7 +57,7 @@
 			// set new internal version number
 			$lastNum = $b->fetchColumn();
 		}
-		Database::insert('plugin_downloads_version', array('did' => $pluginFileRow['did'], 'vnumber' => $lastNum + 1, 'vhash' => $fileMd5, 'vdate' => date('Y-m-d H:i:s'), 'vchangelog' => 'notdoneyet', 'isons3' => '0'));
+		Database::insert('plugin_downloads_version', array('did' => $pluginFileRow['did'], 'vnumber' => $lastNum + 1, 'vhash' => $fileMd5, 'vdate' => date('Y-m-d H:i:s'), 'vchangelog' => 'notdoneyet', 'isons3' => '0', 'vsignature' => 'signing in progress'));
 		$vID = Database::getHandle()->lastInsertID();
 		
 		//file_put_contents($signedHashDir . $vid . '.sha256', sha256_file($tempFile));
@@ -70,6 +70,8 @@
 		//$signature = pack('H*', $signature);
 		$signature = bin2hex($signature);
 		file_put_contents($signedHashDir . $vID . '.sig', $signature);
+		
+		Database::update('plugin_downloads_version', array('vsignature' => $signature), null, array('vid = ?', $vID));
 		
 		
 		$_SESSION['plugin_' . $_FILES['Filedata']['name']] = $vID;
