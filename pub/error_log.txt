@@ -55,3 +55,65 @@
 [09-Jan-2011 15:20:37] PHP Warning:  PDOStatement::execute() expects parameter 1 to be array, string given in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 79
 [10-Jan-2011 00:36:01] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 117
 [10-Jan-2011 00:36:01] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:117) in Unknown on line 0
+[10-Jan-2011 10:39:54] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 117
+[10-Jan-2011 10:39:54] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:117) in Unknown on line 0
+[10-Jan-2011 22:41:08] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 117
+[10-Jan-2011 22:41:08] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:117) in Unknown on line 0
+[10-Jan-2011 22:41:08] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 117
+[10-Jan-2011 22:41:08] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/list.php:117) in Unknown on line 0
+[10-Jan-2011 22:42:33] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[10-Jan-2011 22:42:33] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[10-Jan-2011 22:43:20] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[10-Jan-2011 22:43:20] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[10-Jan-2011 22:44:43] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[10-Jan-2011 22:44:43] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[10-Jan-2011 23:11:36] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[10-Jan-2011 23:11:36] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[11-Jan-2011 03:55:30] PHP Fatal error:  Uncaught exception 'Twig_Error_Syntax' with message 'The block 'col3out' has already been defined in twocolumn.html at line 52' in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php:27
+Stack trace:
+#0 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#1 /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php(35): Twig_Parser->subparse(Array, true)
+#2 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#3 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(71): Twig_Parser->subparse(NULL)
+#4 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(280): Twig_Parser->parse(Object(Twig_TokenStream))
+#5 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(304): Twig_Environment->parse(Object(Twig_TokenStream))
+#6 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(212): Twig_Environment->compileSource('{% extends "bas...', 'twocolumn.html')
+#7 /home2/bukkit/public_html/phil in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php on line 27
+[11-Jan-2011 03:55:30] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[11-Jan-2011 03:56:31] PHP Fatal error:  Uncaught exception 'Twig_Error_Syntax' with message 'The block 'col3' has already been defined in twocolumn.html at line 47' in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php:27
+Stack trace:
+#0 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#1 /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php(35): Twig_Parser->subparse(Array, true)
+#2 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#3 /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php(35): Twig_Parser->subparse(Array, true)
+#4 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#5 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(71): Twig_Parser->subparse(NULL)
+#6 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(280): Twig_Parser->parse(Object(Twig_TokenStream))
+#7 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(304): Twig_En in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php on line 27
+[11-Jan-2011 03:56:31] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[11-Jan-2011 03:57:46] PHP Fatal error:  Uncaught exception 'Twig_Error_Syntax' with message 'The block 'col3' has already been defined in twocolumn.html at line 53' in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php:27
+Stack trace:
+#0 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#1 /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php(35): Twig_Parser->subparse(Array, true)
+#2 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#3 /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php(35): Twig_Parser->subparse(Array, true)
+#4 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#5 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(71): Twig_Parser->subparse(NULL)
+#6 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(280): Twig_Parser->parse(Object(Twig_TokenStream))
+#7 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(304): Twig_En in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php on line 27
+[11-Jan-2011 03:57:46] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[11-Jan-2011 03:58:18] PHP Fatal error:  Uncaught exception 'Twig_Error_Syntax' with message 'The block 'col3out' has already been defined in twocolumn.html at line 50' in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php:27
+Stack trace:
+#0 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#1 /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php(35): Twig_Parser->subparse(Array, true)
+#2 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(136): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#3 /home2/bukkit/public_html/phill/lib/Twig/Parser.php(71): Twig_Parser->subparse(NULL)
+#4 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(280): Twig_Parser->parse(Object(Twig_TokenStream))
+#5 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(304): Twig_Environment->parse(Object(Twig_TokenStream))
+#6 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(212): Twig_Environment->compileSource('{% extends "bas...', 'twocolumn.html')
+#7 /home2/bukkit/public_html/phil in /home2/bukkit/public_html/phill/lib/Twig/TokenParser/Block.php on line 27
+[11-Jan-2011 03:58:18] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[11-Jan-2011 04:01:41] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[11-Jan-2011 04:01:41] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[11-Jan-2011 04:01:44] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[11-Jan-2011 04:01:44] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0

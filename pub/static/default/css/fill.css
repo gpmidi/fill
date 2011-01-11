@@ -4,7 +4,7 @@
 }
 body{
     background:#f0f0f0;
-	font-family: Georgia,"Times New Roman",serif;
+	font-family: Myriad Pro,"Georgia",serif;
 }
 .wrap{
     float:left;
@@ -71,6 +71,7 @@ body{
     border: #e09e00 1px solid; /* this too */
 }
 .featured-rotator{
+	margin-top: 30px;
     float:left;
     width:100%;
     height:125px;
@@ -83,13 +84,14 @@ body{
     width:80%;
     height:103px;
     overflow:hidden;
+	margin-top: 15px;
 }
 .featured-rotator-wrap ul li{
     float:left;
     width:233px;
     margin-left:28px;
     margin-right:28px;
-    height:103px;
+    height: 103px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 	border-radius: 5px;
@@ -155,6 +157,7 @@ body{
     border-radius: 5px;
     float:left;
 }
+
 
 .subHeading {
 	height: 27px;
@@ -281,6 +284,12 @@ input[type=checkbox] {
 input.error,
 input.valid {
 	background-image: none;
+}
+
+h1.seeAll {
+	text-align: right;
+	color: #000000;
+	font-size: small;
 }
 
 /** footer **/
