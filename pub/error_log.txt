@@ -117,3 +117,5 @@ Stack trace:
 [11-Jan-2011 04:01:41] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
 [11-Jan-2011 04:01:44] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
 [11-Jan-2011 04:01:44] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[11-Jan-2011 07:51:16] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[11-Jan-2011 07:51:16] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
