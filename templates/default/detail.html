@@ -1,6 +1,23 @@
-		{% extends 'twocolumn.html' %}
-{% block title %}{{ HR_PLUGIN_NAME }} // {{ HR_PLUGIN_AUTHOR_NAME }}{% endblock title %}
+{% extends 'twocolumn.html' %}
+{% block title %}View: {{ HR_PLUGIN_NAME }}{% endblock title %}
 {% block col2 %}
-						<h1>{{ HR_PLUGIN_NAME }} // {{ HR_PLUGIN_AUTHOR_NAME }}</h1>
+						<h1><a href="/list/">Browse</a> &gt; <a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/">{{ HR_PLUGIN_NAME }}</a></h1>
 						{% include "plugindetail.html" %}
 {% endblock %}
+{% block col3out %}
+		<div class="item">
+			<div class="item-t">
+				<h1>Plugin Information:</h1>
+				<b>Author:</b> {{ HR_PLUGIN_AUTHOR }}<br />
+				<b>Date Added:</b> {{ HR_PLUGIN_ADDED_DATE }}<br />
+				<b>Downloads:</b> {{ HR_PLUGIN_NO_DOWNLOADS }}<br />
+				<br />
+				<br />
+				Files:<br />
+				{% for version in HR_PLUGIN_VERSIONS %}<a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ version.version }}/">{{ version.version }}</a>{% if not loop.last %}, {% endif %}{% endfor %}<br />
+				<br />
+				Versions:<br />
+				{% for version in HR_PLUGIN_VERSIONS %}<a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ download.name }}/{{ version.version }}/">{{ version.version }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+			</div>
+		</div>
+{% endblock col3out %}

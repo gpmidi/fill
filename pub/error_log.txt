@@ -119,3 +119,29 @@ Stack trace:
 [11-Jan-2011 04:01:44] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
 [11-Jan-2011 07:51:16] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
 [11-Jan-2011 07:51:16] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[12-Jan-2011 18:50:43] PHP Fatal error:  Uncaught exception 'Twig_Error_Loader' with message 'Unable to find template "plugincart.html" (looked into: /home2/bukkit/public_html/phill//templates/default).' in /home2/bukkit/public_html/phill/lib/Twig/Loader/Filesystem.php:131
+Stack trace:
+#0 /home2/bukkit/public_html/phill/lib/Twig/Loader/Filesystem.php(88): Twig_Loader_Filesystem->findTemplate('plugincart.html')
+#1 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(189): Twig_Loader_Filesystem->getCacheKey('plugincart.html')
+#2 /home2/bukkit/public_html/phill/lib/Twig/Environment.php(201): Twig_Environment->getTemplateClass('plugincart.html')
+#3 /home2/bukkit/public_html/phill/templates_cache/__TwigTemplate_166f5d740c871935ba078caac3f7daff.php(95): Twig_Environment->loadTemplate('plugincart.html')
+#4 [internal function]: __TwigTemplate_166f5d740c871935ba078caac3f7daff->block_col3out(Array, Array)
+#5 /home2/bukkit/public_html/phill/lib/Twig/Template.php(95): call_user_func(Array, Array, Array)
+#6 /home2/bukkit/public_html/phill/templates_cache/__ in /home2/bukkit/public_html/phill/lib/Twig/Loader/Filesystem.php on line 131
+[12-Jan-2011 18:50:43] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[12-Jan-2011 19:18:34] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[12-Jan-2011 19:18:34] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[13-Jan-2011 04:26:05] PHP Notice:  Undefined variable: fallbackFile in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 80
+[13-Jan-2011 04:30:42] PHP Notice:  Undefined index: isprimary in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 82
+[13-Jan-2011 04:42:24] PHP Parse error:  syntax error, unexpected ')' in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 92
+[13-Jan-2011 04:42:24] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:92) in Unknown on line 0
+[13-Jan-2011 04:44:56] PHP Parse error:  syntax error, unexpected '/' in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 100
+[13-Jan-2011 04:44:56] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:100) in Unknown on line 0
+[13-Jan-2011 04:44:57] PHP Parse error:  syntax error, unexpected '/' in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 100
+[13-Jan-2011 04:44:57] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:100) in Unknown on line 0
+[13-Jan-2011 04:58:49] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 115
+[13-Jan-2011 04:59:46] PHP Notice:  Undefined offset: 0 in /home2/bukkit/public_html/phill/inc/db.php on line 357
+[13-Jan-2011 05:04:00] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:7) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[13-Jan-2011 05:04:11] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:81) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[13-Jan-2011 05:05:22] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[13-Jan-2011 05:06:05] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8

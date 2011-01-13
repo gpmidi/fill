@@ -1,8 +1,8 @@
 		{% extends 'threecolumn.html' %}
 {% block title %}Plugin Listing{% endblock title %}
 {% block col2 %}
-						<h1>List of Plugins</h1>
-						<p class="queryInfo">There {% if HR_RESULTS_NUM != 1 %}were {{ HR_RESULTS_NUM }} results{% else %}was {{ HR_RESULTS_NUM }} result{% endif %} to your query in total, of which {{ HR_RESULTS_SHOWN }} {% if HR_RESULTS_SHOWN != 1 %}are{% else %}is{% endif %} displayed here.</p>
+						<h1>Browse</h1>
+<!--						<p class="queryInfo">There {% if HR_RESULTS_NUM != 1 %}were {{ HR_RESULTS_NUM }} results{% else %}was {{ HR_RESULTS_NUM }} result{% endif %} to your query in total, of which {{ HR_RESULTS_SHOWN }} {% if HR_RESULTS_SHOWN != 1 %}are{% else %}is{% endif %} displayed here.</p>-->
 <!--						{{ HR_DEBUG_INFO|raw }}-->
 						{% include "pluginlist.html" %}
 {% endblock %}
@@ -15,13 +15,14 @@
 				<div class="item">
 					<div class="item-t">
 						<h1>Collections:</h1>
-						<h1 class="seeAll">See All ></h1>
+						<h1 class="seeAll">See All &gt;</h1>
 					</div>
 				</div>
 				<div class="item">
 					<div class="item-t">
 						<h1>Plugin Cart:</h1>
-						<h1 class="seeAll">See All ></h1>
+						{% include "plugincart.html" %}
+						<h1 class="seeAll">See All &gt;</h1>
 					</div>
 				</div>
 {% endblock col3out %}

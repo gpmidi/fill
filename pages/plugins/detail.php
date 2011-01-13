@@ -3,10 +3,20 @@
 	$template_settings=array();
 	$params = array_slice($hr_URI, 1);
 
+	if (count($params) < 2) throw new HttpException(404);
 	$pluginUsername = $params[0];
 	$u = new XenForo_Model_User();
 	$pluginUserID = $u->getUserIdFromUser($u->getUserByName($pluginUsername));
 	$pluginName = $params[1];
+	
+	$fileID = $versionID = -1;
+	if (isset($params[2])) { // this is the FILE id
+		$fileID = (int)$params[2];
+	}
+	if (isset($params[3])) { // this is the VERSION id
+		$versionID = (int)$params[3];
+	}
+	
 	$additional = '';
 	if (User::$uid == $pluginUserID || User::$role == User::ROLE_ADMIN) {
 		$additional = '-3, -2, -1, ';
@@ -26,7 +36,7 @@
 	$sql = 'SELECT pd.* FROM plugin_downloads AS pd WHERE pd.pid = ?';
 	$getDownloads = $pdo->prepare($sql);
 	$getDownloads->execute(array($thisPlugin->getID()));
-	$versionsSQL = 'SELECT * FROM plugin_downloads_version WHERE did = ? ORDER BY did DESC LIMIT 1';
+	$versionsSQL = 'SELECT * FROM plugin_downloads_version WHERE did = ? ORDER BY vid DESC LIMIT 1';
 	$versionsPre = $pdo->prepare($versionsSQL);
 	$lastDownloads = array();
 	while ($downloadLine = $getDownloads->fetch()) {
@@ -43,7 +53,7 @@
 		} else {
 			continue; // We COULD do something here, but no.
 		}
-		$lastDownloads[] = array(
+		$pluginArr = array(
 			'name' => $downloadLine['dfriendlyname'],
 			'filename' => $downloadLine['dfname'],
 			'httpuri' => $madeHttpURI,
@@ -51,8 +61,29 @@
 			'description' => Markdown($downloadLine['ddesc']),
 			'lastchangelog' => Markdown($versionsLine['vchangelog']),
 			'isfirst' => ($downloadLine['ddesc'] == $versionsLine['vchangelog']),
-			'version' => $downloadLine['vnumber']
+			'version' => $versionsLine['vnumber'],
+			'isprimary' => $versionsLine['visprimary']
 		);
+		print_r($versionsLine);
+		//print_r($downloadLine);
+		if ($versionsLine['visprimary'] == 1) { // woo primary file
+			if ($fileID == -1) { // no file selected, select primary
+				$currentFile = $pluginArr;
+			}
+			$fallbackFile = $pluginArr; // make a fallback
+		}
+		if ($fileID != -1 && $fileID == $downloadLine['did']) {
+			if ($versionID != -1 && $versionID == $versionsLine['vid']) {
+				$currentFile = $pluginArr;
+			}
+		}
+		$lastDownloads[] = $pluginArr;
+	}
+	if (!isset($fallbackFile)) {
+		throw new HttpException(404);
+	}
+	if (!isset($currentFile)) {
+		$currentFile = $fallbackFile; // select fallback
 	}
 	
 	$template_settings = array(

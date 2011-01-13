@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
 		'auto': true,
 		'multi': true,
 		'cancelImage': '/static/images/uploadify/uploadify-cancel.png',
-		'onSelect': function(file) {
+		/*'onSelect': function(file) {
 			setTimeout(jQuery.proxy(setTimeStuff, file), 2);
 		},
 		'onUploadStart': function(file) {
@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 			if (errCode == SWFUpload.UPLOAD_ERROR.FILE_CANCELLED) {
 				jQuery('#' + file.id + '_details').remove();
 			}
-		},
+		},*/
 		'onUploadComplete': function(file, queue) {
 			uploadInProgress = (queue.queueLength > 0);
 			if (!uploadInProgress) {
@@ -109,10 +109,12 @@ function setTimeStuff() {
 			}
 			makeTheRow = makeTheRow + "<div id='"+file.id+"_showRow' class='"+whatIs+"'>"+showRow+"</div>";
 			makeTheRow = makeTheRow + "<input type='hidden' name='"+file.id+"_origfname' id='"+file.id+"_origfname' value='" + file.name +"' />"; //
+			makeTheRow = makeTheRow + "<label for='"+file.id+"_newPrimary'>New primary version:</label><input type='checkbox' name='"+file.id+"_newPrimary' id='"+file.id+"_newPrimary' value='yes' /><br />";
 			makeTheRow = makeTheRow + "<br /><label for='"+file.id+"_version'>File version (required):</label><input type='text' name='"+file.id+"_version' id='"+file.id+"_version' /><br />";
 			makeTheRow = makeTheRow + "<label for='"+file.id+"_changelog'>File Description (required):</label><textarea name='"+file.id+"_changelog' id='"+file.id+"_changelog' style='width: 100%; height: 250px;'></textarea></fieldset></div>";
 			jQuery('#uploadFormArea').append(
 				makeTheRow
-				);
-			jQuery('#' + file.id + '_showRowCheck').click(jQuery.proxy(toggleShowRow, this));
+			);
+			window.curf = this;
+			setTimeout(function() { jQuery('#' + file.id + '_showRowCheck').click(jQuery.proxy(toggleShowRow, window.curf)); }, 1);
 		}

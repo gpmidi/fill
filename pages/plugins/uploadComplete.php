@@ -41,6 +41,7 @@
 		}
 		$editLog = array();
 		$addLog = array();
+		$hasNewPrimary = false;
 		foreach ($descdata as $dataarray) {
 			if (!isset($dataarray['fname']) || !isset($dataarray['changelog']) || !isset($dataarray['version'])) continue;
 			$dbrec = Database::select('plugin_downloads', array('did', 'ddesc'), array('pid = ? AND dfname = ?', $pluginID, $dataarray['fname']));
@@ -75,17 +76,54 @@
 			} else {
 				$editLog[] = $dataarray['fname'];
 			}
+			$dbS = Database::select('plugin_downloads_version', 'vid', array(
+					'did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"',
+					$dinfo['did']
+				)
+				);
+			$dbR = $dbS->fetch();
 			Database::update('plugin_downloads_version', 
 				array(
 					'vchangelog' => $dataarray['changelog'],
 					'vnumber' => $dataarray['version']
+//					'visprimary' => (((bool)$dataarray['newPrimary']) ? '1' : '0')
 				),
 				null,
 				array(
-					'did = ? AND isons3 = 0 AND vchangelog = "notdoneyet"',
-					$dinfo['did']
+					'vid = ?',
+					$dbR['vid']
 				)
 			);
+			if ($dataarray['newPrimary'] == 'yes' || $dataarray['newPrimary'] == '1') {
+				$dataarray['newPrimary'] = true;
+			} else {
+				$dataarray['newPrimary'] = false;
+			}
+			if ($hasNewPrimary == false) { // on lookout for new primary!
+				if ($dataarray['newPrimary']) { // this is it!
+					echo 'asdfasdfasdf';
+					$hasNewPrimary = $dbR['vid'];
+					echo $dbR['vid'];
+				}
+			}
+			print_r($dataarray);
+			print_r($hasNewPrimary);
+		}
+		if ($hasNewPrimary != false) {
+			echo 'prim', $hasNewPrimary;//
+			$q = Database::getHandle()->prepare('SELECT * FROM `plugins` AS plu LEFT JOIN plugin_downloads AS plud ON plu.pid = plud.pid LEFT JOIN plugin_downloads_version AS pluv ON plud.did = pluv.did WHERE plu.pname = ? AND plu.pauthor_id = ?');
+			$q->execute(array($pluginName, $pluginUserID));
+			while ($r = $q->fetch()) {
+				Database::update('plugin_downloads_version',
+					array(
+						'visprimary' => ($hasNewPrimary == $r['vid'])
+					),
+					null,
+					array(
+						'vid = ?', $r['vid']
+					)
+				);
+			}
 		}
 		$editSummary = '';
 		if (count($addLog) != 0) {

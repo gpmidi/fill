@@ -4,7 +4,7 @@
 }
 body{
     background:#f0f0f0;
-	font-family: Myriad Pro,"Georgia",serif;
+	font-family: Myriad Pro,"MyriadProRegular","Georgia",serif;
 }
 .wrap{
     float:left;
@@ -147,6 +147,10 @@ body{
     display:block;
 }
 
+.content-wrap.twocol .cols2 {
+	width: 71%;
+}
+
 .content-wrap .item{
     background:#fcfbff;
     border:1px solid #d4d4d4;
@@ -191,7 +195,8 @@ body{
 
 .content-wrap .item-t{
     background:#fcfbff url('/static/default/images/item-top.gif') top repeat-x;
-    margin-left:2px;
+    /*margin-left:2px;*/
+	margin-left:10px;
     margin-bottom:20px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -201,12 +206,15 @@ body{
 }
 .content-wrap .item-t h1{
     font-size:0.88em;
-    margin-left:10px;
+    margin-left:5px;
     font-weight:normal;
     color:#8c8c8c;
     padding-top:8px;
 }
-
+.content-wrap .item-t h1 a{
+	color:#8c8c8c;
+	text-decoration: none;
+}
 .featured  {
 	padding: none;
 	margin: none;
@@ -406,4 +414,22 @@ h4 {
 .queryInfo {
 	text-align: right;
 	font-size: x-small;
+}
+
+#pluginCartOuter {
+	margin: 20px;
+}
+
+#pluginCartDrag {
+	width: 100%;
+	height: 100px;
+	vertical-align: middle;
+	text-align: center;
+	border: 2px dashed #dfdddd;
+	box-sizing: border-box;
+	color: #dfdddd;
+}
+
+#pluginCartDrag > span {
+	line-height: 100px;
 }
