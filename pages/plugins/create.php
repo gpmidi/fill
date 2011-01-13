@@ -33,9 +33,9 @@
 			$pname = $newPlugin->name = htmlentities($_POST['pname']);
 			$pdesc = $newPlugin->desc = htmlentities($_POST['pdesc']);
 			$preqs = $newPlugin->reqs = htmlentities($_POST['preqs']);
-			$pmysql .= ( $_POST['pmysql'] == 'yes') ? ' checked="checked"' : '';
+			//$pmysql .= ( $_POST['pmysql'] == 'yes') ? ' checked="checked"' : '';
 			$ismyplugin .= ( $_POST['ismyplugin'] == 'yes') ? ' checked="checked"' : '';
-			$newPlugin->requires_mysql = ($_POST['pmysql'] == 'yes');
+			$newPlugin->requires_mysql = 0;
 			$newPlugin->author_id = User::$uid;
 			$pauthorname = $newPlugin->real_author_name = ($_POST['ismyplugin'] == 'yes') ? '' : htmlentities($_POST['pauthorname']);
 			$pauthornameVis = ($_POST['ismyplugin'] == 'yes') ? ' style="display:none;"' : '';
@@ -54,8 +54,9 @@
 	$catQ = Database::select('categories', array('cid','cname'));
 	$pcategory = '';
 	while ($catR = $catQ->fetch(PDO::FETCH_ASSOC)) {
-		$pcategory .= '<div style="border-bottom: 1px solid #e0e0e0; clear: both; width: 100%;"><label style="display: inline; font-size: small; float: left;">'.$catR['cname'].'</label><input type="checkbox" value="'.$catR['cid'].'" name="pcategory[]" style="float: right;" /></div>';
+		$pcategory .= '<div style="border-bottom: 1px solid #e0e0e0; clear: both; width: 100%;"><label style="display: inline; font-size: small; float: left;" for="'.$catR['cid'].'_chkbx">'.$catR['cname'].'</label><input type="checkbox" id="'.$catR['cid'].'_chkbx" value="'.$catR['cid'].'" name="pcategory[]" style="float: right;" /></div>';
 	}
+	$pcategory .= '<div style="border-top: 1px solid #e0e0e0; clear: both; width: 100%;">&nbsp;</div>';
 	
 	
 	$template_settings['HR_TEMPLATE_CONTENT'] = "
@@ -81,10 +82,6 @@
 			<div class=\"form-row\">
 				<label for=\"preqs\">Requirements</label>
 				<span><input type=\"text\" name=\"preqs\" id=\"preqs\" value=\"".$preqs."\" /></span>
-			</div>
-			<div class=\"form-row\">
-				<label for=\"pmysql\">Requires MySQL?</label>
-				<span><input type=\"checkbox\" name=\"pmysql\" id=\"pmysql\" value=\"yes\" ".$pmysql." /></span>
 			</div>
 			<div class=\"form-row\">
 				<label for=\"ismyplugin\">Is My Own Plugin?</label>

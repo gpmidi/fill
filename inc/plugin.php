@@ -176,4 +176,14 @@ class Plugin {
 		}
 		return array('hidden' => $hidden, 'trusted' => $trusted, 'claimed' => $claimed);
 	}
+	
+	
+	function getDownloads() {
+		inc('download.php');
+		$getQ = Database::select('plugin_downloads', 'did', array('pid = ?', $this->id));
+		$outArr = array();
+		while ($getR = $getQ->fetchColumn()) {
+			$outArr[] = new Download($getR);
+		}
+	}
 }

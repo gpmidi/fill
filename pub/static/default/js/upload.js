@@ -6,6 +6,7 @@ jQuery(document).ready(function() {
 		'auto': true,
 		'multi': true,
 		'cancelImage': '/static/images/uploadify/uploadify-cancel.png',
+		'removeCompleted': false,
 		'onUploadComplete': function(file, queue) {
 			uploadInProgress = (queue.queueLength > 0);
 			if (!uploadInProgress) {
@@ -20,12 +21,7 @@ jQuery(document).ready(function() {
 			alert('An upload is currently in progress. Please wait until it has completed before submitting the form.');
 			return false;
 		}
-		if (itemsSubmitted == 0) {
-			alert('You must upload something before you can submit this form.');
-			return false;
-		}
 		return true;
 	});
 });
 uploadInProgress = false;
-itemsSubmitted = 0;

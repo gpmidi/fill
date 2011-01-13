@@ -42,7 +42,7 @@
 			echo 'File exists';
 			exit();
 		}
-		$a = Database::select('plugin_downloads', '*', array('dfname = ?', $_FILES['Filedata']['name']));
+		/*$a = Database::select('plugin_downloads', '*', array('dfname = ?', $_FILES['Filedata']['name']));
 		$lastNum = 0;
 		if ($a->rowCount() == 0) // if download doesn't already exist...
 		{ // create download
@@ -58,7 +58,8 @@
 			$lastNum = $b->fetchColumn();
 		}
 		Database::insert('plugin_downloads_version', array('did' => $pluginFileRow['did'], 'vnumber' => $lastNum + 1, 'vhash' => $fileMd5, 'vdate' => date('Y-m-d H:i:s'), 'vchangelog' => 'notdoneyet', 'isons3' => '0', 'vsignature' => 'signing in progress'));
-		$vID = Database::getHandle()->lastInsertID();
+		$vID = Database::getHandle()->lastInsertID();*/
+		
 		
 		//file_put_contents($signedHashDir . $vid . '.sha256', sha256_file($tempFile));
 		$fileToGetFrom = '/home2/bukkit/fillbukkit.'.((!$isTrusted)?'un':'').'trusted.pem';
@@ -71,10 +72,12 @@
 		$signature = bin2hex($signature);
 		file_put_contents($signedHashDir . $vID . '.sig', $signature);
 		
-		Database::update('plugin_downloads_version', array('vsignature' => $signature), null, array('vid = ?', $vID));
-		
-		
-		$_SESSION['plugin_' . $_FILES['Filedata']['name']] = $vID;
+		//Database::update('plugin_downloads_version', array('vsignature' => $signature), null, array('vid = ?', $vID));
+		if (!isset($_SESSION['pluginuploads'])) {
+			$_SESSION['pluginuploads'] = array();
+		}
+		$_SESSION['pluginuploads'][] = array( 'fname' => $_FILES['Filedata']['name'], 'signature' => $signature, 'newfname' => $newFileName );
+		//$_SESSION['plugin_' . $_FILES['Filedata']['name']] = $vID;
 		move_uploaded_file($tempFile, $fileDir . $newFileName);
 		echo '1';
 		exit();

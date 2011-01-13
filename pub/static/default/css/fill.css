@@ -195,14 +195,14 @@ body{
 
 .content-wrap .item-t{
     background:#fcfbff url('/static/default/images/item-top.gif') top repeat-x;
-    /*margin-left:2px;*/
-	margin-left:10px;
+    margin-left:2px;
     margin-bottom:20px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     min-height:100px;
     margin-right:2px;
+	/*padding-left:10px;*/
 }
 .content-wrap .item-t h1{
     font-size:0.88em;
