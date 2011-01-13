@@ -31,6 +31,7 @@
 	inclib('markdown.php');
 	$descMarkdowned = Markdown($thisPlugin->desc);
 	
+	/*
 	$pdo = Database::getHandle();
 	//$sql = 'SELECT pd.*, pdv.* FROM plugin_downloads AS pd JOIN plugin_downloads_version ON pd.did = pdv.did WHERE pd.pid = ?';
 	$sql = 'SELECT pd.* FROM plugin_downloads AS pd WHERE pd.pid = ?';
@@ -99,4 +100,4 @@
 		'HR_PLUGIN_RATING' => $thisPlugin->rating,
 		'HR_PLUGIN_STATUS' => $thisPlugin->status,
 		'HR_PLUGIN_DOWNLOADS' => $lastDownloads
-	);
+	);*/
