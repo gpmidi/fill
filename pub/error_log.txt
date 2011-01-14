@@ -157,3 +157,7 @@ Stack trace:
 [13-Jan-2011 05:43:05] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
 [13-Jan-2011 05:43:05] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
 [13-Jan-2011 06:06:02] PHP Notice:  Undefined index: pluginupoads in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 26
+[13-Jan-2011 09:25:58] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[13-Jan-2011 09:25:58] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[13-Jan-2011 09:26:01] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[13-Jan-2011 09:26:01] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
