@@ -179,11 +179,11 @@ class Plugin {
 	
 	
 	function getDownloads() {
-		inc('download.php');
+		inc('PluginUpload.php');
 		$getQ = Database::select('plugin_downloads', 'did', array('pid = ?', $this->id));
 		$outArr = array();
 		while ($getR = $getQ->fetchColumn()) {
-			$outArr[] = new Download($getR);
+			$outArr[] = new PluginUpload($getR);
 		}
 	}
 }
