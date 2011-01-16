@@ -957,3 +957,25 @@ Stack trace:
 [16-Jan-2011 04:46:44] PHP Notice:  Undefined variable: pluginUserID in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 17
 [16-Jan-2011 04:46:44] PHP Notice:  Undefined variable: pluginUserID in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 17
 [16-Jan-2011 04:46:45] PHP Notice:  Undefined variable: pluginUserID in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 17
+[16-Jan-2011 05:32:29] PHP Fatal error:  Call to undefined method Plugin::save() in /home2/bukkit/public_html/phill/pages/plugins/download.php on line 34
+[16-Jan-2011 05:32:29] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/download.php:34) in Unknown on line 0
+[16-Jan-2011 05:34:18] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/download.php:45) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 05:40:06] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:40:06] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 05:40:24] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:40:24] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 05:40:38] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:40:38] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 05:40:55] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:40:55] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 05:41:13] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:41:13] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 05:41:26] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:41:26] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 05:41:45] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:41:45] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 05:42:00] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 05:42:00] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 06:33:42] PHP Fatal error:  Call to undefined method Plugin::imprint() in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 33
+[16-Jan-2011 06:33:42] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:33) in Unknown on line 0
+[16-Jan-2011 06:33:59] PHP Notice:  Undefined variable: pViewLogID in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 33

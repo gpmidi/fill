@@ -63,4 +63,8 @@
 	}
 	
 	public function getID() { return $this->id; }
+	
+	public function addDownload() {
+		Database::insert('version_download_log', array('vid' => $this->id, 'userid' => User::$uid));
+	}
  }

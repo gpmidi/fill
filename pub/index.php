@@ -59,6 +59,7 @@ if ('/' . $correctURI != $_SERVER['REQUEST_URI'] && count($_POST) == 0 && strlen
 }
 // end URI fix
 
+
 $nav = array();
 
 
@@ -135,8 +136,16 @@ $mailer->IsSendmail();
 
 User::bootstrap();
 
+Database::insert('page_view_log', array('userid' => User::$uid, 'lpuri' => implode('/', $hr_URI)));
+$pViewLogID = Database::getHandle()->lastInsertId();
+
 $out_array = array();
 $out_array['HR_MENU_ITEMS'] = array(
+	'list' => array(
+		'uri' => '/list/',
+		'id' => 'topBarLinkList',
+		'text' => 'Browse'
+	),
 	"about" => array(
 		"uri" => "/about/",
 		"id" => "topBarLinkAbout",
@@ -265,6 +274,9 @@ try
 			$template = $twig->loadTemplate("detail.html");
 			$out_array = array_merge($out_array, $template_settings);
 			echo $template->render($out_array);
+			break;
+		case 'download':
+			require_once( HR_ROOT . 'pages/plugins/download.php' );
 			break;
 		default:
 			require_once( HR_ROOT . "pages/index.php" );

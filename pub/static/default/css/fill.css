@@ -211,6 +211,9 @@ body{
 	font-size: 14px;
 	min-height: 100px;
 }
+.selected {
+	border:#222 1px solid;
+}
 
 .content-wrap .item-t{
     background:#fcfbff url('/static/default/images/item-top.gif') top repeat-x;
@@ -318,7 +321,7 @@ input.valid {
 	/*color: #000000;*/
 	font-size: 8pt;
 	position: relative;
-	top: -17pt;
+	top: -18pt;
 	left: -5px;
 	margin:none;
 }

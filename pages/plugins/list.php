@@ -53,7 +53,7 @@
 				$value = Database::getHandle()->quote($param[3]);
 				$wherr[] = $fieldName . ' ' . $operator . ' ' . $value;
 			} else {
-				$u = XenForo_Model::create('XenForo_Model_User');
+				$u = new XenForo_Model_User();
 				$userID = (int)$u->getUserIdFromUser($u->getUserByName($param[3]));
 				$value = Database::getHandle()->quote($param[3]);
 				if ($param[2] == '=') {
@@ -101,7 +101,7 @@
 	$template_settings['HR_RESULTS_NUM'] = $numRows = $countres->fetchColumn(0);
 	
 	//$resRows = $res->fetchAll();
-	$u = XenForo_Model::create('XenForo_Model_User');
+	$u = new XenForo_Model_User();
 	
 	$resRows = array();
 	while ($resRow = $res->fetch()) {
@@ -121,23 +121,3 @@
 	$template_settings['HR_RESULTS_SHOWN'] = count($resRows);
 	$template_settings['HR_RESULTS'] = $resRows;
 	
-	
-	//$pluginID = $dbQuery->fetchColumn();
-	
-	// GOT!
-	//$thisPlugin = new Plugin($pluginID);
-	
-	/*$template_settings = array(
-		'HR_PLUGIN_ID' => $thisPlugin->getID(),
-		'HR_PLUGIN_AUTHOR_ID' => $thisPlugin->author_id,
-		'HR_PLUGIN_AUTHOR_NAME' => $pluginName,
-		'HR_PLUGIN_NAME' => $thisPlugin->name,
-		'HR_PLUGIN_DESCRIPTION' => $thisPlugin->desc,
-		'HR_PLUGIN_REQUIREMENTS' => $thisPlugin->reqs,
-		//'HR_PLUGIN_NEEDSMYSQL' => $thisPlugin->requires_mysql,
-		'HR_PLUGIN_DOWNLOADS' => $thisPlugin->downloads,
-		'HR_PLUGIN_ADDED_DATE' => $thisPlugin->added_date,
-		'HR_PLUGIN_RATING' => $thisPlugin->rating,
-		'HR_PLUGIN_STATUS' => $thisPlugin->status,
-		'HR_PLUGIN_STATUS_NAME' => $thisPlugin->getStatusName()
-	);*/

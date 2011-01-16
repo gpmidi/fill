@@ -30,6 +30,7 @@
 	} catch (NoSuchPluginException $e) {
 		throw new HttpException(404);
 	}
+	$thisPlugin->imprint($pViewLogID);
 	
 	// Markdownify
 	inclib('markdown.php');
@@ -87,7 +88,7 @@
 		);
 	}
 	
-	$linkTo = 'http://filldl.bukkit.org/' . $pluginUsername . '/' . $pluginName . '/' . $thisPluginDownloadVersion->hash .  '/' .$thisPluginDownload->filename;
+	$linkTo = '/download/' . $pluginUsername . '/' . $pluginName . '/' . $thisPluginDownload->getID() .  '/' .$thisPluginDownloadVersion->getID() . '/';
 	
 	$thisDLInfo = array(
 		'version' => $thisPluginDownloadVersion->vnumber,

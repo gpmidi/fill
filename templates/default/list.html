@@ -21,8 +21,44 @@
 				<div class="item">
 					<div class="item-t">
 						<h1>Plugin Cart:</h1>
-						<h1 class="seeAll">See All &gt;</h1>
+						<h1 class="seeAll">See All ( <span id="items_in_cart">0</span> ) &gt;</h1>
 						{% include "plugincart.html" %}<script type="text/javascript">
+
+var plugins_to_install=Array();
+function removeItems(array, item) {
+	var i = 0;
+	while (i < array.length) {
+		if (array[i] == item) {
+			array.splice(i, 1);
+		} else {
+			i++;
+		}
+	}
+	return array;
+}
+Array.prototype.has = function(value) {
+	var i;
+	for (var i = 0, loopCnt = this.length; i < loopCnt; i++) {
+		if (this[i] == value) {
+			return true;
+		}
+	}
+	return false;
+}
+function add_install(pid){
+	plugins_to_install.push(pid);
+	$("#inlist_"+pid).fadeIn();
+	$("#items_in_cart").html(plugins_to_install.length);
+}
+function remove_install(pid){
+	removeItems(plugins_to_install,pid);
+	//$("#inlist_"+pid).fadeOut(function(){
+	//	$("#inlist_"+pid).empty();
+	//	$("#inlist_"+pid).remove();
+		$("#items_in_cart").html(plugins_to_install.length);
+	//});
+}
+
 $(document).ready(function() { 
 	$('#pluginCartDrag').droppable({
 		activate: function(event, ui) {
@@ -40,10 +76,15 @@ $(document).ready(function() {
 			//$(this).removeAttribute('style');
 		},
 		over: function(event, ui) {
+			var pid=ui.draggable.attr("id").replace(/plugin_/ig, "");
 			$(this).addClass('cart-active-over', 'fast');
 			$(this).children().each(
 				function (index, elem) {
-					$(elem).html('DROP TO ADD');
+					if(!plugins_to_install.has(pid)){
+						$(elem).html('DROP TO ADD');
+					}else{
+						$(elem).html('DROP TO REMOVE');
+					}
 				}
 			);
 		},
@@ -56,9 +97,16 @@ $(document).ready(function() {
 			);
 		},
 		drop: function(event, ui) {
-			newEntryText = ui.draggable.text();
-			alert(ui.draggable.attr("id").replace(/plugin_/ig, ""));
-			$( "<li></li>" ).text( newEntryText ).appendTo( $("#pluginCartList") );
+			var pid=ui.draggable.attr("id").replace(/plugin_/ig, "");
+			var newEntryText = $("#"+ui.draggable.attr("id")).find(".itemName").first().html();
+			if(!plugins_to_install.has(pid)){
+				//$("#pluginCartList").append("<li id=\"inlist_"+pid+"\" style=\"display:none;\">"+newEntryText+" --------- <a href=\"javascript:;\" onclick=\"remove_install("+pid+");\">REMOVE</a></li>" );
+				add_install(pid);
+				ui.draggable.addClass("selected");
+			}else{
+				remove_install(pid);
+				ui.draggable.removeClass("selected");
+			}
 		}
 	}); 
 	$('.plugin_item').draggable({ opacity: 0.7, helper: 'clone' });

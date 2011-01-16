@@ -83,7 +83,7 @@ class Plugin {
 				$this->categories_names[$row['cid']] = $row['cname'];
 			}
 		}
-		$this->inited = 2;
+		$this->inited = 1;
 	}
 
 	function saveData() {
@@ -235,6 +235,15 @@ class Plugin {
 			return new PluginUploadVersion($getR);
 		}
 		throw new HttpException(404);
+	}
+	
+	function addDownload() {
+		$this->downloads = $this->downloads + 1;
+		$this->saveData();
+	}
+	
+	function imprint($pageViewID) {
+		Database::update('page_view_log', array('pid' => $this->id), null, array('lid = ?', $pageViewID));
 	}
 }
 
