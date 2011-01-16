@@ -72,6 +72,8 @@ class User {
 				self::$isValid = true;
 				if ($visitor->get('is_admin'))
 					self::$role = self::ROLE_ADMIN;
+				else if ($visitor->isMemberOf(7))
+					self::$role = self::ROLE_ADMIN;
 				else
 					self::$role = self::ROLE_MEMBER;
 			}

@@ -1,12 +1,23 @@
-<div class="topitem">
+<div class="topitem plugin_item" id="plugin_{{ plugin.id }}">
+
 		<a href="/detail/{{ plugin.author }}/{{ plugin.name }}/" class="itemNameLink"><span class="itemName">{{ plugin.name }}</span></a><br />
+
 		by <span class="itemAuthor">{{ plugin.author }}</span><br />
+
 		<div class="itemDesc">
+
 			{{ plugin.desc }}
+
 		</div>
+
 		<br />
+
 {% if plugin.showButton %}
+
 		<span class="itemDL" style="cursor: pointer;" onClick="window.location='{{ plugin.buttonURI }}';">{{ plugin.buttonText }}</span>
+
 {% endif %}
+
 <div class="endItem">&nbsp;</div>
+
 </div>

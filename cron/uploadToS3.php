@@ -32,7 +32,7 @@ S3::$useSSL = false;
 $pdo = Database::getHandle();
 $a = $pdo->query('SELECT * FROM plugin_downloads_version AS pdv LEFT JOIN plugin_downloads AS pd ON pdv.did = pd.did LEFT JOIN plugins AS p ON p.pid = pd.pid WHERE pdv.isons3 = 0');
 //$a = Database::select('plugin_downloads_version', '*', array('isons3 = 0'));
-$xfu = new XenForo_Model_User();
+$xfu = XenForo_Model::create('XenForo_Model_User');
 echo 'Starting run at '.time().'
 ';
 $filesToDelete = array();

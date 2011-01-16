@@ -163,3 +163,797 @@ Stack trace:
 [13-Jan-2011 09:26:01] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
 [14-Jan-2011 08:19:55] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
 [14-Jan-2011 08:19:55] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[15-Jan-2011 11:28:42] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[15-Jan-2011 11:28:42] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[15-Jan-2011 11:28:42] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[15-Jan-2011 11:28:42] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[15-Jan-2011 22:17:45] PHP Fatal error:  Class 'NoSuchPluginException' not found in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[15-Jan-2011 22:17:45] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:64) in Unknown on line 0
+[15-Jan-2011 22:29:59] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 50
+[15-Jan-2011 22:30:46] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[15-Jan-2011 22:30:46] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[15-Jan-2011 22:42:46] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 51
+[15-Jan-2011 22:43:03] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 53
+[15-Jan-2011 22:43:54] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 54
+[15-Jan-2011 22:44:09] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 54
+[15-Jan-2011 22:44:28] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 54
+[15-Jan-2011 22:44:36] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 54
+[15-Jan-2011 22:45:53] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 54
+[15-Jan-2011 22:46:33] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 54
+[15-Jan-2011 22:48:29] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 58
+[15-Jan-2011 22:48:29] PHP Notice:  Undefined variable: makeChecked in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 61
+[15-Jan-2011 22:48:43] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 58
+[15-Jan-2011 22:48:43] PHP Notice:  Undefined variable: makeChecked in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 61
+[15-Jan-2011 22:49:46] PHP Notice:  Undefined variable: selectBit in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 59
+[15-Jan-2011 22:58:57] PHP Fatal error:  Cannot redeclare class PluginUpload in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 8
+[15-Jan-2011 22:58:57] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:27) in Unknown on line 0
+[15-Jan-2011 23:00:21] PHP Fatal error:  Call to undefined method PluginUpload::save() in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 44
+[15-Jan-2011 23:00:21] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:27) in Unknown on line 0
+[15-Jan-2011 23:00:32] PHP Notice:  Undefined variable: inited in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 45
+[15-Jan-2011 23:19:21] PHP Fatal error:  Using $this when not in object context in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 51
+[15-Jan-2011 23:19:21] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php:27) in Unknown on line 0
+[15-Jan-2011 23:23:22] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 50
+[15-Jan-2011 23:24:45] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 50
+[15-Jan-2011 23:33:26] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 44
+[15-Jan-2011 23:33:26] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:44) in Unknown on line 0
+[15-Jan-2011 23:33:52] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:33:52] PHP Fatal error:  Class 'NoSuchUploadException' not found in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:33:52] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:35:36] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:35:36] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:35:36] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:36:39] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[15-Jan-2011 23:36:39] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[15-Jan-2011 23:36:50] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:36:50] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:36:50] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:36:56] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:36:56] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:36:56] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:37:36] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:37:36] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:37:36] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:37:37] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:37:37] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:37:37] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:37:38] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:37:38] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:37:38] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:37:57] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:37:57] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:37:57] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:37:58] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:37:58] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:37:58] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:37:59] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:37:59] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:37:59] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:38:41] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:38:41] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:38:41] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:38:42] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:38:42] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:38:42] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:38:54] PHP Notice:  Undefined property: PluginUploadVersion::$pluginid in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 63
+[15-Jan-2011 23:38:54] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(63): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:38:54] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:39:09] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 79
+[15-Jan-2011 23:39:13] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 79
+[15-Jan-2011 23:39:25] PHP Fatal error:  Call to undefined method PluginUpload::getLatest() in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 57
+[15-Jan-2011 23:39:25] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:39:27] PHP Fatal error:  Call to undefined method PluginUpload::getLatest() in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 57
+[15-Jan-2011 23:39:27] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:40:40] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 79
+[15-Jan-2011 23:40:44] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 79
+[15-Jan-2011 23:40:46] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[15-Jan-2011 23:40:48] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 79
+[15-Jan-2011 23:40:51] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(2)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(41): PluginUpload->PluginUpload(2)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:40:51] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:41:01] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(2)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(41): PluginUpload->PluginUpload(2)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[15-Jan-2011 23:41:01] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:41:20] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[15-Jan-2011 23:44:26] PHP Notice:  Undefined variable: lastDownloads in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 79
+[15-Jan-2011 23:48:28] PHP Fatal error:  Call to undefined method PluginUploadVersion::getID() in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 70
+[15-Jan-2011 23:48:28] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:35) in Unknown on line 0
+[15-Jan-2011 23:48:44] PHP Notice:  Undefined variable: versionList in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 87
+[15-Jan-2011 23:48:54] PHP Notice:  Undefined variable: versionList in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 87
+[15-Jan-2011 23:54:28] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[15-Jan-2011 23:54:28] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 00:01:37] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:01:50] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:02:35] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:03:08] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:03:12] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:03:14] PHP Fatal error:  Uncaught exception 'NoSuchPluginException' in /home2/bukkit/public_html/phill/inc/plugin.php:64
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/plugin.php(47): Plugin->loadData(false)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(28): Plugin->Plugin(false)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[16-Jan-2011 00:03:14] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[16-Jan-2011 00:03:23] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:03:23] PHP Fatal error:  Uncaught exception 'NoSuchPluginException' in /home2/bukkit/public_html/phill/inc/plugin.php:64
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/plugin.php(47): Plugin->loadData(false)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(28): Plugin->Plugin(false)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[16-Jan-2011 00:03:23] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[16-Jan-2011 00:03:24] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:03:25] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:03:26] PHP Notice:  Undefined property: PluginUpload::$desc in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 84
+[16-Jan-2011 00:03:42] PHP Fatal error:  Uncaught exception 'NoSuchPluginException' in /home2/bukkit/public_html/phill/inc/plugin.php:64
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/plugin.php(47): Plugin->loadData(false)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(28): Plugin->Plugin(false)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[16-Jan-2011 00:03:42] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[16-Jan-2011 00:04:02] PHP Fatal error:  Uncaught exception 'NoSuchPluginException' in /home2/bukkit/public_html/phill/inc/plugin.php:64
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/plugin.php(47): Plugin->loadData(false)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(28): Plugin->Plugin(false)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[16-Jan-2011 00:04:02] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[16-Jan-2011 00:06:30] PHP Fatal error:  Uncaught exception 'NoSuchPluginException' in /home2/bukkit/public_html/phill/inc/plugin.php:64
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/plugin.php(47): Plugin->loadData(false)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(28): Plugin->Plugin(false)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[16-Jan-2011 00:06:30] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[16-Jan-2011 00:06:32] PHP Fatal error:  Uncaught exception 'NoSuchPluginException' in /home2/bukkit/public_html/phill/inc/plugin.php:64
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/plugin.php(47): Plugin->loadData(false)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(28): Plugin->Plugin(false)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[16-Jan-2011 00:06:32] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[16-Jan-2011 00:06:49] PHP Fatal error:  Uncaught exception 'NoSuchPluginException' in /home2/bukkit/public_html/phill/inc/plugin.php:64
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/plugin.php(47): Plugin->loadData(false)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(28): Plugin->Plugin(false)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/plugin.php on line 64
+[16-Jan-2011 00:06:49] PHP Warning:  Cannot modify header information - headers already sent in Unknown on line 0
+[16-Jan-2011 00:50:27] PHP Notice:  Undefined index: pcategory in /home2/bukkit/public_html/phill/pages/plugins/create.php on line 36
+[16-Jan-2011 00:50:27] PHP Notice:  Undefined index: pcategory in /home2/bukkit/public_html/phill/pages/plugins/create.php on line 37
+[16-Jan-2011 00:54:26] PHP Notice:  Undefined property: Plugin::$pid in /home2/bukkit/public_html/phill/inc/plugin.php on line 72
+[16-Jan-2011 00:54:45] PHP Notice:  Undefined property: Plugin::$pid in /home2/bukkit/public_html/phill/inc/plugin.php on line 72
+[16-Jan-2011 00:54:45] PHP Notice:  Undefined property: PDOStatement::$fetch in /home2/bukkit/public_html/phill/inc/plugin.php on line 74
+[16-Jan-2011 00:54:45] PHP Notice:  Undefined property: Plugin::$pid in /home2/bukkit/public_html/phill/inc/plugin.php on line 72
+[16-Jan-2011 00:54:45] PHP Notice:  Undefined property: PDOStatement::$fetch in /home2/bukkit/public_html/phill/inc/plugin.php on line 74
+[16-Jan-2011 00:55:31] PHP Notice:  Undefined property: Plugin::$pid in /home2/bukkit/public_html/phill/inc/plugin.php on line 73
+[16-Jan-2011 00:55:31] PHP Notice:  Undefined property: PDOStatement::$fetch in /home2/bukkit/public_html/phill/inc/plugin.php on line 75
+[16-Jan-2011 00:55:45] PHP Notice:  Undefined property: PDOStatement::$fetch in /home2/bukkit/public_html/phill/inc/plugin.php on line 75
+[16-Jan-2011 01:05:12] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:27) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 01:06:38] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 01:06:38] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 01:06:38] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 01:07:04] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 01:07:04] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 01:23:23] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 01:23:23] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 01:23:23] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 02:17:52] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 02:17:52] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 02:17:52] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 02:17:58] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 02:17:58] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 02:17:58] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:04:22] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:04:22] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:04:22] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:04:23] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:04:23] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:04:23] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:04:49] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:04:49] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:04:49] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:04:50] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:04:50] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:04:50] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:27] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:27] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:27] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:28] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:28] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:28] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:29] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:29] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:29] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:29] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:29] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:29] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:30] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:30] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:30] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:32] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:32] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:32] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:33] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:33] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:33] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:33] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:33] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:33] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:34] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:34] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:34] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:35] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:35] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:35] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:35] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:35] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:35] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:46] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:46] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:46] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:46] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:46] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(269): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:46] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:58] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:58] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:58] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:05:59] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:05:59] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:05:59] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:06:00] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:06:00] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:06:00] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:06:06] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:06:06] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:06:06] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:06:07] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:06:07] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:06:07] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:06:14] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:06:14] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:06:14] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:06:15] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:06:15] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(270): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:06:15] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:15] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:15] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:15] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:16] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:16] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:16] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:16] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:16] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:16] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:19] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:19] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:19] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:20] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:20] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:20] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:24] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:24] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:24] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:37] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:37] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:37] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:38] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:38] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:38] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:40] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:40] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:40] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:40] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:40] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:40] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:40] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:40] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:40] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:40] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:40] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:40] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:46] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:46] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:46] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:46] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:46] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:46] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:47] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:47] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:47] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:47] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:47] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:47] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:47] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:47] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:47] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:47] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:47] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:47] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:51] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:51] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:51] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:51] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:51] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:51] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:07:51] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:07:51] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:07:51] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:08:34] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:08:34] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:08:34] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:08:34] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:08:34] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:08:34] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:08:35] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:08:35] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:08:35] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:08:35] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:08:35] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(265): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:08:35] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:09:05] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:09:05] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(266): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:09:05] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:09:06] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:09:06] PHP Fatal error:  Uncaught exception 'NoSuchUploadException' in /home2/bukkit/public_html/phill/inc/PluginUpload.php:28
+Stack trace:
+#0 /home2/bukkit/public_html/phill/inc/PluginUpload.php(18): PluginUpload->loadData(NULL)
+#1 /home2/bukkit/public_html/phill/pages/plugins/detail.php(67): PluginUpload->PluginUpload(NULL)
+#2 /home2/bukkit/public_html/phill/pub/index.php(266): require_once('/home2/bukkit/p...')
+#3 {main}
+  thrown in /home2/bukkit/public_html/phill/inc/PluginUpload.php on line 28
+[16-Jan-2011 03:09:06] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in Unknown on line 0
+[16-Jan-2011 03:10:09] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 67
+[16-Jan-2011 03:10:09] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:67) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 03:11:53] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 03:11:53] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 03:12:53] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 69
+[16-Jan-2011 03:12:53] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:69) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 03:12:54] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 69
+[16-Jan-2011 03:12:54] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:69) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 03:13:04] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 69
+[16-Jan-2011 03:13:04] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:69) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 03:14:17] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 03:14:17] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 03:14:17] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 03:14:17] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 04:08:58] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 04:08:58] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 04:14:30] PHP Notice:  Object of class PDOStatement could not be converted to int in /home2/bukkit/public_html/phill/inc/plugin.php on line 124
+[16-Jan-2011 04:14:30] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:124) in /home2/bukkit/public_html/phill/inc/std.php on line 31
+[16-Jan-2011 04:14:49] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 04:14:49] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 04:14:51] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 04:14:51] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 04:15:03] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 04:15:03] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 04:15:05] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 04:15:05] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 04:15:05] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 04:15:05] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 04:16:12] PHP Notice:  Trying to get property of non-object in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 68
+[16-Jan-2011 04:16:12] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:68) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 04:16:43] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 04:16:43] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 04:30:05] PHP Notice:  Object of class PDOStatement could not be converted to int in /home2/bukkit/public_html/phill/inc/plugin.php on line 124
+[16-Jan-2011 04:30:05] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/inc/plugin.php:124) in /home2/bukkit/public_html/phill/inc/std.php on line 31
+[16-Jan-2011 04:31:50] PHP Notice:  Undefined property: PluginUploadVersion::$filename in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 90
+[16-Jan-2011 04:37:59] PHP Notice:  Undefined property: PluginUploadVersion::$filename in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 90
+[16-Jan-2011 04:38:12] PHP Notice:  Undefined property: PluginUploadVersion::$filename in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 90
+[16-Jan-2011 04:38:28] PHP Notice:  Undefined property: PluginUploadVersion::$filename in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 90
+[16-Jan-2011 04:46:44] PHP Notice:  Undefined variable: pluginUserID in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 17
+[16-Jan-2011 04:46:44] PHP Notice:  Undefined variable: pluginUserID in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 17
+[16-Jan-2011 04:46:45] PHP Notice:  Undefined variable: pluginUserID in /home2/bukkit/public_html/phill/pages/plugins/list.php on line 17

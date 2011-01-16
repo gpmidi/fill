@@ -53,7 +53,7 @@
 				$value = Database::getHandle()->quote($param[3]);
 				$wherr[] = $fieldName . ' ' . $operator . ' ' . $value;
 			} else {
-				$u = new XenForo_Model_User();
+				$u = XenForo_Model::create('XenForo_Model_User');
 				$userID = (int)$u->getUserIdFromUser($u->getUserByName($param[3]));
 				$value = Database::getHandle()->quote($param[3]);
 				if ($param[2] == '=') {
@@ -89,7 +89,7 @@
 	$limit = ($pageNum * $limit) . ', ' . $limit;
 	
 	$pdo = Database::getHandle();
-	$sql = "SELECT SQL_CALC_FOUND_ROWS pl.* FROM plugins AS pl LEFT JOIN plugin_downloads AS pd ON pl.pid = pd.pid LEFT JOIN plugin_downloads_version AS pdv ON pd.did = pdv.did WHERE {$where} GROUP BY pl.pid ORDER BY {$orderBy} LIMIT {$limit}";
+	$sql = "SELECT SQL_CALC_FOUND_ROWS pl.* FROM plugins AS pl LEFT JOIN plugin_downloads AS pd ON pl.pid = pd.pid LEFT JOIN plugin_downloads_version AS pdv ON pd.did = pdv.did WHERE ({$where}) AND pstatus IN ($additional 0, 1, 2)  GROUP BY pl.pid ORDER BY {$orderBy} LIMIT {$limit}";
 	$template_settings['HR_DEBUG_INFO'] .= PHP_EOL.PHP_EOL.PHP_EOL.$sql;
 	$countsql = 'SELECT FOUND_ROWS()';
 	//$res = $pdo->prepare('SELECT pl.* FROM plugins AS pl LEFT JOIN plugin_downloads AS pd ON pl.pid = pd.pid LEFT JOIN plugin_downloads_versions AS pdv ON pd.did = pdv.did ORDER BY '.$orderBy . ' LIMIT '.$limit);
@@ -101,13 +101,14 @@
 	$template_settings['HR_RESULTS_NUM'] = $numRows = $countres->fetchColumn(0);
 	
 	//$resRows = $res->fetchAll();
-	$u = new XenForo_Model_User();
+	$u = XenForo_Model::create('XenForo_Model_User');
 	
 	$resRows = array();
 	while ($resRow = $res->fetch()) {
 		$thisu = $u->getUserById($resRow['pauthor_id']);
 		$newRow = array(
 			'author' => $thisu['username'],
+			'id' => $resRow['pid'],
 			'name' => $resRow['pname'],
 			'desc' => $resRow['pdesc'],
 			'showButton' => true,

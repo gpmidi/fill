@@ -21,8 +21,49 @@
 				<div class="item">
 					<div class="item-t">
 						<h1>Plugin Cart:</h1>
-						{% include "plugincart.html" %}
 						<h1 class="seeAll">See All &gt;</h1>
+						{% include "plugincart.html" %}<script type="text/javascript">
+$(document).ready(function() { 
+	$('#pluginCartDrag').droppable({
+		activate: function(event, ui) {
+			this.removeAttribute('style');
+			$(this).addClass('cart-active', 'fast');
+		},
+		deactivate: function(event, ui) {
+			$(this).removeClass('cart-active', 'fast');
+			$(this).removeClass('cart-active-over', 'fast');
+			$(this).children().each(
+				function (index, elem) {
+					$(elem).html('DRAG HERE TO ADD');
+				}
+			);
+			//$(this).removeAttribute('style');
+		},
+		over: function(event, ui) {
+			$(this).addClass('cart-active-over', 'fast');
+			$(this).children().each(
+				function (index, elem) {
+					$(elem).html('DROP TO ADD');
+				}
+			);
+		},
+		out: function(event, ui) {
+			$(this).removeClass('cart-active-over', 'fast');
+			$(this).children().each(
+				function (index, elem) {
+					$(elem).html('DRAG HERE TO ADD');
+				}
+			);
+		},
+		drop: function(event, ui) {
+			newEntryText = ui.draggable.text();
+			alert(ui.draggable.attr("id").replace(/plugin_/ig, ""));
+			$( "<li></li>" ).text( newEntryText ).appendTo( $("#pluginCartList") );
+		}
+	}); 
+	$('.plugin_item').draggable({ opacity: 0.7, helper: 'clone' });
+});
+						</script>
 					</div>
 				</div>
 {% endblock col3out %}

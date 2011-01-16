@@ -2,7 +2,7 @@
 
 function inc ($file) {
 	Log::add("including file: ".$file);
-	require(HR_INC.$file);
+	require_once(HR_INC.$file);
 }
 
 function inclib($file) {

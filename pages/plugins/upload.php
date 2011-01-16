@@ -10,7 +10,7 @@
 	}
 	$params = array_slice($hr_URI, 1);
 	$pluginUsername = $params[0];
-	$u = new XenForo_Model_User();
+	$u = XenForo_Model::create('XenForo_Model_User');
 	$pluginUserID = $u->getUserIdFromUser($u->getUserByName($pluginUsername));
 	$pluginName = $params[1];
 	$dbQuery = Database::select('plugins', 'pid', array('pname = ? AND pauthor_id = ?', $pluginName, $pluginUserID));

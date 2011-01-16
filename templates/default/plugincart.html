@@ -3,3 +3,8 @@
 		<span>DRAG HERE TO ADD</span>
 	</div>
 </div>
+<ul id="pluginCartList">
+{% for plugin in plugincart %}
+	<li>{{ plugin.name }}</li>
+{% endfor %}
+</ul>

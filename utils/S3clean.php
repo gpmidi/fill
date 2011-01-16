@@ -36,6 +36,18 @@ if (Database::getHandle()->exec('TRUNCATE plugin_downloads') != 0) {
 } else {
   echo '...! Failed.', PHP_EOL;
 }
+echo 'Truncating plugins...';
+if (Database::getHandle()->exec('TRUNCATE plugins') != 0) {
+  echo '...:)', PHP_EOL;
+} else {
+  echo '...! Failed.', PHP_EOL;
+}
+echo 'Truncating plugin_cat_pivot...';
+if (Database::getHandle()->exec('TRUNCATE plugin_cat_pivot') != 0) {
+  echo '...:)', PHP_EOL;
+} else {
+  echo '...! Failed.', PHP_EOL;
+}
 echo 'Database cleaning complete. Clearing filesystem...', PHP_EOL;
 foreach (scandir(HR_ROOT . '/uploads/') as $fname) {
   if ($fname == '.' || $fname == '..') continue;

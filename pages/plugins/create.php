@@ -3,11 +3,11 @@
 	$template_settings['HR_TEMPLATE_TITLE'] = "Create New Plugin";
 	$template_settings['HR_TEMPLATE_JS']=array("plugincreateform.js");
 	$template_settings['HR_TEMPLATE_VARS'] = array('url' => '/create', 'uri' => 'create');
-	/**/ if (User::$role < User::ROLE_ADMIN)
+	/* if (User::$role < User::ROLE_ADMIN)
 	{
 		$template_settings['HR_TEMPLATE_CONTENT'] = "This site isn't ready yet! Please wait until everything is ready!";
 	}
-	else /**/ if (User::$role == User::ROLE_GUEST)
+	else */ if (User::$role == User::ROLE_GUEST)
 	{
 		throw new HttpException(403);
 	}
@@ -33,6 +33,8 @@
 			$pname = $newPlugin->name = htmlentities($_POST['pname']);
 			$pdesc = $newPlugin->desc = htmlentities($_POST['pdesc']);
 			$preqs = $newPlugin->reqs = htmlentities($_POST['preqs']);
+			$newPlugin->categories = $_POST['pcategory'];
+			//print_r($_POST['pcategory']); exit();
 			//$pmysql .= ( $_POST['pmysql'] == 'yes') ? ' checked="checked"' : '';
 			$ismyplugin .= ( $_POST['ismyplugin'] == 'yes') ? ' checked="checked"' : '';
 			$newPlugin->requires_mysql = 0;
@@ -88,12 +90,18 @@
 				<span><input type=\"checkbox\" name=\"ismyplugin\" id=\"ismyplugin\" value=\"yes\" ".$ismyplugin." /></span>
 			</div>
 			<div class=\"form-row\" id=\"pauthornameRow\" $pauthornameVis>
-				<label for=\"pauthorname\">Real Author Name</label>
+				<label for=\"pauthorname\">Real Author Name (if not yours)</label>
 				<span><input type=\"text\" name=\"pauthorname\" id=\"pauthorname\" value=\"".$pauthorname."\" /></span>
 			</div>
 			<div class=\"form-row form-row-last\">
 				<span><input type=\"submit\" name=\"submit\" id=\"submitBtn\" value=\"Create!\" /></span>
 			</div>
 		</form>
+		<script type='text/javascript'>
+			$(document).ready(function() {
+				$('#pauthorname').click(function() {
+					$('#pauthornameRow').toggle('fast');
+				});
+			});
 		";
 	}

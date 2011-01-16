@@ -28,6 +28,8 @@ class Plugin {
 	public $requires_mysql = ''; // 0 = no/na, 1 = can use, 2 = MUST use
 	public $downloads = 0; // download counter
 	public $added_date = ''; // date added to db
+	public $categories = array(); // categories nums
+	public $categories_names = array();
 	
 	public $rating = -1; // rating 1-5
 	
@@ -67,6 +69,20 @@ class Plugin {
 		{
 			$this->$toclassvar = $dbr[$fromdb];
 		}
+		// now load categories
+		$dbh = Database::select('plugin_cat_pivot', array('cid'), array('pid = ?', $this->id));
+		$this->categories = $this->categories_names = array();
+		while ($dbr = $dbh->fetch()) {
+			$this->categories[] = $dbr['cid'];
+		}
+		// are there any?
+		if (count($this->categories) > 0) { // load category names
+			$catlist = implode(',', $this->categories);
+			$a = Database::select('categories', '*', array('cid IN ('.$catlist.')'));
+			while ($row = $a->fetch(PDO::FETCH_ASSOC)) {
+				$this->categories_names[$row['cid']] = $row['cname'];
+			}
+		}
 		$this->inited = 2;
 	}
 
@@ -88,6 +104,23 @@ class Plugin {
 			if ($a == 1)
 				$this->id = Database::getHandle()->lastInsertId();
 		}
+		Database::delete('plugin_cat_pivot', array('pid = ?', $this->id));
+		if (is_array($this->categories)) {
+			foreach ($this->categories as $category) {
+				$category = (int)$category;
+				Database::insert('plugin_cat_pivot', array('pid' => $this->id, 'cid' => $category));
+			}
+			// reload categories.
+			$catlist = implode(',', $this->categories);
+			$b = Database::select('categories', '*', array('cid IN ('.$catlist.')'));
+			while ($row = $b->fetch(PDO::FETCH_ASSOC)) {
+				$this->categories_names[$row['cid']] = $row['cname'];
+			}
+		} else {
+			$this->categories = array();
+			$this->categories_names = array();
+		}
+			
 		return ($a == 1) ? true : false;
 	}
 
@@ -119,7 +152,7 @@ class Plugin {
 	 * @param int $userid XenForo user ID of the user to look up
 	**/
 	function userHasVoted($userid) {
-		$a = new XenForo_Model_User();
+		$a = XenForo_Model::create('XenForo_Model_User');
 		$curGet = $a->getUserById($userid);
 		$list = unserialize($curGet['plugins_voted_on']);
 		if (isset($list[$this->id]) && $list[$this->id] != 0) {
@@ -139,7 +172,7 @@ class Plugin {
 	 * @see userGetVote
 	**/
 	function userSetVote($userid, $vote) {
-		$a = new XenForo_Model_User();
+		$a = XenForo_Model::create('XenForo_Model_User');
 		$curGet = $a->getUserById($userid);
 		$list = unserialize($curGet['plugins_voted_on']);
 		$voteCs = $self->getVotes();
@@ -185,5 +218,29 @@ class Plugin {
 		while ($getR = $getQ->fetchColumn()) {
 			$outArr[] = new PluginUpload($getR);
 		}
+		return $outArr;
 	}
+	
+	function getPrimaryDownloadVersion() {
+		inc('PluginUpload.php');
+		inc('PluginUploadVersion.php');
+		$getQ = Database::select('plugin_downloads', 'did', array('pid = ?', $this->id));
+		$insideArr = array();
+		while ($getR = $getQ->fetchColumn()) {
+			$insideArr[] = $getR;
+		}
+		$getQ = Database::getHandle()->prepare('SELECT vid FROM plugin_downloads_version WHERE did IN ('.implode(',', $insideArr).') AND visprimary = 1');
+		$getQ->execute();
+		while ($getR = $getQ->fetchColumn()) {
+			return new PluginUploadVersion($getR);
+		}
+		throw new HttpException(404);
+	}
+}
+
+class NoSuchPluginException extends Exception {
+}
+class NoSuchUploadException extends Exception {
+}
+class NoSuchVersionException extends Exception {
 }

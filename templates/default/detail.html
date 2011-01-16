@@ -2,22 +2,64 @@
 {% block title %}View: {{ HR_PLUGIN_NAME }}{% endblock title %}
 {% block col2 %}
 						<h1><a href="/list/">Browse</a> &gt; <a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/">{{ HR_PLUGIN_NAME }}</a></h1>
+						<div id="pluginDetailArea">
 						{% include "plugindetail.html" %}
+						</div>
 {% endblock %}
 {% block col3out %}
 		<div class="item">
 			<div class="item-t">
 				<h1>Plugin Information:</h1>
-				<b>Author:</b> {{ HR_PLUGIN_AUTHOR }}<br />
+				<b>Author:</b> {{ HR_PLUGIN_AUTHOR_NAME }}<br />
 				<b>Date Added:</b> {{ HR_PLUGIN_ADDED_DATE }}<br />
 				<b>Downloads:</b> {{ HR_PLUGIN_NO_DOWNLOADS }}<br />
 				<br />
 				<br />
 				Files:<br />
-				{% for version in HR_PLUGIN_VERSIONS %}<a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ version.version }}/">{{ version.version }}</a>{% if not loop.last %}, {% endif %}{% endfor %}<br />
+				{% for download in HR_PLUGIN_DOWNLOADS %}
+					<a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ download.id }}/">
+						{% if download.isCurrent %}
+							<b>
+						{% endif %}
+						{{ download.friendlyname }}
+						{% if download.isCurrent %}
+							</b>
+						{% endif %}
+					</a>
+				{% if not loop.last %}, {% endif %}
+				{% endfor %}<br />
 				<br />
-				Versions:<br />
-				{% for version in HR_PLUGIN_VERSIONS %}<a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ download.name }}/{{ version.version }}/">{{ version.version }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+				Versions (of this file):<br />
+				{% for version in HR_PLUGIN_VERSIONS %}
+					<a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ HR_THIS_DOWNLOAD_ID }}/{{ version.id }}/">
+						{% if version.isCurrent %}
+							<b>
+						{% endif %}
+						{{ version.version }}
+						{% if version.isCurrent %}
+							</b>
+						{% endif %}
+					</a>
+					{% if not loop.last %}, {% endif %}
+				{% endfor %}
 			</div>
+		</div>
+		<div class="item">
+					<div class="item-t">
+						<h1>Related Plugins:</h1>
+						<h1 class="seeAll">See All &gt;</h1>
+					</div>
+		</div>
+		<div class="item">
+					<div class="item-t">
+						<h1>More by This User:</h1>
+						<h1 class="seeAll">See All &gt;</h1>
+					</div>
+		</div>
+		<div class="item">
+					<div class="item-t">
+						<h1>Tags:</h1>
+						<h1 class="seeAll">See All &gt;</h1>
+					</div>
 		</div>
 {% endblock col3out %}

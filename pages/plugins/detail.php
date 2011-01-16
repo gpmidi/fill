@@ -5,7 +5,7 @@
 
 	if (count($params) < 2) throw new HttpException(404);
 	$pluginUsername = $params[0];
-	$u = new XenForo_Model_User();
+	$u = XenForo_Model::create('XenForo_Model_User');
 	$pluginUserID = $u->getUserIdFromUser($u->getUserByName($pluginUsername));
 	$pluginName = $params[1];
 	
@@ -24,68 +24,79 @@
 	$dbQuery = Database::select('plugins', 'pid', array('pname = ? AND pauthor_id = ? AND pstatus IN ('.$additional.' 0, 1, 2)', $pluginName, $pluginUserID));
 	$pluginID = $dbQuery->fetchColumn();
 	
-	// GOT!
-	$thisPlugin = new Plugin($pluginID);
+	try {
+		// GOT!
+		$thisPlugin = new Plugin($pluginID);
+	} catch (NoSuchPluginException $e) {
+		throw new HttpException(404);
+	}
 	
 	// Markdownify
 	inclib('markdown.php');
 	$descMarkdowned = Markdown($thisPlugin->desc);
 	
-	/*
-	$pdo = Database::getHandle();
-	//$sql = 'SELECT pd.*, pdv.* FROM plugin_downloads AS pd JOIN plugin_downloads_version ON pd.did = pdv.did WHERE pd.pid = ?';
-	$sql = 'SELECT pd.* FROM plugin_downloads AS pd WHERE pd.pid = ?';
-	$getDownloads = $pdo->prepare($sql);
-	$getDownloads->execute(array($thisPlugin->getID()));
-	$versionsSQL = 'SELECT * FROM plugin_downloads_version WHERE did = ? ORDER BY vid DESC LIMIT 1';
-	$versionsPre = $pdo->prepare($versionsSQL);
-	$lastDownloads = array();
-	while ($downloadLine = $getDownloads->fetch()) {
-		$thisDownloadArr = array();
-		$versionsPre->execute(array($downloadLine['did']));
-		if (!($versionsLine = $versionsPre->fetch())) {
-			continue; // don't add to downloads array
+	$pluginDownloads = $thisPlugin->getDownloads();
+	//print_r($pluginDownloads);
+	
+	inc('PluginUpload.php');
+	inc('PluginUploadVersion.php');
+	if ($fileID != -1) {
+		try {
+			$thisPluginDownload = new PluginUpload($fileID);
+			if ($thisPluginDownload->pluginid != $thisPlugin->getID())
+				throw new HttpException(404);
+		} catch (NoSuchUploadException $e) {
+			throw new HttpException(404);
 		}
-		// make magical fun time
-		if ($versionsLine['isons3'] == 1) { // it is!
-			$ending = $pluginUsername . '/' . $pluginName . '/'. $versionsLine['vhash'] . '/' . $downloadLine['dfname'];
-			$madeHttpURI = 'http://filldl.bukkit.org/' . $ending;
-			$madeHttpsURI = 'https://s3.amazonaws.com/filldl.bukkit.org/' . $ending;
+		
+		if ($versionID != -1) {
+			try {
+				$thisPluginDownloadVersion = new PluginUploadVersion($versionID);
+				if ($thisPluginDownloadVersion->downloadid != $thisPluginDownload->getID())
+					throw new HttpException(404);
+			} catch (NoSuchVersionException $e) {
+				throw new HttpException(404);
+			}
 		} else {
-			continue; // We COULD do something here, but no.
+			$thisPluginDownloadVersion = $thisPluginDownload->getLatest();
 		}
-		$pluginArr = array(
-			'name' => $downloadLine['dfriendlyname'],
-			'filename' => $downloadLine['dfname'],
-			'httpuri' => $madeHttpURI,
-			'httpsuri' => $madeHttpsURI,
-			'description' => Markdown($downloadLine['ddesc']),
-			'lastchangelog' => Markdown($versionsLine['vchangelog']),
-			'isfirst' => ($downloadLine['ddesc'] == $versionsLine['vchangelog']),
-			'version' => $versionsLine['vnumber'],
-			'isprimary' => $versionsLine['visprimary']
+	}
+	
+	if ($fileID == -1) {
+		try {
+			$thisPluginDownloadVersion = $thisPlugin->getPrimaryDownloadVersion();
+			$thisPluginDownload = new PluginUpload($thisPluginDownloadVersion->downloadid);
+		} catch (Exception $e) {
+			throw new HttpException(404);
+		}
+		
+	}
+	
+	foreach ($thisPlugin->getDownloads() as $plugDown) {
+		$downloadList[] = array(
+			'id' => $plugDown->getID(),
+			'friendlyname' => $plugDown->friendlyname,
+			'isCurrent' => ($plugDown->getID() == $thisPluginDownload->getID())
 		);
-		print_r($versionsLine);
-		//print_r($downloadLine);
-		if ($versionsLine['visprimary'] == 1) { // woo primary file
-			if ($fileID == -1) { // no file selected, select primary
-				$currentFile = $pluginArr;
-			}
-			$fallbackFile = $pluginArr; // make a fallback
-		}
-		if ($fileID != -1 && $fileID == $downloadLine['did']) {
-			if ($versionID != -1 && $versionID == $versionsLine['vid']) {
-				$currentFile = $pluginArr;
-			}
-		}
-		$lastDownloads[] = $pluginArr;
 	}
-	if (!isset($fallbackFile)) {
-		throw new HttpException(404);
+	foreach ($thisPluginDownload->getVersions() as $plugVer) {
+		$versionList[] = array(
+			'id' => $plugVer->getID(),
+			'version' => $plugVer->vnumber,
+			'isCurrent' => ($plugVer->getID() == $thisPluginDownloadVersion->getID())
+		);
 	}
-	if (!isset($currentFile)) {
-		$currentFile = $fallbackFile; // select fallback
-	}
+	
+	$linkTo = 'http://filldl.bukkit.org/' . $pluginUsername . '/' . $pluginName . '/' . $thisPluginDownloadVersion->hash .  '/' .$thisPluginDownload->filename;
+	
+	$thisDLInfo = array(
+		'version' => $thisPluginDownloadVersion->vnumber,
+		'changelog' => Markdown($thisPluginDownloadVersion->changelog),
+		'description' => Markdown($thisPluginDownload->description),
+		'friendlyname' => $thisPluginDownload->friendlyname,
+		'showLink' => $thisPluginDownloadVersion->isons3,
+		'linkToShow' => $linkTo
+	);//
 	
 	$template_settings = array(
 		'HR_PLUGIN_ID' => $thisPlugin->getID(),
@@ -99,5 +110,8 @@
 		'HR_PLUGIN_ADDED_DATE' => $thisPlugin->added_date,
 		'HR_PLUGIN_RATING' => $thisPlugin->rating,
 		'HR_PLUGIN_STATUS' => $thisPlugin->status,
-		'HR_PLUGIN_DOWNLOADS' => $lastDownloads
-	);*/
+		'HR_PLUGIN_DOWNLOADS' => $downloadList,
+		'HR_PLUGIN_VERSIONS' => $versionList,
+		'HR_THIS_DOWNLOAD_ID' => $thisPluginDownload->getID(),
+		'HR_PLUGIN_THIS_DOWNLOAD' => $thisDLInfo
+	);

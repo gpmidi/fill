@@ -1,32 +1,10 @@
+{% set curdownload = HR_PLUGIN_THIS_DOWNLOAD %}
 {{ HR_PLUGIN_DESCRIPTION | raw }}
+{% if curdownload.showLink %}
+<a href="{{ curdownload.linkToShow }}"><span class="itemDL">Download</span></a>
+{% endif %}
 <br /><br />
+<h2>{{ curdownload.friendlyname }}</h2>
+<p>{{ curdownload.description | raw }}</p>
 {{ curdownload.version }}:<br />
-{{ curdownload.changelog }}
-{#
-ID: {{ HR_PLUGIN_ID }}<br />
-Author ID: {{ HR_PLUGIN_AUTHOR_ID }}<br />
-Author Name: {{ HR_PLUGIN_AUTHOR_NAME }}<br />
-Plugin Name: {{ HR_PLUGIN_NAME }}<br />
-Plugin Desc: <br />
-Plugin Downloads: {{ HR_PLUGIN_NO_DOWNLOADS }}<br />
-Date added: {{ HR_PLUGIN_ADDED_DATE }}<br />
-Plugin rating: {{ HR_PLUGIN_RATING }}<br />
-Plugin status: {{ HR_PLUGIN_STATUS }}<br />
-<br />
-<ul>
-{% for download in HR_PLUGIN_DOWNLOADS %}
-<li>{{ download.name }}<br />
-<ul>
-	<li>Filename: {{ download.filename }}</li>
-	<li>Download Description: {{ download.description }}</li>
-	<li>Current Version: {{ download.version }}</li>
-	{% if not download.isfirst %}
-		<li>Download Changelog: {{ download.changelog }}</li>
-	{% endif %}
-</ul>
-</li>
-{% else %}
-	<li><strong>There are no downloads for this plugin yet.</strong></li>
-{% endfor %}
-</ul>
-#}
+<p>{{ curdownload.changelog | raw }}</p>

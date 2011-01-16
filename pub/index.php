@@ -40,7 +40,7 @@ $twig = new Twig_Environment($loader, array(
 
 
 // GAH! Trim URIs first!
-$hr_URI = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+$hr_URI = explode('/', urldecode(trim($_SERVER['REQUEST_URI'], '/')));
 
 // URI fixing, to avoid google :( ing
 $correctURI = ltrim($_SERVER['REQUEST_URI'], '/');
@@ -199,7 +199,6 @@ function ago($timestamp) {
 
 try
 {
-
 	switch ($hr_URI[0])
 	{
 		case 'git':
@@ -283,5 +282,13 @@ try
 	);
 	$out_array = array_merge($out_array, $template_settings);
 	echo $template->render($out_array);
+} catch (Exception $e) { // breakout! dunna dunna dunna
+	$e = new HttpException(500);
+	$template = $twig->loadTemplate($e->getErrorTemplate());
+	$template_settings = array(
+		'HR_FRIENDLY_ERROR' => $e->getErrorFriendly(),
+		'HR_ERROR_CODE' => $e->getErrorCode()
+	);
+	$out_array = array_merge($out_array, $template_settings);
+	echo $template->render($out_array);
 }
-
