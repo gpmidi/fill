@@ -478,3 +478,17 @@ h4 {
 #pluginDetailArea {
 	padding: 10px;
 }
+
+#moderatorIcons, #downloadLink {
+	position: relative;
+	float: right;
+	top: -20px;
+}
+
+#downloadLink {
+	top: -25px;
+}
+
+#moderatorIcons {
+	margin-left: 10px;
+}

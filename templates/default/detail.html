@@ -1,8 +1,29 @@
 {% extends 'twocolumn.html' %}
+{% set curdownload = HR_PLUGIN_THIS_DOWNLOAD %}
 {% block title %}View: {{ HR_PLUGIN_NAME }}{% endblock title %}
 {% block col2 %}
 						<h1><a href="/list/">Browse</a> &gt; <a href="/detail/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/">{{ HR_PLUGIN_NAME }}</a></h1>
 						<div id="pluginDetailArea">
+							{% if HR_CAN_MODERATE %}
+								<div id="moderatorIcons">
+									<a id="moderatorVisibleIcon" href="/moderate/toggleVisible/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ HR_THIS_DOWNLOAD_ID }}/{{ curdownload.versionID }}/" class="ui-silk gray ui-silk-eye">Visible</a>
+									<a id="moderatorClaimedIcon" href="/moderate/toggleClaimed/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ HR_THIS_DOWNLOAD_ID }}/{{ curdownload.versionID }}/" class="ui-silk gray ui-silk-user">Claimed</a>
+									<a id="moderatorSealIcon" href="/moderate/toggleSeal/{{ HR_PLUGIN_AUTHOR_NAME }}/{{ HR_PLUGIN_NAME }}/{{ HR_THIS_DOWNLOAD_ID }}/{{ curdownload.versionID }}/" class="ui-silk gray ui-silk-rosette">Seal of Approval</a>
+								</div>
+								<script type="text/javascript">
+	$(document).ready(function() {
+		$('#moderatorVisibleIcon').click(function() {
+			alert(this.id);
+			return false;
+		});
+	});
+								</script>
+							{% endif %}
+							{% if curdownload.showLink %}
+								<a href="{{ curdownload.linkToShow }}" id="downloadLink">
+									<span class="itemDL">Download</span>
+								</a>
+							{% endif %}
 						{% include "plugindetail.html" %}
 						</div>
 {% endblock %}

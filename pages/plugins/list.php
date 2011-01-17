@@ -53,7 +53,8 @@
 				$value = Database::getHandle()->quote($param[3]);
 				$wherr[] = $fieldName . ' ' . $operator . ' ' . $value;
 			} else {
-				$u = new XenForo_Model_User();
+//				$u = new XenForo_Model_User();
+				$u = XenForo_Model::create('XenForo_Model_User');
 				$userID = (int)$u->getUserIdFromUser($u->getUserByName($param[3]));
 				$value = Database::getHandle()->quote($param[3]);
 				if ($param[2] == '=') {
@@ -101,7 +102,8 @@
 	$template_settings['HR_RESULTS_NUM'] = $numRows = $countres->fetchColumn(0);
 	
 	//$resRows = $res->fetchAll();
-	$u = new XenForo_Model_User();
+//	$u = new XenForo_Model_User();
+	$u = XenForo_Model::create('XenForo_Model_User');
 	
 	$resRows = array();
 	while ($resRow = $res->fetch()) {

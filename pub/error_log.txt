@@ -979,3 +979,8 @@ Stack trace:
 [16-Jan-2011 06:33:42] PHP Fatal error:  Call to undefined method Plugin::imprint() in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 33
 [16-Jan-2011 06:33:42] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:33) in Unknown on line 0
 [16-Jan-2011 06:33:59] PHP Notice:  Undefined variable: pViewLogID in /home2/bukkit/public_html/phill/pages/plugins/detail.php on line 33
+[16-Jan-2011 19:12:52] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:7) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 19:13:04] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bukkit/public_html/phill/pages/plugins/detail.php:37) in /home2/bukkit/public_html/phill/inc/http_error.php on line 8
+[16-Jan-2011 19:15:31] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 70
+[16-Jan-2011 19:15:31] PHP Notice:  Undefined variable: vID in /home2/bukkit/public_html/phill/pages/plugins/handleUpload.php on line 73
+[16-Jan-2011 19:15:47] PHP Notice:  Undefined index: 0_newfile in /home2/bukkit/public_html/phill/pages/plugins/uploadComplete.php on line 37

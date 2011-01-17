@@ -19,11 +19,9 @@
 	
 	$additional = '';
 	if (User::$uid == $pluginUserID || User::$role == User::ROLE_ADMIN) {
-		$additional = '-3, -2, -1, ';
-	}
-	$canModerate = false;
-	if (User::$role == User::ROLE_ADMIN) {
-		$canModerate = true;
+		$additional = '-3, -2, -1, ';	
+	} else {
+		throw new HttpException(403);
 	}
 	$dbQuery = Database::select('plugins', 'pid', array('pname = ? AND pauthor_id = ? AND pstatus IN ('.$additional.' 0, 1, 2)', $pluginName, $pluginUserID));
 	$pluginID = $dbQuery->fetchColumn();
@@ -77,48 +75,5 @@
 		
 	}
 	
-	foreach ($thisPlugin->getDownloads() as $plugDown) {
-		$downloadList[] = array(
-			'id' => $plugDown->getID(),
-			'friendlyname' => $plugDown->friendlyname,
-			'isCurrent' => ($plugDown->getID() == $thisPluginDownload->getID())
-		);
-	}
-	foreach ($thisPluginDownload->getVersions() as $plugVer) {
-		$versionList[] = array(
-			'id' => $plugVer->getID(),
-			'version' => $plugVer->vnumber,
-			'isCurrent' => ($plugVer->getID() == $thisPluginDownloadVersion->getID())
-		);
-	}
+	// processing code!
 	
-	$linkTo = '/download/' . $pluginUsername . '/' . $pluginName . '/' . $thisPluginDownload->getID() .  '/' .$thisPluginDownloadVersion->getID() . '/';
-	
-	$thisDLInfo = array(
-		'version' => $thisPluginDownloadVersion->vnumber,
-		'versionID' => $thisPluginDownloadVersion->getID(),
-		'changelog' => Markdown($thisPluginDownloadVersion->changelog),
-		'description' => Markdown($thisPluginDownload->description),
-		'friendlyname' => $thisPluginDownload->friendlyname,
-		'showLink' => $thisPluginDownloadVersion->isons3,
-		'linkToShow' => $linkTo
-	);//
-	
-	$template_settings = array(
-		'HR_PLUGIN_ID' => $thisPlugin->getID(),
-		'HR_PLUGIN_AUTHOR_ID' => $thisPlugin->author_id,
-		'HR_PLUGIN_AUTHOR_NAME' => $pluginUsername,
-		'HR_PLUGIN_NAME' => $thisPlugin->name,
-		'HR_PLUGIN_DESCRIPTION' => $descMarkdowned,
-		'HR_PLUGIN_REQUIREMENTS' => $thisPlugin->reqs,
-		//'HR_PLUGIN_NEEDSMYSQL' => $thisPlugin->requires_mysql,
-		'HR_PLUGIN_NO_DOWNLOADS' => $thisPlugin->downloads,
-		'HR_PLUGIN_ADDED_DATE' => $thisPlugin->added_date,
-		'HR_PLUGIN_RATING' => $thisPlugin->rating,
-		'HR_PLUGIN_STATUS' => $thisPlugin->status,
-		'HR_PLUGIN_DOWNLOADS' => $downloadList,
-		'HR_PLUGIN_VERSIONS' => $versionList,
-		'HR_THIS_DOWNLOAD_ID' => $thisPluginDownload->getID(),
-		'HR_PLUGIN_THIS_DOWNLOAD' => $thisDLInfo,
-		'HR_CAN_MODERATE' => $canModerate
-	);

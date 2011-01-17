@@ -1,8 +1,4 @@
-{% set curdownload = HR_PLUGIN_THIS_DOWNLOAD %}
 {{ HR_PLUGIN_DESCRIPTION | raw }}
-{% if curdownload.showLink %}
-<a href="{{ curdownload.linkToShow }}"><span class="itemDL">Download</span></a>
-{% endif %}
 <br /><br />
 <h2>{{ curdownload.friendlyname }}</h2>
 <p>{{ curdownload.description | raw }}</p>

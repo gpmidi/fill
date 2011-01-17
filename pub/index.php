@@ -290,17 +290,35 @@ try
 	$template = $twig->loadTemplate($e->getErrorTemplate());
 	$template_settings = array(
 		'HR_FRIENDLY_ERROR' => $e->getErrorFriendly(),
-		'HR_ERROR_CODE' => $e->getErrorCode()
+		'HR_ERROR_CODE' => $e->getErrorCode(),
+		'HR_ERROR_INFO' => 'none'
 	);
 	$out_array = array_merge($out_array, $template_settings);
 	echo $template->render($out_array);
-} catch (Exception $e) { // breakout! dunna dunna dunna
+} catch (Exception $fe) { // breakout! dunna dunna dunna
 	$e = new HttpException(500);
 	$template = $twig->loadTemplate($e->getErrorTemplate());
 	$template_settings = array(
 		'HR_FRIENDLY_ERROR' => $e->getErrorFriendly(),
-		'HR_ERROR_CODE' => $e->getErrorCode()
+		'HR_ERROR_CODE' => $e->getErrorCode(),
+		'HR_ERROR_INFO' => formatExceptionTrace($fe)
 	);
 	$out_array = array_merge($out_array, $template_settings);
 	echo $template->render($out_array);
 }
+
+function formatExceptionTrace(Exception $e) {
+    $trace = $e->getTrace();
+
+    $result = 'Exception: "';
+    $result .= $e->getMessage();
+    $result .= '" @ ';
+    if($trace[0]['class'] != '') {
+      $result .= $trace[0]['class'];
+      $result .= '->';
+    }
+    $result .= $trace[0]['function'];
+    $result .= '();<br />';
+
+    return $result;
+  }
